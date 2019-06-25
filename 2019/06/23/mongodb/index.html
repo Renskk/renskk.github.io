@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="基本概念在MongoDB中，数据库和集合都不需要手动创建，当我们创建文档时，如果文档所在的集合或数据库不存在，会自动创建数据库和集合  数据库（database） 集合（collection） 文档（document）  基本指令1234show dbs OR show databases	# 显示当前所有数据库use &amp;lt;database&amp;gt;			# 进入指定数据库db 				# 显示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB基础">
+<meta property="og:url" content="http://yoursite.com/2019/06/23/mongodb/index.html">
+<meta property="og:site_name" content="TOMBNOTES">
+<meta property="og:description" content="基本概念在MongoDB中，数据库和集合都不需要手动创建，当我们创建文档时，如果文档所在的集合或数据库不存在，会自动创建数据库和集合  数据库（database） 集合（collection） 文档（document）  基本指令1234show dbs OR show databases	# 显示当前所有数据库use &amp;lt;database&amp;gt;			# 进入指定数据库db 				# 显示">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-06-25T16:56:24.966Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoDB基础">
+<meta name="twitter:description" content="基本概念在MongoDB中，数据库和集合都不需要手动创建，当我们创建文档时，如果文档所在的集合或数据库不存在，会自动创建数据库和集合  数据库（database） 集合（collection） 文档（document）  基本指令1234show dbs OR show databases	# 显示当前所有数据库use &amp;lt;database&amp;gt;			# 进入指定数据库db 				# 显示">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>MongoDB基础</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk">Projectes</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/06/02/mock/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/06/23/mongodb/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/06/23/mongodb/&text=MongoDB基础"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/06/23/mongodb/&is_video=false&description=MongoDB基础"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MongoDB基础&body=Check out this article: http://yoursite.com/2019/06/23/mongodb/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/06/23/mongodb/&name=MongoDB基础&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本指令"><span class="toc-number">2.</span> <span class="toc-text">基本指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库CRUD的查询"><span class="toc-number">3.</span> <span class="toc-text">数据库CRUD的查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#insert"><span class="toc-number">4.</span> <span class="toc-text">insert()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find"><span class="toc-number">5.</span> <span class="toc-text">find()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#update"><span class="toc-number">6.</span> <span class="toc-text">update()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#remove"><span class="toc-number">7.</span> <span class="toc-text">remove()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入多数据"><span class="toc-number">8.</span> <span class="toc-text">插入多数据</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        MongoDB基础
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">TOMBNOTES</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-06-23T10:31:52.000Z" itemprop="datePublished">2019-06-23</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>在MongoDB中，数据库和集合都不需要手动创建，当我们创建文档时，如果文档所在的集合或数据库不存在，会自动创建数据库和集合</strong></p>
+<ul>
+<li>数据库（database）</li>
+<li>集合（collection）</li>
+<li>文档（document）</li>
+</ul>
+<h2 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show dbs OR show databases	# 显示当前所有数据库</span><br><span class="line">use &lt;database&gt;			# 进入指定数据库</span><br><span class="line">db 				# 显示当前所处数据库</span><br><span class="line">show collections		# 显示数据库中的集合</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库CRUD的查询"><a href="#数据库CRUD的查询" class="headerlink" title="数据库CRUD的查询"></a>数据库CRUD的查询</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$or       	逻辑或</span><br><span class="line">$and     	逻辑与</span><br><span class="line">$not      	逻辑非</span><br><span class="line">$nor      	逻辑or的取反</span><br><span class="line">$exists   	存在逻辑</span><br><span class="line">$type     	查询键的数据类型</span><br><span class="line">$push		操作符添加指定的值到数组中</span><br><span class="line">$ne		一个值不在数组里时就把它加进去，避免重复数据 </span><br><span class="line">$set 		可以用来修改文档中指定属性</span><br><span class="line">$unset 		可以删除文档中的制定属性</span><br><span class="line">$addToSet	往数组里面加入数据，如果数组里已经存在，则不会加入</span><br><span class="line">$pop		删除数组元素，只能从头部或尾部删除一个元素 </span><br><span class="line">$pull		删除数组元素，将所有匹配的元素删除</span><br><span class="line">$gt		查找大于</span><br><span class="line">$gte		查找大于等于</span><br><span class="line">$lt		查找小于</span><br><span class="line">$inc		自增</span><br><span class="line">&#123;$gt:value，$lt:value&#125;	查找区间</span><br></pre></td></tr></table></figure>
+
+<h2 id="insert"><a href="#insert" class="headerlink" title="insert()"></a>insert()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.insert(doc)		# 在&lt;collection&gt;中插入一个文档</span><br><span class="line">db.collection.insertOne(doc)		# 插入一个文档</span><br><span class="line">db.collection.insertMany(doc)		# 插入多个文档</span><br></pre></td></tr></table></figure>
+
+<h2 id="find"><a href="#find" class="headerlink" title="find()"></a>find()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.&lt;collection&gt;.find(doc)			# 查询当前集合中所有文档,返回一个数组</span><br><span class="line">db.&lt;collection&gt;.find(&#123;&apos;doc.doc&apos;:&apos;值&apos;&#125;)		# 查询当前集合中文档中的文档值</span><br><span class="line">db.&lt;collection&gt;.findOne(doc)			# 查询一个，返回文档</span><br><span class="line">db.&lt;collection&gt;.find(doc).count()		# 查询符合条件的是几个文档</span><br><span class="line">db.&lt;collection&gt;.find(doc).limit(10)		# 查找前十的数据</span><br><span class="line">db.&lt;collection&gt;.find(doc).skip(10).limit(10)	# 查找11条到20条的数据</span><br><span class="line">db.&lt;collection&gt;.find($or:[条件，条件])		# 查找11条到20条的数据</span><br></pre></td></tr></table></figure>
+
+<h2 id="update"><a href="#update" class="headerlink" title="update()"></a>update()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">update() 默认情况使用新对象替换旧对象/默认只会修改一个</span><br><span class="line">db.&lt;collection&gt;.update(&#123;查询条件&#125;，&#123;新对象&#125;)				# 替换一个文档</span><br><span class="line">db.&lt;collection&gt;.update(&#123;查询条件&#125;，&#123;$set:&#123;属性&#125;&#125;)			# 修改一个文档</span><br><span class="line">db.&lt;collection&gt;.update(&#123;查询条件&#125;，&#123;$unset:&#123;属性&#125;&#125;)			# 删除一个文档</span><br><span class="line">db.&lt;collection&gt;.update(&#123;查询条件&#125;，&#123;$push/$addToSet:&#123;属性&#125;&#125;)		# 像数组中添加一个新元素</span><br><span class="line">db.&lt;collection&gt;.updateMany() OR db.&lt;collection&gt;.update(&#123;multi:true&#125;)	# 修改多个</span><br><span class="line">db.&lt;collection&gt;.repleceOne()						# 替换多个</span><br></pre></td></tr></table></figure>
+
+<h2 id="remove"><a href="#remove" class="headerlink" title="remove()"></a>remove()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">remove() 默认删除多个/必须传参</span><br><span class="line">remove(&#123;&#125;) 清空集合</span><br><span class="line">db.&lt;collection&gt;.remove(属性)		# 删除符合条件所有文档</span><br><span class="line">db.&lt;collection&gt;.remove(属性,true)	# 删除一个文档</span><br><span class="line">db.&lt;collection&gt;.drop()			# 删除集合</span><br><span class="line">db.dropDatabase()			# 删库跑路</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入多数据"><a href="#插入多数据" class="headerlink" title="插入多数据"></a>插入多数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(var i=1; i&lt;=100; i++)&#123;db.&lt;collection&gt;.insert(doc:i)&#125;	# 循环插入100条数据</span><br><span class="line">-------------------------------</span><br><span class="line">var arr = [];</span><br><span class="line">for(var i=1; i&lt;=100; i++)&#123;arr.push(&#123;doc:i&#125;);&#125;</span><br><span class="line">db.&lt;collection&gt;.insert(arr)					# 快速插入100条数据</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk">Projectes</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本指令"><span class="toc-number">2.</span> <span class="toc-text">基本指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库CRUD的查询"><span class="toc-number">3.</span> <span class="toc-text">数据库CRUD的查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#insert"><span class="toc-number">4.</span> <span class="toc-text">insert()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find"><span class="toc-number">5.</span> <span class="toc-text">find()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#update"><span class="toc-number">6.</span> <span class="toc-text">update()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#remove"><span class="toc-number">7.</span> <span class="toc-text">remove()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入多数据"><span class="toc-number">8.</span> <span class="toc-text">插入多数据</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/06/23/mongodb/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/06/23/mongodb/&text=MongoDB基础"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/06/23/mongodb/&is_video=false&description=MongoDB基础"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MongoDB基础&body=Check out this article: http://yoursite.com/2019/06/23/mongodb/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/06/23/mongodb/&title=MongoDB基础"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/06/23/mongodb/&name=MongoDB基础&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Renskk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk">Projectes</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

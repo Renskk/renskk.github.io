@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Unittest框架 python自带的单元测试框架，java自带的单元框架Junit 单元测试的本质：代码测试代码；原理：调用源代码，对比预期结果和实际结果 特别注意：unittest 框架识别被测代码的方式：测试代码方法名需以test开头  核心API1234setUP() 		# 初始化；特点：每一条测试用例执行前就会执行初始化tearDown() 		# 资源回收；特点：每一条测试用例执行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unittest框架">
+<meta property="og:url" content="http://yoursite.com/2018/08/02/Unittest框架/index.html">
+<meta property="og:site_name" content="TOMBNOTES">
+<meta property="og:description" content="Unittest框架 python自带的单元测试框架，java自带的单元框架Junit 单元测试的本质：代码测试代码；原理：调用源代码，对比预期结果和实际结果 特别注意：unittest 框架识别被测代码的方式：测试代码方法名需以test开头  核心API1234setUP() 		# 初始化；特点：每一条测试用例执行前就会执行初始化tearDown() 		# 资源回收；特点：每一条测试用例执行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-06-25T16:47:51.287Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unittest框架">
+<meta name="twitter:description" content="Unittest框架 python自带的单元测试框架，java自带的单元框架Junit 单元测试的本质：代码测试代码；原理：调用源代码，对比预期结果和实际结果 特别注意：unittest 框架识别被测代码的方式：测试代码方法名需以test开头  核心API1234setUP() 		# 初始化；特点：每一条测试用例执行前就会执行初始化tearDown() 		# 资源回收；特点：每一条测试用例执行">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Unittest框架</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk">Projectes</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/08/02/接口测试基础/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/06/03/ADB shell/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/08/02/Unittest框架/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/08/02/Unittest框架/&text=Unittest框架"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/08/02/Unittest框架/&is_video=false&description=Unittest框架"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Unittest框架&body=Check out this article: http://yoursite.com/2018/08/02/Unittest框架/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/08/02/Unittest框架/&name=Unittest框架&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Unittest框架"><span class="toc-number">1.</span> <span class="toc-text">Unittest框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心API"><span class="toc-number">2.</span> <span class="toc-text">核心API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#断言"><span class="toc-number">3.</span> <span class="toc-text">断言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TestSuite-测试集"><span class="toc-number">4.</span> <span class="toc-text">TestSuite 测试集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#装饰器"><span class="toc-number">5.</span> <span class="toc-text">装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TestRunner"><span class="toc-number">6.</span> <span class="toc-text">TestRunner</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试报告"><span class="toc-number">7.</span> <span class="toc-text">测试报告</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Unittest框架
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">TOMBNOTES</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-08-02T01:11:39.000Z" itemprop="datePublished">2018-08-02</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Unittest框架"><a href="#Unittest框架" class="headerlink" title="Unittest框架"></a>Unittest框架</h2><ul>
+<li>python自带的单元测试框架，java自带的单元框架Junit</li>
+<li>单元测试的本质：代码测试代码；原理：调用源代码，对比预期结果和实际结果</li>
+<li>特别注意：unittest 框架识别被测代码的方式：测试代码方法名需以test开头</li>
+</ul>
+<h2 id="核心API"><a href="#核心API" class="headerlink" title="核心API"></a>核心API</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setUP() 		# 初始化；特点：每一条测试用例执行前就会执行初始化</span><br><span class="line">tearDown() 		# 资源回收；特点：每一条测试用例执行后就会执行资源回收  </span><br><span class="line">setUpClass() 		# 初始化；特点：所有测试用例执行前执行初始化</span><br><span class="line">tearDownClass() 	# 资源回收；特点：所有用例执行后执行资源回收</span><br></pre></td></tr></table></figure>
+
+<h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">assertEqual(a,b,msg)		a == b</span><br><span class="line">assertGreater(a,b,msg)     	a &gt; b</span><br><span class="line">assertLess(a,b,msg)  		a &lt; b</span><br></pre></td></tr></table></figure>
+
+<h2 id="TestSuite-测试集"><a href="#TestSuite-测试集" class="headerlink" title="TestSuite 测试集"></a>TestSuite 测试集</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">suite = unittest,TestSuite() 							# 实例化测试集</span><br><span class="line">suite.addTests(unittest.TestLoader().loadTestsFromTestCase( 类名 ))		# 加载整个类中的测试用例进入测试集</span><br><span class="line">suite.addTests(unittest.TestLoader().loadTestsFromName(‘模块名.类名.方法名’))	# 记载指定某个模块下的某个类下的方法/用例</span><br><span class="line">suite.addTests(unittest.TestLoader().loadTestsFromName(‘模块名.类名’)) 		# 加载整个类中的测试用例进入测试集</span><br><span class="line">suite.addTests(unittest.TestLoader().loadTestsFromModule(模块名))		# 加载整个模块的测试用例进入测试集，特别注意：需要导入本模</span><br><span class="line">runner=unittest.TextTestRunner(verbosity=2)					# 实例化一个runner, verbosity：结果复杂度</span><br><span class="line">runner.run(suite)								# 执行测试集</span><br></pre></td></tr></table></figure>
+
+<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@unittest.skip					# 强制跳过</span><br><span class="line">@unittest.skipIf(1&lt;2,reason=&apos;1&lt;2,跳过&apos;)		# 满足条件就跳过，True-跳过</span><br><span class="line">@unittest.skipUnless(2&lt;1,reason=&apos;1&lt;2,跳过&apos;)	# 不满足条件就跳过，False-跳过</span><br><span class="line">```			</span><br><span class="line">## TestResult  </span><br><span class="line">```                        </span><br><span class="line">suite=unittest.TestSuite()			# 实例化测试集</span><br><span class="line">suite.addTest(calc_Test(&apos;test_add01&apos;))		# 加载单个测试用例到测试集中</span><br><span class="line">r=unittest.TestResult()				# 实例化一个测试结果用于存储测试结果</span><br><span class="line">suite.run(result=r)				# 以测试集方式执行测试</span><br></pre></td></tr></table></figure>
+
+<h2 id="TestRunner"><a href="#TestRunner" class="headerlink" title="TestRunner"></a>TestRunner</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">suite=unittest.TestSuite()			# 实例化测试集</span><br><span class="line">suite.addTest(calc_Test(&apos;test_add01&apos;))		# 加载单个测试用例到测试集中</span><br><span class="line">unittest.TextTestRunner().run(suite)		# 执行测试集</span><br></pre></td></tr></table></figure>
+
+<h2 id="测试报告"><a href="#测试报告" class="headerlink" title="测试报告"></a>测试报告</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 系统自带生成报告</span><br><span class="line">with open(&apos;report.txt&apos;,&apos;w&apos;) as file:</span><br><span class="line">    unittest.TextTestRunner(stream=file,verbosity=2).run(suite)</span><br><span class="line"># 利用第三方库HTMLTestRunner</span><br><span class="line">with open(&apos;report.html&apos;,&apos;w&apos;,encoding=&apos;utf-8&apos;) as file:</span><br><span class="line">    HTMLTestRunner(stream=file,verbosity=2,title=&apos;测试报告&apos;,description=&apos;计算器的测试报告&apos;).run(suite)</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk">Projectes</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Unittest框架"><span class="toc-number">1.</span> <span class="toc-text">Unittest框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心API"><span class="toc-number">2.</span> <span class="toc-text">核心API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#断言"><span class="toc-number">3.</span> <span class="toc-text">断言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TestSuite-测试集"><span class="toc-number">4.</span> <span class="toc-text">TestSuite 测试集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#装饰器"><span class="toc-number">5.</span> <span class="toc-text">装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TestRunner"><span class="toc-number">6.</span> <span class="toc-text">TestRunner</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试报告"><span class="toc-number">7.</span> <span class="toc-text">测试报告</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/08/02/Unittest框架/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/08/02/Unittest框架/&text=Unittest框架"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/08/02/Unittest框架/&is_video=false&description=Unittest框架"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Unittest框架&body=Check out this article: http://yoursite.com/2018/08/02/Unittest框架/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/08/02/Unittest框架/&title=Unittest框架"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/08/02/Unittest框架/&name=Unittest框架&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Renskk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk">Projectes</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
