@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="性能测试基础">
+    <meta name="description" content="性能测试分类 负载测试（Load testing） 负载测试是不断增加系统的负载，直到负载达到阈值——评估系统在预期工作负载下的性能的测试。   压力测试（Stress Testing） 压力测试是指当硬件资源如cpu、内存、磁盘空间等不充足时对软件稳定性的检查。 压力测试属于负面测试（Negative testing），使大量并发用户/进程加载软件以使系统硬件资源不能应付。这个测试也被称为是疲劳">
 <meta property="og:type" content="article">
 <meta property="og:title" content="性能测试基础">
 <meta property="og:url" content="http://yoursite.com/2018/11/26/性能测试基础/index.html">
 <meta property="og:site_name" content="TOMBNOTES">
-<meta property="og:description" content="性能测试基础">
+<meta property="og:description" content="性能测试分类 负载测试（Load testing） 负载测试是不断增加系统的负载，直到负载达到阈值——评估系统在预期工作负载下的性能的测试。   压力测试（Stress Testing） 压力测试是指当硬件资源如cpu、内存、磁盘空间等不充足时对软件稳定性的检查。 压力测试属于负面测试（Negative testing），使大量并发用户/进程加载软件以使系统硬件资源不能应付。这个测试也被称为是疲劳">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-25T15:35:33.625Z">
+<meta property="og:updated_time" content="2019-06-26T04:35:39.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="性能测试基础">
-<meta name="twitter:description" content="性能测试基础">
+<meta name="twitter:description" content="性能测试分类 负载测试（Load testing） 负载测试是不断增加系统的负载，直到负载达到阈值——评估系统在预期工作负载下的性能的测试。   压力测试（Stress Testing） 压力测试是指当硬件资源如cpu、内存、磁盘空间等不充足时对软件稳定性的检查。 压力测试属于负面测试（Negative testing），使大量并发用户/进程加载软件以使系统硬件资源不能应付。这个测试也被称为是疲劳">
     
     
         
@@ -62,7 +62,7 @@
          
           <li><a href="/archives/">Articles</a></li>
          
-          <li><a href="https://github.com/Renskk">Projectes</a></li>
+          <li><a href="https://github.com/Renskk">Github</a></li>
         
       </ul>
     </span>
@@ -70,7 +70,7 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/11/27/jmeter/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/12/11/Bean Shell/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/2018/09/06/linux/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -100,7 +100,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试基础"><span class="toc-number">1.</span> <span class="toc-text">性能测试基础</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分类"><span class="toc-number">1.</span> <span class="toc-text">性能测试分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标"><span class="toc-number">2.</span> <span class="toc-text">性能指标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试初级"><span class="toc-number"></span> <span class="toc-text">性能测试初级</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案"><span class="toc-number">1.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试场景"><span class="toc-number">2.</span> <span class="toc-text">性能测试场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标体系"><span class="toc-number">3.</span> <span class="toc-text">性能指标体系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分析"><span class="toc-number">4.</span> <span class="toc-text">性能测试分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统性能优化"><span class="toc-number">5.</span> <span class="toc-text">系统性能优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器环境"><span class="toc-number">6.</span> <span class="toc-text">服务器环境</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试高级篇"><span class="toc-number"></span> <span class="toc-text">性能测试高级篇</span></a>
     </div>
   </span>
 </div>
@@ -139,7 +139,146 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="性能测试基础"><a href="#性能测试基础" class="headerlink" title="性能测试基础"></a>性能测试基础</h1>
+    <h2 id="性能测试分类"><a href="#性能测试分类" class="headerlink" title="性能测试分类"></a>性能测试分类</h2><ul>
+<li>负载测试（Load testing）<ul>
+<li>负载测试是不断增加系统的负载，直到负载达到阈值——评估系统在预期工作负载下的性能的测试。</li>
+</ul>
+</li>
+<li>压力测试（Stress Testing）<ul>
+<li>压力测试是指当硬件资源如cpu、内存、磁盘空间等不充足时对软件稳定性的检查。</li>
+<li>压力测试属于负面测试（Negative testing），使大量并发用户/进程加载软件以使系统硬件资源不能应付。这个测试也被称为是疲劳测试（Fatigue testing），通过超出其能力的测试来捕获应用程序的稳定性。</li>
+</ul>
+</li>
+<li>尖峰测试（Spike testing）<ul>
+<li>尖峰测试是在目标系统经受短时间内反复增加工作负载，以至超出预期生产操作的负载量时，分析系统的行为，验证其性能特征。它还包括检查应用程序是否可以从突然增加的超预期负荷中恢复出来的测试。</li>
+</ul>
+</li>
+<li>可扩展性测试（Scalability Testing）<ul>
+<li>可扩展性测试是一种非功能的测试，它测试软件应用程序以确定所有非功能能力的扩展能力，如用户负载支持、事务数量、数据量等。</li>
+</ul>
+</li>
+<li>容量测试（Volume testing）<ul>
+<li>容量测试是一种非功能的测试，它通过向应用程序中添加大量的数据来实现。可以通过向数据库插入大量的数据或让应用程序处理一个大型文件来进行测试应用程序。</li>
+<li>通过容量测试，可以识别应用程序中具有大数据时的瓶颈，检查应用程序的效率，进而得到不同数据量级下应用程序的性能。</li>
+</ul>
+</li>
+<li>持久测试（Endurance testing）<ul>
+<li>持久测试也被称为是浸泡测试（Soak Testing），它也是一种非功能的测试。</li>
+<li>持久测试是指在相当长的时间内使用预期的负载量对系统进行测试，以检查系统的各种行为，如内存泄露、系统错误、随机行为等。</li>
+</ul>
+</li>
+</ul>
+<h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><ul>
+<li>响应时间 RT Response Time 首屏时间–客户端请求服务器 发首页请求的响应时间</li>
+<li>吞吐量：BPS RPS</li>
+<li>事务处理能力 TPS  </li>
+<li>系统资源消耗情况：CPU MEMORY DISK NETWORDK</li>
+</ul>
+<h1 id="性能测试初级"><a href="#性能测试初级" class="headerlink" title="性能测试初级"></a>性能测试初级</h1><p>工具永远只能解决1/3的问题</p>
+<ul>
+<li>性能测试工具：loadrunner、jmeter<br>发送请求  —&gt;  参数化、思考时间、集合点、事务等  —&gt;  设计场景  —&gt;  运行场景  —&gt;  监控指标  —&gt;  结果图标</li>
+</ul>
+<h2 id="性能测试方案"><a href="#性能测试方案" class="headerlink" title="性能测试方案"></a>性能测试方案</h2><ol>
+<li>能够位实施过程提供战术依据，实施过程必须严格遵守方案执行。</li>
+<li>测什么：测试对象（测什么版本），测试范围（关键业务）</li>
+<li>怎么测：接口、脚本、场景、参数、指标、运行策略（测试时间，压力，并发，负载，稳定性）</li>
+<li>数据如何分析，如何定位瓶颈（预测本系统通常瓶颈容易出现在哪里），对指标体系的设计参考</li>
+<li>优化和解决问题（解决方案），回归测试策略。</li>
+<li>人员配置和工作协调。</li>
+<li>软硬件配置清单，工具使用，脚本开发</li>
+</ol>
+<h2 id="性能测试场景"><a href="#性能测试场景" class="headerlink" title="性能测试场景"></a>性能测试场景</h2><ol>
+<li>压力：最大用户数或使劲弄（负载机，客户端瓶颈，（租用云服务器，成本有点高），充分利用云服务器环境的运算能力+网络资源）</li>
+<li>并发：集合点，（伪并发：1000个线程同时发请求，未必能同时到达服务器）。</li>
+<li>负载：到底多少用户是合适的？<ul>
+<li>(通常参考同行的系统，TPS，并发用户数是多少？(不一定需要关心)。如果是已上线系统，可以参考历史记录，历史交易。(Transaction)，但是如果是新上线的呢？（做最好的准备，最坏的打算，先基于业务进行估算，然后上线后实时监控，实时调整）。</li>
+<li>如果在测试环境，测试结果毫无参考价值。最好的解决方案就是在生产环境（公网）直接进行测试。可通过采集测试环境的数据，拟合一条线性回归议程，来预测生产环境对应配置的负载能力。或者将生产环境直接用于测试，将访问域名解析到备用机上，将生产环境隔离出来用于性能测试（建议在深夜执行）。)</li>
+</ul>
+</li>
+<li>长时间在标准负载（最佳用户数）运行（比如一个星期），考察是否支持7*24运行，考察是否存在内存溢出问题。</li>
+</ol>
+<h2 id="性能指标体系"><a href="#性能指标体系" class="headerlink" title="性能指标体系"></a>性能指标体系</h2><p>基于I/O路径来定位硬件和软件</p>
+<ol>
+<li>硬件：CPU，内存，带宽，硬件（路由器、交换机、集群、磁盘阵列、分布式）</li>
+<li>软件：进程所消耗的CPU，内存，进程内部的内存管理，线程池（Pool,避免繁琐的新增和销毁），数据池连接池，缓存策略（缓存是目前最有效提升系统性能的办法之一，但凡有IO的地   方，最好都要使用缓存），算法对CPU的消耗，很多时候需要专门的监控工具</li>
+<li>客户端视角：响应时间，响应内容，成功率，可靠性（稳定运行）</li>
+</ol>
+<h2 id="性能测试分析"><a href="#性能测试分析" class="headerlink" title="性能测试分析"></a>性能测试分析</h2><ol>
+<li>瓶颈，指标的均衡（动态指标变化），用户体验（第一印象，First Impression，首屏加载时间：当执行性能测试时，利用F12同步访问该系统，手工统计即可。Dynatrace Ajax，前端性能分析工具，F12前端性能）。Microfocus，Compuware。</li>
+<li>200并发-&gt;响应时间3s-&gt;服务器-&gt;TPS: 66  -&gt; 增加到500并发-&gt;（TPS:166？）-&gt;响应时间5秒-&gt;系统的处理能力会高于100，响应时间会低于5秒。</li>
+<li>主要利用关联分析，对多个指标按时间进行关联，看是否存在正相关还是不相关。<h2 id="系统性能优化"><a href="#系统性能优化" class="headerlink" title="系统性能优化"></a>系统性能优化</h2></li>
+<li>使用监控工具获取性能细节：内存，JVM，线程，硬盘，CPU，SQL。。。</li>
+<li>server.xml设置Tomcat的线程数。</li>
+<li>可以在catalina.bat文件中设置JVM内存参数。 <a href="https://blog.csdn.net/gududedabai/article/details/81072075" target="_blank" rel="noopener">https://blog.csdn.net/gududedabai/article/details/81072075</a></li>
+<li>配置Tomcat集群。</li>
+</ol>
+<h2 id="服务器环境"><a href="#服务器环境" class="headerlink" title="服务器环境"></a>服务器环境</h2><ol>
+<li>JavaEE服务器（容器）：IBM: Websphere，Oracle: BEA：WebLogic，Tomcat，Apusic，Resin。</li>
+<li>Web服务器（只处理HTTP请求）：Apache, Nginx，IIS，lighttp。</li>
+<li>数据库：MySQL，PostgreSQL，MariaDB，DB2，Informix，Oracle，SQL Server，MongoDB。 分库，分表。</li>
+<li>高可用（High Availability）：集群Cluster，请求分发，负载均衡(Load-Balance)，Redware，容错处理（Fail-Over）。</li>
+<li>缓存服务器(Redis，MemedCache-内存型非关系型数据库-key:value，使用集群解决数据出问题)，分布式文件系统（FastDFS），磁盘存储阵列，网络文件系统（固态硬盘）。带宽-&gt;CDN服务器。</li>
+<li>分布式开发，微服务，云计算，分布式事务，CAP原则又称CAP定理，指的是在一个分布式系统中，Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可兼得。。。</li>
+<li>高并发，高可用。Redhat: RHEL-&gt;CentOS，MySQL-&gt;MariaDB（OpenJDK）。</li>
+</ol>
+<h1 id="性能测试高级篇"><a href="#性能测试高级篇" class="headerlink" title="性能测试高级篇"></a>性能测试高级篇</h1><ol>
+<li>并发用户数量是一个无法完全精准的数据，需要明确具体的时间段。</li>
+<li>关于并发用户数量的分析：针对已经上线的系统，可以通过日志进行访问记录，进而得出某个合理的时间段内的并发用户数量。但是如果系统是首次上线前的性能测试评估，如何设计合理的并发用户量和场景？<pre><code>    1）通过公开渠道查阅相关的数据资料。
+    2）通过分析竞品寻找相应的参数数据。
+    3）根据需求分析和架构设计的要求，来验证并发用户数量。    
+        （某个关键事务的响应时间在多少秒内？2-5-8原则：2秒，5秒，8秒，超过8秒。
+        并发用户量（客户端视角）或业务处理量（服务器视角，特定的硬件环境）：
+        Transaction：事务，交易。（服务器视角和客户端视角）。
+        上线后继续收集访问日志，随时调整测试方案和硬件配置。
+        （什么环境，什么配置下）如果并发量和处理量均达标，但是响应时间不达标，此类情况，继续深入分析慢的原因：代码，数据库，算法，带宽，客户端阻塞等。。。。。）
+    4）明确地知道用户是什么群体，在哪里，有多少人，按10%做并发折算。
+3、测试环境与生产环境，如果配置不一样，测试环境的数据意义何在？如何解决？
+4、浏览器的并发线程数量：https://www.cnblogs.com/sunsky303/p/8862128.html。
+5、配置基于Tomcat的集群环境：https://blog.csdn.net/dearfinance/article/details/79907594
+    负载均衡：Load-Balance，多个节点共同提供服务。
+    容错转移：Fail-Over，当一个节点失效时，请求将被转交给其他节点处理。
+6、性能测试也需要同时对功能进行正确性校验，以统计事务的成功率，评估其功能上的稳定性。通常失败率不能够超过3%，尽量在1%。如果超过5%，则必须严格分析和检查，以定位问题。</code></pre></li>
+</ol>
+<p>8、模拟真实场景：<br>            缓存（将代速设备的内容保存到高速设备中，减少对低速的读写）：<br>                1、缓存：页面资源必须要下载，但是通常只下载一次，后面的请求如果有相同的资源，则浏览器本身会从缓存中读取。相对于网络传输和服务器处理的时间来说，<br>                    浏览器直接读取本地缓存（硬盘或内存）或更快，同时可以显著降低服务器端的I/O消耗。<br>                2、如何用Python脚本来实现缓存？第一次下载页面资源后，将资源文件保存到硬盘某个特定目录，下一次再下载资源文件前，先检查一下该资源文件名是否已经存在于硬盘，如果存在，则无需下载。<br>                3、在JMeter中，无法精确模拟缓存，要么全部下载，要么不下载。建议全部下载。<br>                4、同一个用户才有缓存，不同的用户（并发用户），缓存不可能重复使用。目录：<a href="http://www.woniuxy.com/thread-1" target="_blank" rel="noopener">www.woniuxy.com/thread-1</a>   <a href="http://www.woniuxy.com/thread-2。" target="_blank" rel="noopener">www.woniuxy.com/thread-2。</a><br>                5、5G：4.6G/s   500M/s，  远高于目前的标准硬盘的读写速度，此时还需要缓存吗？<br>                6、对于硬盘来说，将内容缓存到内存，也是一种提速的方法。<br>            网络带宽：<br>                1、服务器端的出口带宽。<br>                2、客户端的访问带宽。<br>                3、性能测试实施过程中，要确保负载机（客户端）的并发情况下，客户端的带宽足够。<br>            调优（基于I/O路径进行优化）：<br>                1、降低资源文件的大小，减少带宽的占用。<br>                2、合理利用各类系统节点的缓存，降低对低速设备的读写频率。<br>                3、优化代码算法，降低CPU使用率。<br>                4、找到系统的瓶颈所在，对瓶颈进行分析和优化。<br>                5、修改系统的核心内存参数，优化内存的使用，降低硬盘的读写。<br>9、指标监控与分析：<br>            1、指标并不是越多越好，关键是找到核心指标，清楚了解该指标的作用。<br>            2、巧妇难为无米之炊：一定要基于监控的指标数据进行分析，数据是基础。<br>            3、监控工具很多，关键在指标本身。<br>            4、对指标的分析：找到指标与指标之间影响关系，分析系统的瓶颈所在。最终目的是解决性能问题。<br>            5、请求的处理过程会经历多个步骤，每一个步骤都可能存在瓶颈。<br>            6、由于有多个步骤，所以步骤与步骤之间，就会存在动态影响。<br>            7、动态影响：<br>                1）假设Tomcat所在服务器出现瓶颈，则此时数据库可能闲着。<br>                2）如果解决了Tomcat的瓶颈，数据库有可能成为瓶颈。<br>                3）如果解决了Tomcat和数据库的瓶颈，带宽有可能成为新的瓶颈。<br>                4）如果带宽问题解决，流量变大，Tomcat或数据库又可能出现更高要求的瓶颈。</p>
+<pre><code>    随着并发用户量的增加，必然导致请求数量增加，资源消耗增加，进而导致响应时间变长，导致处理请求的数量减少，请求队列增加，进而进入恶性循环。（瓶颈）。
+    服务器端的一个关键指标：Timeout超时时间可能会起作用。
+
+吞吐量：硬盘，网络，请求，事务，都可以统一表达为吞吐量，单位时间的吞吐量叫吞吐率。
+事务处理能力，TPS：Transaction Per Second，TPM：Minute。事务的成功率。
+Tomcat的服务器端状态监控：（修改conf目录下的 tomcat-users.xml文件，最后添加并重启）
+    &lt;role rolename=&quot;tomcat&quot;/&gt;
+      &lt;role rolename=&quot;role1&quot;/&gt;
+      &lt;role rolename=&quot;manager-gui&quot;/&gt;
+      &lt;role rolename=&quot;manager&quot;/&gt;
+      &lt;user username=&quot;denny&quot; password=&quot;123456&quot; roles=&quot;manager,manager-gui&quot;/&gt;  
+     //server status登录
+      &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat&quot;/&gt;
+      &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;
+      &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;
+    默认情况下，Tomcat的内存分配：Free memory: 19.23 MB Total memory: 49.99 MB Max memory: 247.50 MB，最大的内存是256MB。
+    Free memory: 19.23 MB：目前可用内存。
+    Total memory: 49.99 MB：目前Tomcat被分配到的总内存。
+    Max memory: 247.50 MB：Tomcat可以被分配的最大的内存数量。
+    修改conf/server.xml，为Connector节点对应的访问端口处添加线程和队列长度：
+    &lt;Connector port=&quot;8088&quot; protocol=&quot;HTTP/1.1&quot;
+             connectionTimeout=&quot;20000&quot;
+             redirectPort=&quot;8445&quot; maxThreads=&quot;100&quot; acceptCount=&quot;110&quot; /&gt;
+        maxThreads=&quot;100&quot;：Tomcat的最大处理线程。
+        acceptCount=&quot;110&quot;：允许排除的长度。
+    修改catalina.bat，添加一行：
+        set JAVA_OPTS=-Xms1024M -Xmx1024M -XX:MaxPermSize=1024M
+8、MySQL：
+    1）MySQL的核心配置参数在Linux的/etc/my.cnf，在Windows上，对应于MySQL的数据目录所在位置，叫my.ini。
+    2）缓冲区大小：
+        query_cache_size=0  # 设置为0表示禁用缓存，不建议使用该设置。
+        query_cache_type=1  # 表示打开缓存
+    3）MySQL，查找my.ini中的如下三个参数，并修改：
+        slow-query-log=1   # 1表示开启慢查询的监控
+        slow_query_log_file=&quot;DESKTOP-0C07AN0-slow.log&quot;    # 将慢SQL写入日志文件中
+        long_query_time=1.5   # 1.5表示SQL语句执行时间超过1.5秒的，视为慢查询
+    4）内存型数据库：把数据直接全部放到内存中进行DML和DQL。效率极高，速度极快，彻底解决了硬盘瓶颈的问题，但是很难完全商业化？为什么？因为内存不稳定，一个不小心，数据丢失。
+                    存储阵列，NAS，RAID，固态硬盘：综合运用，提升硬盘速度。</code></pre><p>9、性能测试方案（目的：根据方案可以很容易实施性能测试）：<br>            定义标准：关键性能指标，响应时间，事务处理，事务成功率，资源利用率等。<br>            环境配置：在什么软件和硬件配置下进行性能测试。<br>            测试范围：关键业务，测什么？用户使用频率最高，并发量最大的业务。<br>            测试场景：如何设计场景，并发用户量，负载策略，分布式执行策略，数据库容量，客户端和服务器端带宽需求，缓存策略，IP地址（云服务器），思考时间，集合点，生产环境和测试环境。。。。<br>            测试脚本：如何发送请求，接口规范，检查点，断言，事务，执行顺序。<br>            性能指标：要监控什么指标。<br>            回归测试：什么时候回归，如何回归，出现问题的应对措施。<br>            实施计划。<br>10、性能测试报告：<br>            在现有的测试环境下，是否满足性能需求？<br>            性能测试过程中，出现了什么问题，如何解决的？<br>            相应的数据分析和图表，与结论对应。<br>            改时方案，回归测试后的结果。。。。<br>11、Web前端性能分析：<br>            请求的数量：越少越好，请求越多，浏览器线程等待时间更长，更频繁地建立TCP连接，后台服务器IO的开销更多，考虑合并请求。<br>            响应时间：越短越好，观察是否有明显的较长的响应时间。<br>            响应的大小：比如文件，图片，确认是否可以压缩。<br>            前端代码压缩：CSS，HTML和JS均可以做压缩，降低带宽消耗。<br>            传输过程压缩：Accept-Encoding: gzip, deflate。<br>            监控前端JavaScript代码的执行效率：Dynatrace Ajax Editon，或F12的调试。<br>            监控前端资源配合测试：为了更好地配合前后端性能测试，当正在进行后端性能测试时（高并发的时候），此时利用F12或Fiddler等前端分析工具对整个通信过程进行监控。<br>            First-Impression：第一印象，首屏加载时间。响应时间很长，并不代表首屏时间很长，而用户最直观的感受是首屏加载时间。</p>
+
   </div>
 </article>
 
@@ -156,13 +295,13 @@
          
           <li><a href="/archives/">Articles</a></li>
          
-          <li><a href="https://github.com/Renskk">Projectes</a></li>
+          <li><a href="https://github.com/Renskk">Github</a></li>
         
       </ul>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试基础"><span class="toc-number">1.</span> <span class="toc-text">性能测试基础</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分类"><span class="toc-number">1.</span> <span class="toc-text">性能测试分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标"><span class="toc-number">2.</span> <span class="toc-text">性能指标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试初级"><span class="toc-number"></span> <span class="toc-text">性能测试初级</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案"><span class="toc-number">1.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试场景"><span class="toc-number">2.</span> <span class="toc-text">性能测试场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标体系"><span class="toc-number">3.</span> <span class="toc-text">性能指标体系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分析"><span class="toc-number">4.</span> <span class="toc-text">性能测试分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统性能优化"><span class="toc-number">5.</span> <span class="toc-text">系统性能优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器环境"><span class="toc-number">6.</span> <span class="toc-text">服务器环境</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试高级篇"><span class="toc-number"></span> <span class="toc-text">性能测试高级篇</span></a>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -204,7 +343,7 @@
          
           <li><a href="/archives/">Articles</a></li>
          
-          <li><a href="https://github.com/Renskk">Projectes</a></li>
+          <li><a href="https://github.com/Renskk">Github</a></li>
         
       </ul>
     </nav>
