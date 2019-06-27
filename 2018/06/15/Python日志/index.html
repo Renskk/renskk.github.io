@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="抛出异常抛出异常使用 raise 语句。在代码中，raise 语句包含以下部分：  raise 关键字 对 Exception 函数的调用 传递给 Exception 函数的字符串，包含有用的出错信息1raiseException(&amp;apos;Thisistheerrormessage.&amp;apos;)    使用日志模块1234importlogginglogging.basicConfig(le">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python日志">
+<meta property="og:url" content="http://yoursite.com/2018/06/15/Python日志/index.html">
+<meta property="og:site_name" content="TOMBNOTES">
+<meta property="og:description" content="抛出异常抛出异常使用 raise 语句。在代码中，raise 语句包含以下部分：  raise 关键字 对 Exception 函数的调用 传递给 Exception 函数的字符串，包含有用的出错信息1raiseException(&amp;apos;Thisistheerrormessage.&amp;apos;)    使用日志模块1234importlogginglogging.basicConfig(le">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-06-27T17:47:20.713Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python日志">
+<meta name="twitter:description" content="抛出异常抛出异常使用 raise 语句。在代码中，raise 语句包含以下部分：  raise 关键字 对 Exception 函数的调用 传递给 Exception 函数的字符串，包含有用的出错信息1raiseException(&amp;apos;Thisistheerrormessage.&amp;apos;)    使用日志模块1234importlogginglogging.basicConfig(le">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Python日志</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/07/19/Selenium基础/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/06/10/Appium基础/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/15/Python日志/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/15/Python日志/&text=Python日志"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/15/Python日志/&is_video=false&description=Python日志"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python日志&body=Check out this article: http://yoursite.com/2018/06/15/Python日志/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/15/Python日志/&name=Python日志&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#抛出异常"><span class="toc-number">1.</span> <span class="toc-text">抛出异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用日志模块"><span class="toc-number">2.</span> <span class="toc-text">使用日志模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#禁用日志"><span class="toc-number">3.</span> <span class="toc-text">禁用日志</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Python日志
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">TOMBNOTES</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-06-15T10:31:52.000Z" itemprop="datePublished">2018-06-15</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="抛出异常"><a href="#抛出异常" class="headerlink" title="抛出异常"></a>抛出异常</h2><p>抛出异常使用 raise 语句。在代码中，raise 语句包含以下部分：</p>
+<ul>
+<li>raise 关键字</li>
+<li>对 Exception 函数的调用</li>
+<li>传递给 Exception 函数的字符串，包含有用的出错信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raiseException(&apos;Thisistheerrormessage.&apos;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="使用日志模块"><a href="#使用日志模块" class="headerlink" title="使用日志模块"></a>使用日志模块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">importlogging</span><br><span class="line">logging.basicConfig(level=logging.DEBUG,format=&apos;%(asctime)s-%(levelname)s-%(message)s&apos;)</span><br><span class="line">logging.debug(&apos;Startofprogram&apos;)</span><br><span class="line">logging.debug(&apos;Endofprogram&apos;)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>filename</td>
+<td>指定日志文件名</td>
+</tr>
+<tr>
+<td>filemode</td>
+<td>和file函数意义相同，指定日志文件的打开模式，’w’或’a’</td>
+</tr>
+<tr>
+<td>format</td>
+<td>指定输出的格式和内容，format可以输出很多有用信息，如上例所示</td>
+</tr>
+<tr>
+<td>%(levelno)s</td>
+<td>打印日志级别的数值</td>
+</tr>
+<tr>
+<td>%(levelname)s</td>
+<td>打印日志级别名称</td>
+</tr>
+<tr>
+<td>%(pathname)s</td>
+<td>打印当前执行程序的路径，其实就是sys.argv[0]</td>
+</tr>
+<tr>
+<td>%(filename)s</td>
+<td>打印当前执行程序名</td>
+</tr>
+<tr>
+<td>%(funcName)s</td>
+<td>打印日志的当前函数</td>
+</tr>
+<tr>
+<td>%(lineno)d</td>
+<td>打印日志的当前行号</td>
+</tr>
+<tr>
+<td>%(asctime)s</td>
+<td>打印日志的时间</td>
+</tr>
+<tr>
+<td>%(thread)d</td>
+<td>打印线程ID</td>
+</tr>
+<tr>
+<td>%(threadName)s</td>
+<td>打印线程名称</td>
+</tr>
+<tr>
+<td>%(process)d</td>
+<td>打印进程ID</td>
+</tr>
+<tr>
+<td>%(message)s</td>
+<td>打印日志信息</td>
+</tr>
+<tr>
+<td>datefmt</td>
+<td>指定时间格式，同time.strftime()</td>
+</tr>
+<tr>
+<td>level</td>
+<td>设置日志级别，默认为logging.WARNING</td>
+</tr>
+<tr>
+<td>stream</td>
+<td>指定将日志的输出流，可以指定输出到sys.stderr,sys.stdout或者文件，默认输出到sys.stderr，当stream和filename同时指定时，stream被忽略</td>
+</tr>
+<tr>
+<td>## 日志级别</td>
+<td></td>
+</tr>
+<tr>
+<td>级别</td>
+<td>日志函数</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>DEBUG</td>
+<td>logging.debug()</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>logging.info()</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>logging.warning()</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>logging.error()</td>
+</tr>
+<tr>
+<td>CRITICAL</td>
+<td>logging.critical()</td>
+</tr>
+</tbody></table>
+<h2 id="禁用日志"><a href="#禁用日志" class="headerlink" title="禁用日志"></a>禁用日志</h2><p>在调试完程序后，你可能不希望所有这些日志消息出现在屏幕上。logging.disable() 函数禁用了这些消息，这样就不必进入到程序中，手工删除所有的日志调用。只要向 logging.disable() 传入一个日志级别，它就会禁止该级别和更低级别的所有日志消息。所以，如果想要禁用所有日志，只要在程序中添加 logging. disable（logging.CRITICAL）</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#抛出异常"><span class="toc-number">1.</span> <span class="toc-text">抛出异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用日志模块"><span class="toc-number">2.</span> <span class="toc-text">使用日志模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#禁用日志"><span class="toc-number">3.</span> <span class="toc-text">禁用日志</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/15/Python日志/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/15/Python日志/&text=Python日志"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/15/Python日志/&is_video=false&description=Python日志"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python日志&body=Check out this article: http://yoursite.com/2018/06/15/Python日志/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/15/Python日志/&title=Python日志"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/15/Python日志/&name=Python日志&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Renskk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

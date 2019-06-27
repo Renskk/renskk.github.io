@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Appium参数12345678910desired_caps = &amp;#123;&amp;#125;  				# 定义webdriver的兼容性设置字典对象desired_caps[&amp;apos;platformName&amp;apos;] = &amp;apos;Android&amp;apos;  	# 指定测试Android平台desired_caps[&amp;apos;platformVersion&amp;apos;] = ver">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Appium参数">
+<meta property="og:url" content="http://yoursite.com/2018/06/10/Appium基础/index.html">
+<meta property="og:site_name" content="TOMBNOTES">
+<meta property="og:description" content="Appium参数12345678910desired_caps = &amp;#123;&amp;#125;  				# 定义webdriver的兼容性设置字典对象desired_caps[&amp;apos;platformName&amp;apos;] = &amp;apos;Android&amp;apos;  	# 指定测试Android平台desired_caps[&amp;apos;platformVersion&amp;apos;] = ver">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-06-27T17:38:02.733Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Appium参数">
+<meta name="twitter:description" content="Appium参数12345678910desired_caps = &amp;#123;&amp;#125;  				# 定义webdriver的兼容性设置字典对象desired_caps[&amp;apos;platformName&amp;apos;] = &amp;apos;Android&amp;apos;  	# 指定测试Android平台desired_caps[&amp;apos;platformVersion&amp;apos;] = ver">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Appium参数</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/06/15/Python日志/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/06/03/ADB shell/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/10/Appium基础/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/10/Appium基础/&text=Appium参数"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/10/Appium基础/&is_video=false&description=Appium参数"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Appium参数&body=Check out this article: http://yoursite.com/2018/06/10/Appium基础/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/10/Appium基础/&name=Appium参数&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Appium参数"><span class="toc-number">1.</span> <span class="toc-text">Appium参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试脚本字典参数"><span class="toc-number">2.</span> <span class="toc-text">测试脚本字典参数</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Appium参数
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">TOMBNOTES</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-06-10T10:31:52.000Z" itemprop="datePublished">2018-06-10</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Appium参数"><a href="#Appium参数" class="headerlink" title="Appium参数"></a>Appium参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">desired_caps = &#123;&#125;  				# 定义webdriver的兼容性设置字典对象</span><br><span class="line">desired_caps[&apos;platformName&apos;] = &apos;Android&apos;  	# 指定测试Android平台</span><br><span class="line">desired_caps[&apos;platformVersion&apos;] = version  	# 指定移动端的版本号</span><br><span class="line">desired_caps[&apos;deviceName&apos;] = &apos;Appium&apos; 		# 指定设备名称</span><br><span class="line"># desired_caps[&apos;automationName&apos;] = &apos;uiautomator2&apos;</span><br><span class="line">desired_caps[&apos;appPackage&apos;] = &apos;com.mobivans.onestrokecharge&apos;  # 指定要启动的包</span><br><span class="line">desired_caps[&apos;appActivity&apos;] = &apos;com.stub.stub01.Stub01&apos;  # 指定启动的主类程序</span><br><span class="line">desired_caps[&apos;unicodeKeyboard&apos;] = &apos;True&apos;  	# 使用中文输入法</span><br><span class="line">desired_caps[&apos;udid&apos;] = udid 		# 指定模拟器设备编号(adb devices输出结果)</span><br><span class="line">desired_caps[&apos;noReset&apos;] = &apos;True&apos;  		# 不重置应用程序的状态，默认为false</span><br></pre></td></tr></table></figure>
+
+<p>Appium内置的配置参数非常多，主要分为两大类。一类是命令行启动参数，主要用于在命令行启动Appium服务器的时候指定的参数。一类是脚本开发时的兼容性设置参数，如前一节内容中的desired_caps字典对象指定的参数值。两种类别的参数有些是可以互相代替的，比如在启动命令中未指定，而通过字典对象在脚本中指定，结果一样。先来看看两种类型的参数中比较重要的参数。<br>命令行启动参数</p>
+<ul>
+<li>-a 绑定的IP地址：如appium –a 192.168.1.5，默认不指定的情况下为localhost，也即是127.0.0.1，适用于为本机脚本提供连接。当然，我们也可以让测试脚本连接远程Appium服务器。</li>
+<li>-p 服务器端口号：Appium服务器启动时绑定的端口号，用于脚本的通信，默认值为4723。此处需要注意的是，一个端口号只能服务于一台移动设备，如果我们需要同时对多台针对设备进行测试，那么则需要启动多个Appium服务器，每一个服务器实例需要绑定不同的端口号。</li>
+<li>-bp 连接移动端设备的端口号，即Bootstrap端口，默认值为4724。如果需要连接多台移动设备，则需要启动不同端口的Appium服务器并且指定不同的设备端口号。即需要单独为不同的设备，启动不同端口的Appium服务器，并且指定不同的Bootstrap端口号，否则会导致冲突。</li>
+<li>–app 应用程序路径：指定调试模式下的iOS应用或标准的Android系统的APK应用程序的路径，通常情况下不建议在启动时指定，而是在测试脚本中通过字典对象来指定应用程序路径。如果是针对非调试模式下的iOS设备，则对应参数为–ipa。如果已经在手机上安装了相应的应用，则勿需指定，只需要通知移动端代理启动应用即可。</li>
+<li>–app-pkg：指定要测试的应用程序的主包名，与测试脚本中指定的功能一致。该参数仅Android端适用。</li>
+<li>–app-activity：指定要测试的应用程序的主类名，与测试脚本中指定的功能一致。该参数仅Android端适用。</li>
+<li>-U 设备编号：在启动时直接指定当前服务器连接到哪个设备终端。其编号可以从命令“adb devices”的输出列表中获取。一台设备，当连接上电脑后一定有一台唯一的编号。也可以通过参数“–udid”指定，二者效果一致。</li>
+<li>–session-override：当连接过程出现Session冲突的时候，允许被覆盖。目前使用情况较少。</li>
+<li>–full-reset：完全重置被测试应用程序的状态，包括将测试应用程序全部删除。</li>
+<li>–no-reset：不重置状态，不删除应用。</li>
+<li>-g 日志文件：将Appium运行过程的日志输出到指定的日志文件中，便于后续查看。通常情况下，在正式进行测试的过程，我们最好将日志输出到文件，便于永久保存和后续分析。该参数也可以使用“–log”代替。</li>
+<li>–log-timestamp：在终端输出里显示时间戳，便于更好地知道日志输出的时间。</li>
+<li>–log-level：在终端里输出的日志级别，可以设置为debug，info，warn，error等级别。</li>
+<li>–device-name：指定待测试的移动设备的名称，也可在测试脚本中指定。</li>
+<li>–platform-name：指定移动设备对应的平台的名称，如Android或iOS，也可在测试脚本中指定。</li>
+<li>–platform-version：指定移动设备系统对应的版本号，如4.4.2，也可在测试脚本中指定。<br>比如可以通过以下命令启动Appium，来指定IP地址，端口号，Bootstrap端口号，设备编号，不重置状态，输出时间戳在日志中，覆盖Session连接状态，并将日志信息输出到指定的日志文件中进行永久保存：appium -a 127.0.0.1 -p 4723 –bp 4724 –U 127.0.0.1:62001 –no-reset –session-override –log-timestamp –log D:\appium.log</li>
+</ul>
+<h2 id="测试脚本字典参数"><a href="#测试脚本字典参数" class="headerlink" title="测试脚本字典参数"></a>测试脚本字典参数</h2><p>(platformName、platformVersion、deviceName、app、browserName、udid、noReset、appActivity、appPackage、unicodeKeyboard)<br>在测试脚本中的字典参数有很多与命令行参数功能类似，只是参数名称不一样，现列举如下：</p>
+<ul>
+<li>automationName：指定自动化测试引擎，可以是Appium (默认) 或 Selendroid。如果是较新的Android版本，如6.0以上，则必须明确指定automationName=’ uiautomator2’。</li>
+<li>platformName：指定要测试的手机操作系统，如：iOS，Android或FirefoxOS。</li>
+<li>platformVersion：移动操作系统版本，如4.4.2。</li>
+<li>deviceName：使用的手机类型或模拟器类型。在iOS中，必须使用“instruments -s devices”命令得到的设备编号。</li>
+<li>app：指定待测试应用程序。</li>
+<li>browserName：如果是针对手机上的浏览器应用进行测试，需要指定其浏览器名称。在iOS上可用“Safari”，在Android上可指定“Chrome”，“Chromium”或“Browser”。</li>
+<li>newCommandTimeout：设置命令超时时间，单位：秒。达到超时时间仍未接收到新的命令时Appium 会假设客户端退出然后自动结束会话。</li>
+<li>autoLaunch：Appium是否需要自动安装和启动应用，默认值为true。</li>
+<li>udid：连接的移动设备的唯一设备标识</li>
+<li>autoWebview：直接转换到 WebView 上下文。 默认值为false。</li>
+<li>noReset：不要在会话前重置应用状态，默认为false。</li>
+<li>fullReset：在会话结束后自动清除被测应用，默认为false。</li>
+<li>appActivity：应用包中启动的 Android Activity 主类名称。它通常需要在前面添加“.”。</li>
+<li>appPackage：想运行的Android应用程序的主包名。</li>
+<li>deviceReadyTimeout：设置等待一个模拟器或真机准备就绪的超时时间。</li>
+<li>unicodeKeyboard：设置使用Unicode输入法，这样才能支持中文输入。</li>
+<li>resetKeyboard：在使用了unicodeKeyboard参数后，对其进行重置，还原为默认设置。<br>完整的参数列表，访问Appium官方网站查阅：<a href="http://appium.io/docs/en/writing-running-appium/caps/" target="_blank" rel="noopener">http://appium.io/docs/en/writing-running-appium/caps/</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Appium参数"><span class="toc-number">1.</span> <span class="toc-text">Appium参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试脚本字典参数"><span class="toc-number">2.</span> <span class="toc-text">测试脚本字典参数</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/10/Appium基础/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/10/Appium基础/&text=Appium参数"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/10/Appium基础/&is_video=false&description=Appium参数"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Appium参数&body=Check out this article: http://yoursite.com/2018/06/10/Appium基础/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/10/Appium基础/&title=Appium参数"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/10/Appium基础/&name=Appium参数&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Renskk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
