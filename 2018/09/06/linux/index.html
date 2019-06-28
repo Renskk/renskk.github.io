@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="linux基础命令####　杀进程 12345$ ps -ef | grep *  # 查找进程ID$ ps -e --forest | grep * # 显示进程数$ kill - 9 ID  # 杀死当前进程的ID－－－－－－－－－－－－－－－－－－$ killall -9 * # 直接杀死当前进程（包含这个进程的所有ID）     Signal Name Single Value Effec">
+    <meta name="description" content="Linux树形结构目录   / 根目录    ├── bin 存放用户二进制文件   ├── boot 存放内核引导配置文件   ├── dev 存放设备文件   ├── etc 存放系统配置文件   ├── home 用户主目录   ├── lib 动态共享库   ├── lost+found 文件系统恢复时的恢复文件   ├── media 可卸载存储介质挂载点   ├── mnt 文件系统临">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux基础命令">
 <meta property="og:url" content="http://yoursite.com/2018/09/06/linux/index.html">
 <meta property="og:site_name" content="TOMBNOTES">
-<meta property="og:description" content="linux基础命令####　杀进程 12345$ ps -ef | grep *  # 查找进程ID$ ps -e --forest | grep * # 显示进程数$ kill - 9 ID  # 杀死当前进程的ID－－－－－－－－－－－－－－－－－－$ killall -9 * # 直接杀死当前进程（包含这个进程的所有ID）     Signal Name Single Value Effec">
+<meta property="og:description" content="Linux树形结构目录   / 根目录    ├── bin 存放用户二进制文件   ├── boot 存放内核引导配置文件   ├── dev 存放设备文件   ├── etc 存放系统配置文件   ├── home 用户主目录   ├── lib 动态共享库   ├── lost+found 文件系统恢复时的恢复文件   ├── media 可卸载存储介质挂载点   ├── mnt 文件系统临">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-25T15:44:26.684Z">
+<meta property="og:updated_time" content="2019-06-28T15:45:40.766Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础命令">
-<meta name="twitter:description" content="linux基础命令####　杀进程 12345$ ps -ef | grep *  # 查找进程ID$ ps -e --forest | grep * # 显示进程数$ kill - 9 ID  # 杀死当前进程的ID－－－－－－－－－－－－－－－－－－$ killall -9 * # 直接杀死当前进程（包含这个进程的所有ID）     Signal Name Single Value Effec">
+<meta name="twitter:description" content="Linux树形结构目录   / 根目录    ├── bin 存放用户二进制文件   ├── boot 存放内核引导配置文件   ├── dev 存放设备文件   ├── etc 存放系统配置文件   ├── home 用户主目录   ├── lib 动态共享库   ├── lost+found 文件系统恢复时的恢复文件   ├── media 可卸载存储介质挂载点   ├── mnt 文件系统临">
     
     
         
@@ -100,7 +100,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux基础命令"><span class="toc-number">1.</span> <span class="toc-text">linux基础命令</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux基础命令"><span class="toc-number"></span> <span class="toc-text">linux基础命令</span></a>
     </div>
   </span>
 </div>
@@ -139,7 +139,87 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="linux基础命令"><a href="#linux基础命令" class="headerlink" title="linux基础命令"></a>linux基础命令</h1><p>####　杀进程</p>
+    <h2 id="Linux树形结构目录"><a href="#Linux树形结构目录" class="headerlink" title="Linux树形结构目录"></a>Linux树形结构目录</h2><table>
+<thead>
+<tr>
+<th>/</th>
+<th>根目录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>├── bin</td>
+<td>存放用户二进制文件</td>
+</tr>
+<tr>
+<td>├── boot</td>
+<td>存放内核引导配置文件</td>
+</tr>
+<tr>
+<td>├── dev</td>
+<td>存放设备文件</td>
+</tr>
+<tr>
+<td>├── etc</td>
+<td>存放系统配置文件</td>
+</tr>
+<tr>
+<td>├── home</td>
+<td>用户主目录</td>
+</tr>
+<tr>
+<td>├── lib</td>
+<td>动态共享库</td>
+</tr>
+<tr>
+<td>├── lost+found</td>
+<td>文件系统恢复时的恢复文件</td>
+</tr>
+<tr>
+<td>├── media</td>
+<td>可卸载存储介质挂载点</td>
+</tr>
+<tr>
+<td>├── mnt</td>
+<td>文件系统临时挂载点</td>
+</tr>
+<tr>
+<td>├── opt</td>
+<td>附加的应用程序包</td>
+</tr>
+<tr>
+<td>├── proc</td>
+<td>系统内存的映射目录，提供内核与进程信息</td>
+</tr>
+<tr>
+<td>├── root</td>
+<td>root 用户主目录</td>
+</tr>
+<tr>
+<td>├── sbin</td>
+<td>存放系统二进制文件</td>
+</tr>
+<tr>
+<td>├── srv</td>
+<td>存放服务相关数据</td>
+</tr>
+<tr>
+<td>├── sys</td>
+<td>sys   虚拟文件系统挂载点</td>
+</tr>
+<tr>
+<td>├── tmp</td>
+<td>存放临时文件</td>
+</tr>
+<tr>
+<td>├── usr</td>
+<td>存放用户应用程序</td>
+</tr>
+<tr>
+<td>└── var</td>
+<td>存放邮件、系统日志等变化文件</td>
+</tr>
+</tbody></table>
+<h1 id="linux基础命令"><a href="#linux基础命令" class="headerlink" title="linux基础命令"></a>linux基础命令</h1><p>####　杀进程</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ps -ef | grep *  # 查找进程ID</span><br><span class="line"><span class="meta">$</span> ps -e --forest | grep * # 显示进程数</span><br><span class="line"><span class="meta">$</span> kill - 9 ID  # 杀死当前进程的ID</span><br><span class="line">－－－－－－－－－－－－－－－－－－</span><br><span class="line"><span class="meta">$</span> killall -9 * # 直接杀死当前进程（包含这个进程的所有ID）</span><br></pre></td></tr></table></figure>
 
 <table>
@@ -199,7 +279,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux基础命令"><span class="toc-number">1.</span> <span class="toc-text">linux基础命令</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux基础命令"><span class="toc-number"></span> <span class="toc-text">linux基础命令</span></a>
     </div>
 
     <div id="share-footer" style="display: none">

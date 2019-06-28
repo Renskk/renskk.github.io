@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="测试阶段 单元测试-UT-Unit Testing  （unittest单元测试框架、Junit-Java自带的单元测试框架 参照的需求文档文档：详细设计说明书） 集成测试-IT-Intergration Testing （参照的需求文档：概要设计说明书（HLD）） 系统测试-ST-System Testing（参照的需求文档：需求规格说明书（SRS）/产品需求文档（PRD）） 验收测试-UAT-">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-25T15:20:08.080Z">
+<meta property="og:updated_time" content="2019-06-28T15:40:45.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件测试基础">
 <meta name="twitter:description" content="测试阶段 单元测试-UT-Unit Testing  （unittest单元测试框架、Junit-Java自带的单元测试框架 参照的需求文档文档：详细设计说明书） 集成测试-IT-Intergration Testing （参照的需求文档：概要设计说明书（HLD）） 系统测试-ST-System Testing（参照的需求文档：需求规格说明书（SRS）/产品需求文档（PRD）） 验收测试-UAT-">
@@ -100,7 +100,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试阶段"><span class="toc-number">1.</span> <span class="toc-text">测试阶段</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试阶段"><span class="toc-number">1.</span> <span class="toc-text">测试阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程"><span class="toc-number">2.</span> <span class="toc-text">测试过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件开发模型"><span class="toc-number">3.</span> <span class="toc-text">软件开发模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程模型"><span class="toc-number">4.</span> <span class="toc-text">测试过程模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试方法"><span class="toc-number">5.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件质量"><span class="toc-number">6.</span> <span class="toc-text">软件质量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件质量模型"><span class="toc-number">6.1.</span> <span class="toc-text">软件质量模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六大测试类型"><span class="toc-number">7.</span> <span class="toc-text">六大测试类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB漏洞扫描工具"><span class="toc-number">8.</span> <span class="toc-text">WEB漏洞扫描工具</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -147,6 +147,98 @@
 <li><strong>α测试</strong>-内测–开发在现场-可以掌控-部分用户参与-产品型软件</li>
 <li><strong>β测试</strong>-公测–开发不在场–不可以掌控–生产环境、所有用户–产品型软件</li>
 </ul>
+<h2 id="测试过程"><a href="#测试过程" class="headerlink" title="测试过程"></a>测试过程</h2><ul>
+<li><p><strong>分析</strong> -  制定测试计划 – 资源（人力、软硬件）测试对象、测试范围、测试里程碑、组织架构、出口准则、测试挂起恢复准则等</p>
+</li>
+<li><p><strong>设计</strong> - 制定测试方案 – 测试对象、测试环境、测试策略、风险评估与应急措施、制定功能的重要级别、缺陷的重要级别等</p>
+</li>
+<li><p><strong>实现</strong> - 提取测试要点、编写测试用例、编写测试脚本 – 测试需求分析、测试用例、测试代码</p>
+</li>
+<li><p><strong>执行</strong>- 执行测试用例、运行测试脚本、提交缺陷、跟踪缺陷、提交测试报告</p>
+</li>
+</ul>
+<h2 id="软件开发模型"><a href="#软件开发模型" class="headerlink" title="软件开发模型"></a>软件开发模型</h2><ul>
+<li><p><strong>大爆炸模型</strong> - 无需求文档、无测试      </p>
+</li>
+<li><p><strong>瀑布模型</strong> - 串行执行、一句软件生命周期 </p>
+</li>
+<li><p><strong>迭代模型</strong> - 产品已在线上运行维护、周期短、项目小</p>
+</li>
+<li><p><strong>边写边改模型</strong> - 有非正规的需求文档   </p>
+</li>
+<li><p><strong>螺旋模型</strong> - 依据软件生命周期、加入制定目标、备份方案、风险分析及相应的解决方案</p>
+</li>
+<li><p><strong>敏捷开发模型</strong> -  敏捷开发以用户的需求进化为核心，采用迭代、循序渐进的方法进行软件开发。在敏捷开发中，软件项目在构建初期被切分成多个子项目，各个子项目的成果都经过测试，具备可视、可集成和可运行使用的特征。换言之，就是把一个大项目分为多个相互联系，但也可独立运行的小项目，并分别完成，在此过程中软件一直处于可使用状态</p>
+</li>
+</ul>
+<h2 id="测试过程模型"><a href="#测试过程模型" class="headerlink" title="测试过程模型"></a>测试过程模型</h2><ul>
+<li><p><strong>V模型</strong> - 依据软件生命周期串行执行</p>
+</li>
+<li><p><strong>W模型/双V模型</strong> - 验证+确认，需求阶段介入测试</p>
+</li>
+<li><p><strong>H模型</strong> - 测试准备（测试需求分析、测试计划、测试方案、测试用例、测试脚本）+测试执行（运行脚本、执行用例、提交缺陷、跟踪缺陷、提交报告）</p>
+</li>
+<li><p><strong>X模型</strong> - 开发频繁交接代码模块，测试迭代测试，探索性测试</p>
+</li>
+</ul>
+<h2 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h2><ul>
+<li><p><strong>黑盒测试(系统测试阶段)</strong> - 不管程序的内部结构，只关注功能的测试方法</p>
+</li>
+<li><p><strong>黑盒测试方法</strong> -  等价类划分法、边界值法、判定表法、流程分析法/场景法、 正交实验、状态迁移法、因果图法、错误推测法</p>
+</li>
+<li><p><strong>灰盒测试(接口测试)</strong> - 既关注功能有关注程序内部结构 （集成测试阶段 - 灰盒测试 - 接口测试）</p>
+</li>
+<li><p><strong>接口测试类型</strong> </p>
+<ul>
+<li><p>基于代码的接口测试</p>
+</li>
+<li><p>基于协议的接口测试</p>
+</li>
+</ul>
+</li>
+<li><p><strong>白盒测试(单元测试阶段)</strong> - 只关注程序内部结构，不管功能是否满足需求，只关注代码设计</p>
+</li>
+<li><p><strong>白盒测试方法</strong> </p>
+<ul>
+<li><p>语句覆盖：覆盖每条语句，覆盖最弱</p>
+</li>
+<li><p>逻辑覆盖：与或非，覆盖逻辑</p>
+</li>
+<li><p>路径覆盖：覆盖每条路径，覆盖能力最强</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h2><p>ISO9000：实体企业进行质量管理体系、CMMI：能力成熟度密性继承（软件的质量管理体系）、六西格玛</p>
+<h3 id="软件质量模型"><a href="#软件质量模型" class="headerlink" title="软件质量模型"></a>软件质量模型</h3><ul>
+<li><p><strong>功能性</strong> - 适合性、准确性、互操作性、保密安全性、功能性的依从性</p>
+</li>
+<li><p><strong>可靠性</strong> - 成熟性、容错性、易恢复性、可靠性的依从性</p>
+</li>
+<li><p><strong>易用性</strong> - 易理解性、吸引性、易学性、易操控性、易用性的依从性</p>
+</li>
+<li><p><strong>效率</strong> -  响应时间、事务处理能力、吞吐量、资源利用率</p>
+</li>
+<li><p><strong>可维护性</strong> - 易分析性、易改变性、已测试性、稳定性、可维护性的依从性</p>
+</li>
+<li><p><strong>可移植性</strong> - 适应性、已安装性、共存性、易替换性、可移植性的依从性</p>
+</li>
+</ul>
+<h2 id="六大测试类型"><a href="#六大测试类型" class="headerlink" title="六大测试类型"></a>六大测试类型</h2><ul>
+<li><p><strong>功能性测试</strong> - 功能是否实现</p>
+</li>
+<li><p><strong>兼容性测试</strong> - 检查软件在不同的硬件平台、软件平台上是否可以正常的运行，即是通常说的软件的可移植性。</p>
+</li>
+<li><p><strong>可用性测试</strong> - 美观、满足用户的使用习惯、吸引性、易学性、易操作性</p>
+</li>
+<li><p><strong>可靠性测试</strong> - 容错能力、恢复性</p>
+</li>
+<li><p><strong>安全性测试</strong> - 钱+生命、密码机制、权限测试</p>
+</li>
+<li><p><strong>性能测试</strong> - 响应时间、吞吐量、事务处理能力、资源利用率、每秒点击数、RPS（每秒处理的请求数）</p>
+</li>
+</ul>
+<h2 id="WEB漏洞扫描工具"><a href="#WEB漏洞扫描工具" class="headerlink" title="WEB漏洞扫描工具"></a>WEB漏洞扫描工具</h2><p>X-scan</p>
 
   </div>
 </article>
@@ -170,7 +262,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试阶段"><span class="toc-number">1.</span> <span class="toc-text">测试阶段</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试阶段"><span class="toc-number">1.</span> <span class="toc-text">测试阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程"><span class="toc-number">2.</span> <span class="toc-text">测试过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件开发模型"><span class="toc-number">3.</span> <span class="toc-text">软件开发模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程模型"><span class="toc-number">4.</span> <span class="toc-text">测试过程模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试方法"><span class="toc-number">5.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件质量"><span class="toc-number">6.</span> <span class="toc-text">软件质量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件质量模型"><span class="toc-number">6.1.</span> <span class="toc-text">软件质量模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六大测试类型"><span class="toc-number">7.</span> <span class="toc-text">六大测试类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB漏洞扫描工具"><span class="toc-number">8.</span> <span class="toc-text">WEB漏洞扫描工具</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
