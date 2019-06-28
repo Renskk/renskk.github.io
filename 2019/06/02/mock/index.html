@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="如何解决依赖产生的痛点1、使用代理工具实现MOCK服务器2、在测试中代码mock，写个mock服务3、真实写个临时接口返回 mock介绍 unittest.mock是一个用于在Python中进行测试的库。它允许你使用模拟对象替换受测试系统的部分，检查调用并对如何使用它们进行断言。 unittest.mock提供了一个核心Mock类，还有MagicMock. 执行操作后，您可以断言使用哪种方法/属性">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-25T16:58:52.797Z">
+<meta property="og:updated_time" content="2019-06-28T09:08:44.111Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mock基础">
 <meta name="twitter:description" content="如何解决依赖产生的痛点1、使用代理工具实现MOCK服务器2、在测试中代码mock，写个mock服务3、真实写个临时接口返回 mock介绍 unittest.mock是一个用于在Python中进行测试的库。它允许你使用模拟对象替换受测试系统的部分，检查调用并对如何使用它们进行断言。 unittest.mock提供了一个核心Mock类，还有MagicMock. 执行操作后，您可以断言使用哪种方法/属性">
@@ -62,7 +62,7 @@
          
           <li><a href="/archives/">Articles</a></li>
          
-          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
         
       </ul>
     </span>
@@ -153,25 +153,25 @@
 <li><p>设置返回值和属性</p>
 </li>
 <li><p>mock object对象的返回值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mock = Mock()</span><br><span class="line">mock.return_value = 3</span><br><span class="line">mock()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mock = Mock()</span><br><span class="line">mock.return_value = <span class="number">3</span></span><br><span class="line">mock()</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>methods具体方法返回值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mock.something.return_value = 3</span><br><span class="line">mock.something()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mock.something.return_value = <span class="number">3</span></span><br><span class="line">mock.something()</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>attribute setting 属性的设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mock.x = 5</span><br><span class="line">mock.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mock.x = <span class="number">5</span></span><br><span class="line">mock.x</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>通过构造方法-传参的方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mock = Mock(return_value = 3)</span><br><span class="line">mock()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mock = Mock(return_value = <span class="number">3</span>)</span><br><span class="line">mock()</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>多次不同返回值及顺序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mock.side_effect = (200,404,302,500)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mock.side_effect = (<span class="number">200</span>,<span class="number">404</span>,<span class="number">302</span>,<span class="number">500</span>)</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="希望跟踪多个方法是否被调用和断言"><a href="#希望跟踪多个方法是否被调用和断言" class="headerlink" title="希望跟踪多个方法是否被调用和断言"></a>希望跟踪多个方法是否被调用和断言</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 跟踪是否被调用</span><br><span class="line">mock_calls</span><br><span class="line"># 断言是否调用的这个参数		</span><br><span class="line">assert_called_with()</span><br><span class="line"># 断言是否只调用一次		</span><br><span class="line">assert_called_once_with()</span><br></pre></td></tr></table></figure>
+<h2 id="希望跟踪多个方法是否被调用和断言"><a href="#希望跟踪多个方法是否被调用和断言" class="headerlink" title="希望跟踪多个方法是否被调用和断言"></a>希望跟踪多个方法是否被调用和断言</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 跟踪是否被调用</span></span><br><span class="line">mock_calls</span><br><span class="line"><span class="comment"># 断言是否调用的这个参数		</span></span><br><span class="line">assert_called_with()</span><br><span class="line"><span class="comment"># 断言是否只调用一次		</span></span><br><span class="line">assert_called_once_with()</span><br></pre></td></tr></table></figure>
 
-<h2 id="对已有的类的实例使用patch临时改变返回值"><a href="#对已有的类的实例使用patch临时改变返回值" class="headerlink" title="对已有的类的实例使用patch临时改变返回值"></a>对已有的类的实例使用patch临时改变返回值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 导入需要测试的类，mock库，patch</span><br><span class="line">from test import testClass</span><br><span class="line">from unittest.mock import patch</span><br><span class="line"></span><br><span class="line"># some_function方法是调用要测试的实例</span><br><span class="line">def some_function():</span><br><span class="line">    ins = testClass.method()  # 调用测试类中的模块   </span><br><span class="line">    return ins.method()</span><br><span class="line"></span><br><span class="line"># 使用with patch方法将要mock的方法写出来，加了返回值和方法返回值，是拦截了命名空间先调用了mock</span><br><span class="line">with patch(&apos;test.testClass.method&apos;) as mock:</span><br><span class="line">    ins = mock.return_value</span><br><span class="line">    ins.method.return_value = &apos;result&apos;</span><br><span class="line">    result = some_function()</span><br><span class="line">    assert result == &apos;result&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="对已有的类的实例使用patch临时改变返回值"><a href="#对已有的类的实例使用patch临时改变返回值" class="headerlink" title="对已有的类的实例使用patch临时改变返回值"></a>对已有的类的实例使用patch临时改变返回值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入需要测试的类，mock库，patch</span></span><br><span class="line"><span class="keyword">from</span> test <span class="keyword">import</span> testClass</span><br><span class="line"><span class="keyword">from</span> unittest.mock <span class="keyword">import</span> patch</span><br><span class="line"></span><br><span class="line"><span class="comment"># some_function方法是调用要测试的实例</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">some_function</span><span class="params">()</span>:</span></span><br><span class="line">    ins = testClass.method()  <span class="comment"># 调用测试类中的模块   </span></span><br><span class="line">    <span class="keyword">return</span> ins.method()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用with patch方法将要mock的方法写出来，加了返回值和方法返回值，是拦截了命名空间先调用了mock</span></span><br><span class="line"><span class="keyword">with</span> patch(<span class="string">'test.testClass.method'</span>) <span class="keyword">as</span> mock:</span><br><span class="line">    ins = mock.return_value</span><br><span class="line">    ins.method.return_value = <span class="string">'result'</span></span><br><span class="line">    result = some_function()</span><br><span class="line">    <span class="keyword">assert</span> result == <span class="string">'result'</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="mock扩展应用-性能测试解决方案之一"><a href="#mock扩展应用-性能测试解决方案之一" class="headerlink" title="mock扩展应用-性能测试解决方案之一"></a>mock扩展应用-性能测试解决方案之一</h2><ul>
 <li>进行自服务器的压力测试方案</li>
@@ -221,7 +221,7 @@
          
           <li><a href="/archives/">Articles</a></li>
          
-          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
         
       </ul>
     </div>
@@ -269,7 +269,7 @@
          
           <li><a href="/archives/">Articles</a></li>
          
-          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
         
       </ul>
     </nav>

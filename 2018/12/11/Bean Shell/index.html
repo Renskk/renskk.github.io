@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="什么是Bean Shell BeanShell是一种完全符合Java语法规范的脚本语言，并且有拥有自己的一些语法和方法。 BeanShell是一种松散类型的脚本语言（这点和JS）类似。 BeanShell是用Java写成的，一个小型的、免费的、可下载的、嵌入式的Java源代码解释器，具有对象脚本语言特性，非常精简的解释器。 BeanShell执行标准的Java语句和表达式，另外包括一些脚本命令和语">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-27T17:11:32.317Z">
+<meta property="og:updated_time" content="2019-06-28T09:06:24.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bean Shell基础">
 <meta name="twitter:description" content="什么是Bean Shell BeanShell是一种完全符合Java语法规范的脚本语言，并且有拥有自己的一些语法和方法。 BeanShell是一种松散类型的脚本语言（这点和JS）类似。 BeanShell是用Java写成的，一个小型的、免费的、可下载的、嵌入式的Java源代码解释器，具有对象脚本语言特性，非常精简的解释器。 BeanShell执行标准的Java语句和表达式，另外包括一些脚本命令和语">
@@ -62,7 +62,7 @@
          
           <li><a href="/archives/">Articles</a></li>
          
-          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
         
       </ul>
     </span>
@@ -172,13 +172,13 @@
 <li><p>添加http请求，数据参数化</p>
 </li>
 <li><p>添加beanshellpreprcessor</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vars.put(&quot;user&quot;,&quot;admin123&quot;);//定义请求数据中的参数:用户名</span><br><span class="line">vars.put(&quot;pass&quot;,&quot;admin123&quot;);//定义请求数据中的参数：密码</span><br><span class="line">save=vars.put(&quot;save&quot;,&quot;false&quot;);//定义请求数据中的参数：是否保存登录信息</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vars.put("user","admin123");//定义请求数据中的参数:用户名</span><br><span class="line">vars.put("pass","admin123");//定义请求数据中的参数：密码</span><br><span class="line">save=vars.put("save","false");//定义请求数据中的参数：是否保存登录信息</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>添加beanshell断言</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String username=vars.get(&quot;user&quot;);//获取参数中的用户名信息</span><br><span class="line">log.info(&quot;用户名:&quot;+username);//打印用户名</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String username=vars.get("user");//获取参数中的用户名信息</span><br><span class="line">log.info("用户名:"+username);//打印用户名</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>添加beanshellpostprocessor</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">resp_text=prev.getResponseDataAsString();//获取请求的响应结果</span><br><span class="line">log.info(resp_text);//打印响应结果</span><br><span class="line">log.info(resp_code);//打印响应代码</span><br><span class="line">resp_mes=prev.getResponseMessage();//获取响应结果的消息</span><br><span class="line">log.info(resp_mes);//打印响应结果的消息</span><br><span class="line">pro=props.get(&quot;START.HMS&quot;);//获取START.HMS的属性信息</span><br><span class="line">log.info(pro);//打印START.HMS的属性信息</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">resp_text=prev.getResponseDataAsString();//获取请求的响应结果</span><br><span class="line">log.info(resp_text);//打印响应结果</span><br><span class="line">log.info(resp_code);//打印响应代码</span><br><span class="line">resp_mes=prev.getResponseMessage();//获取响应结果的消息</span><br><span class="line">log.info(resp_mes);//打印响应结果的消息</span><br><span class="line">pro=props.get("START.HMS");//获取START.HMS的属性信息</span><br><span class="line">log.info(pro);//打印START.HMS的属性信息</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>自定义函数：添加beanshell sample，编写脚本</p>
 </li>
@@ -202,7 +202,7 @@
          
           <li><a href="/archives/">Articles</a></li>
          
-          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
         
       </ul>
     </div>
@@ -250,7 +250,7 @@
          
           <li><a href="/archives/">Articles</a></li>
          
-          <li><a href="https://github.com/Renskk/meClass">Github</a></li>
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
         
       </ul>
     </nav>
