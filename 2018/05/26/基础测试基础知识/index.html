@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="测试阶段 单元测试-UT-Unit Testing  （unittest单元测试框架、Junit-Java自带的单元测试框架 参照的需求文档文档：详细设计说明书） 集成测试-IT-Intergration Testing （参照的需求文档：概要设计说明书（HLD）） 系统测试-ST-System Testing（参照的需求文档：需求规格说明书（SRS）/产品需求文档（PRD）） 验收测试-UAT-">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-28T15:40:45.029Z">
+<meta property="og:updated_time" content="2019-06-29T08:43:31.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件测试基础">
 <meta name="twitter:description" content="测试阶段 单元测试-UT-Unit Testing  （unittest单元测试框架、Junit-Java自带的单元测试框架 参照的需求文档文档：详细设计说明书） 集成测试-IT-Intergration Testing （参照的需求文档：概要设计说明书（HLD）） 系统测试-ST-System Testing（参照的需求文档：需求规格说明书（SRS）/产品需求文档（PRD）） 验收测试-UAT-">
@@ -100,7 +100,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试阶段"><span class="toc-number">1.</span> <span class="toc-text">测试阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程"><span class="toc-number">2.</span> <span class="toc-text">测试过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件开发模型"><span class="toc-number">3.</span> <span class="toc-text">软件开发模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程模型"><span class="toc-number">4.</span> <span class="toc-text">测试过程模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试方法"><span class="toc-number">5.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件质量"><span class="toc-number">6.</span> <span class="toc-text">软件质量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件质量模型"><span class="toc-number">6.1.</span> <span class="toc-text">软件质量模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六大测试类型"><span class="toc-number">7.</span> <span class="toc-text">六大测试类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB漏洞扫描工具"><span class="toc-number">8.</span> <span class="toc-text">WEB漏洞扫描工具</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试阶段"><span class="toc-number">1.</span> <span class="toc-text">测试阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程"><span class="toc-number">2.</span> <span class="toc-text">测试过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件开发模型"><span class="toc-number">3.</span> <span class="toc-text">软件开发模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程模型"><span class="toc-number">4.</span> <span class="toc-text">测试过程模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试方法"><span class="toc-number">5.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件质量"><span class="toc-number">6.</span> <span class="toc-text">软件质量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件质量模型"><span class="toc-number">6.1.</span> <span class="toc-text">软件质量模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六大测试类型"><span class="toc-number">7.</span> <span class="toc-text">六大测试类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB漏洞扫描工具"><span class="toc-number">8.</span> <span class="toc-text">WEB漏洞扫描工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB安全测试"><span class="toc-number">9.</span> <span class="toc-text">WEB安全测试</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -239,6 +239,18 @@
 </li>
 </ul>
 <h2 id="WEB漏洞扫描工具"><a href="#WEB漏洞扫描工具" class="headerlink" title="WEB漏洞扫描工具"></a>WEB漏洞扫描工具</h2><p>X-scan</p>
+<h2 id="WEB安全测试"><a href="#WEB安全测试" class="headerlink" title="WEB安全测试"></a>WEB安全测试</h2><p>攻击主要类型</p>
+<ul>
+<li>认证与授权</li>
+<li>Session与Cookie</li>
+<li>暴力破解</li>
+<li>跨站请求伪造（CSFR）</li>
+<li>文件上传漏洞</li>
+<li>SQL、XML注入</li>
+<li>跨站脚本攻击（XSS）</li>
+<li>分布式拒绝服务攻击（DOS）</li>
+<li>信息泄露</li>
+</ul>
 
   </div>
 </article>
@@ -262,7 +274,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试阶段"><span class="toc-number">1.</span> <span class="toc-text">测试阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程"><span class="toc-number">2.</span> <span class="toc-text">测试过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件开发模型"><span class="toc-number">3.</span> <span class="toc-text">软件开发模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程模型"><span class="toc-number">4.</span> <span class="toc-text">测试过程模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试方法"><span class="toc-number">5.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件质量"><span class="toc-number">6.</span> <span class="toc-text">软件质量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件质量模型"><span class="toc-number">6.1.</span> <span class="toc-text">软件质量模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六大测试类型"><span class="toc-number">7.</span> <span class="toc-text">六大测试类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB漏洞扫描工具"><span class="toc-number">8.</span> <span class="toc-text">WEB漏洞扫描工具</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试阶段"><span class="toc-number">1.</span> <span class="toc-text">测试阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程"><span class="toc-number">2.</span> <span class="toc-text">测试过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件开发模型"><span class="toc-number">3.</span> <span class="toc-text">软件开发模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试过程模型"><span class="toc-number">4.</span> <span class="toc-text">测试过程模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试方法"><span class="toc-number">5.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件质量"><span class="toc-number">6.</span> <span class="toc-text">软件质量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件质量模型"><span class="toc-number">6.1.</span> <span class="toc-text">软件质量模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六大测试类型"><span class="toc-number">7.</span> <span class="toc-text">六大测试类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB漏洞扫描工具"><span class="toc-number">8.</span> <span class="toc-text">WEB漏洞扫描工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB安全测试"><span class="toc-number">9.</span> <span class="toc-text">WEB安全测试</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
