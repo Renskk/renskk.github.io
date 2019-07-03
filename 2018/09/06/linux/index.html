@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="Linux树形结构目录   / 根目录    ├── bin 存放用户二进制文件   ├── boot 存放内核引导配置文件   ├── dev 存放设备文件   ├── etc 存放系统配置文件   ├── home 用户主目录   ├── lib 动态共享库   ├── lost+found 文件系统恢复时的恢复文件   ├── media 可卸载存储介质挂载点   ├── mnt 文件系统临">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-28T15:45:40.766Z">
+<meta property="og:updated_time" content="2019-07-02T06:56:03.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础命令">
 <meta name="twitter:description" content="Linux树形结构目录   / 根目录    ├── bin 存放用户二进制文件   ├── boot 存放内核引导配置文件   ├── dev 存放设备文件   ├── etc 存放系统配置文件   ├── home 用户主目录   ├── lib 动态共享库   ├── lost+found 文件系统恢复时的恢复文件   ├── media 可卸载存储介质挂载点   ├── mnt 文件系统临">
@@ -78,10 +78,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -100,7 +100,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux基础命令"><span class="toc-number"></span> <span class="toc-text">linux基础命令</span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux杀进程"><span class="toc-number"></span> <span class="toc-text">linux杀进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux常用命令"><span class="toc-number">1.</span> <span class="toc-text">linux常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux打包压缩"><span class="toc-number">2.</span> <span class="toc-text">linux打包压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux用户及组管理"><span class="toc-number">3.</span> <span class="toc-text">linux用户及组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux文件权限"><span class="toc-number">4.</span> <span class="toc-text">linux文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux管道"><span class="toc-number">5.</span> <span class="toc-text">linux管道</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -219,8 +219,7 @@
 <td>存放邮件、系统日志等变化文件</td>
 </tr>
 </tbody></table>
-<h1 id="linux基础命令"><a href="#linux基础命令" class="headerlink" title="linux基础命令"></a>linux基础命令</h1><p>####　杀进程</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ps -ef | grep *  # 查找进程ID</span><br><span class="line"><span class="meta">$</span> ps -e --forest | grep * # 显示进程数</span><br><span class="line"><span class="meta">$</span> kill - 9 ID  # 杀死当前进程的ID</span><br><span class="line">－－－－－－－－－－－－－－－－－－</span><br><span class="line"><span class="meta">$</span> killall -9 * # 直接杀死当前进程（包含这个进程的所有ID）</span><br></pre></td></tr></table></figure>
+<h1 id="linux杀进程"><a href="#linux杀进程" class="headerlink" title="linux杀进程"></a>linux杀进程</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ps -ef | grep *  # 查找进程ID</span><br><span class="line"><span class="meta">$</span> ps -e --forest | grep * # 显示进程数</span><br><span class="line"><span class="meta">$</span> kill - 9 ID  # 杀死当前进程的ID</span><br><span class="line">－－－－－－－－－－－－－－－－－－</span><br><span class="line"><span class="meta">$</span> killall -9 * # 直接杀死当前进程（包含这个进程的所有ID）</span><br></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -256,6 +255,189 @@
 <td align="center">停止进程</td>
 </tr>
 </tbody></table>
+<h2 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h2><table>
+<thead>
+<tr>
+<th>bash命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ls</td>
+<td>显示文件或目录</td>
+</tr>
+<tr>
+<td>mkdir   [-p]</td>
+<td>创建目录 [若无父目录，则创建父目录]</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>创建空文件</td>
+</tr>
+<tr>
+<td>echo</td>
+<td>输出</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>查看文件内容</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>拷贝</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>移动</td>
+</tr>
+<tr>
+<td>rm   [-r]   [-f]</td>
+<td>删除文件 [递归删除，可删除子目录及文件] [强制删除]</td>
+</tr>
+<tr>
+<td>find</td>
+<td>在文件系统中搜索文件</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>统计文本中行数、字数、字符数</td>
+</tr>
+<tr>
+<td>grep</td>
+<td>在文本文件中查找某个字符</td>
+</tr>
+<tr>
+<td>rmdir</td>
+<td>删除 空目录</td>
+</tr>
+<tr>
+<td>tree</td>
+<td>树形结构显示目录，需要安装tree包</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>显示当前目录</td>
+</tr>
+<tr>
+<td>ln</td>
+<td>创建链接文件</td>
+</tr>
+<tr>
+<td>more/less</td>
+<td>分页显示文本文件内容</td>
+</tr>
+<tr>
+<td>head/tail</td>
+<td>显示文件头、尾文件</td>
+</tr>
+<tr>
+<td>stat</td>
+<td>显示指定文件的详细信息，比ls更详细</td>
+</tr>
+<tr>
+<td>who</td>
+<td>显示在线登陆用户</td>
+</tr>
+<tr>
+<td>whoami</td>
+<td>显示当前操作用户</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>显示主机名</td>
+</tr>
+<tr>
+<td>uname</td>
+<td>显示系统信息</td>
+</tr>
+<tr>
+<td>top</td>
+<td>动态显示当前耗费资源最多的进程</td>
+</tr>
+<tr>
+<td>ps</td>
+<td>显示瞬间进程状态 ps -aux</td>
+</tr>
+<tr>
+<td>du</td>
+<td>查看目录大小 du -h /home带有单位显示目录信息</td>
+</tr>
+<tr>
+<td>df</td>
+<td>查看磁盘大小 df -h 带有单位显示磁盘信息</td>
+</tr>
+<tr>
+<td>ping</td>
+<td>测试网络</td>
+</tr>
+<tr>
+<td>netstat</td>
+<td>显示网络状态</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>清屏</td>
+</tr>
+<tr>
+<td>alias</td>
+<td>对命令重命名 如 alias showmeit=”ps -aux”,另外接触使用 unalias showmeit</td>
+</tr>
+<tr>
+<td>shutdown</td>
+<td>[-r] 关机重启     [- h]关机不重启    [now]立刻关机</td>
+</tr>
+<tr>
+<td>halt</td>
+<td>关机</td>
+</tr>
+<tr>
+<td>reboot</td>
+<td>重启</td>
+</tr>
+</tbody></table>
+<h2 id="linux打包压缩"><a href="#linux打包压缩" class="headerlink" title="linux打包压缩"></a>linux打包压缩</h2><p>Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z</p>
+<p>其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2</p>
+<p><strong>tar</strong>    打包(cvzf) 压缩(xvzf)</p>
+<p>​    -c  压缩文件</p>
+<p>​    -x 归档文件</p>
+<p>​    -z gzip压缩文件</p>
+<p>​    -j bzip2压缩文件</p>
+<p>​    -v 显示压缩解压缩过程</p>
+<p>​    -f 使用文档名</p>
+<h2 id="linux用户及组管理"><a href="#linux用户及组管理" class="headerlink" title="linux用户及组管理"></a>linux用户及组管理</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">useradd		[username]</span><br><span class="line"></span><br><span class="line">userdel		[username]</span><br><span class="line"></span><br><span class="line">adduser		[username]</span><br><span class="line"></span><br><span class="line">groupadd	[groupname]</span><br><span class="line"></span><br><span class="line">groupdel	[groupname]</span><br><span class="line"></span><br><span class="line">passwd root		# 给root设置密码</span><br><span class="line">su use			# 切换用户,加载配置文件.bashrc</span><br><span class="line">su - user		# 切换用户，加载配置文件/etc/profile，加载bash_profile,更改文件的用户及用户组</span><br><span class="line">chown [-R] owner[:group] &#123;File|Directory&#125; # 例 ：chown root:root jdk-8u211.tar</span><br></pre></td></tr></table></figure>
+
+<h2 id="linux文件权限"><a href="#linux文件权限" class="headerlink" title="linux文件权限"></a>linux文件权限</h2><ul>
+<li><p>三种基本权限</p>
+<ul>
+<li>R         读            数值表示为4</li>
+<li>W        写            数值表示为2</li>
+<li>X      可执行        数值表示为1</li>
+</ul>
+</li>
+<li><p>更改权限</p>
+<ul>
+<li><p>chmod     [u所属用户     g所属组    o其他用户    a所有用户]   [+增加权限   -减少权限]    [r w x]  [目录名]</p>
+</li>
+<li><p>此外chmod也可以用数字来表示权限如：</p>
+<p>chmod   777   [filename]</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="linux管道"><a href="#linux管道" class="headerlink" title="linux管道"></a>linux管道</h2><ul>
+<li><p>管道是什么：</p>
+<ul>
+<li><p>管道是一种通讯机制，通常用于进程间的通信(也可以通过socket进行网络通信)，它表现出现的新形式就是将前面的每一个命令的输出(stdout)直接作为下一个命令的输入(stdin)</p>
+</li>
+<li><p>例如：grep -r “close” /home/* | more  在home目录下所有文件查找，包括close的文件，并分页输出</p>
+</li>
+</ul>
+</li>
+</ul>
 
   </div>
 </article>
@@ -279,7 +461,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux基础命令"><span class="toc-number"></span> <span class="toc-text">linux基础命令</span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux杀进程"><span class="toc-number"></span> <span class="toc-text">linux杀进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux常用命令"><span class="toc-number">1.</span> <span class="toc-text">linux常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux打包压缩"><span class="toc-number">2.</span> <span class="toc-text">linux打包压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux用户及组管理"><span class="toc-number">3.</span> <span class="toc-text">linux用户及组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux文件权限"><span class="toc-number">4.</span> <span class="toc-text">linux文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux管道"><span class="toc-number">5.</span> <span class="toc-text">linux管道</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -299,10 +481,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>

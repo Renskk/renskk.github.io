@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="WebDriver方法WebDriver对象有好几种方法，用于在页面中寻找元素。它们被分成find_element_和find_elements_方法。find_element_方法返回一个 WebElement 对象，代表页面中匹配查询的第一个元素。find_elements_方法返回 WebElement_*对象的列表，包含页面中所有匹配的元素。selenium 的 WebDriver 方法，">
+    <meta name="description" content="chromedriver: http://chromedriver.storage.googleapis.com/index.html firefoxdriver: https://github.com/mozilla/geckodriver/releases/ WebDriver方法WebDriver对象有好几种方法，用于在页面中寻找元素。它们被分成find_element_和find_elem">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python+Selenium">
 <meta property="og:url" content="http://yoursite.com/2018/07/19/Selenium基础/index.html">
 <meta property="og:site_name" content="TOMBNOTES">
-<meta property="og:description" content="WebDriver方法WebDriver对象有好几种方法，用于在页面中寻找元素。它们被分成find_element_和find_elements_方法。find_element_方法返回一个 WebElement 对象，代表页面中匹配查询的第一个元素。find_elements_方法返回 WebElement_*对象的列表，包含页面中所有匹配的元素。selenium 的 WebDriver 方法，">
+<meta property="og:description" content="chromedriver: http://chromedriver.storage.googleapis.com/index.html firefoxdriver: https://github.com/mozilla/geckodriver/releases/ WebDriver方法WebDriver对象有好几种方法，用于在页面中寻找元素。它们被分成find_element_和find_elem">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-28T09:10:37.030Z">
+<meta property="og:updated_time" content="2019-07-02T06:09:06.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python+Selenium">
-<meta name="twitter:description" content="WebDriver方法WebDriver对象有好几种方法，用于在页面中寻找元素。它们被分成find_element_和find_elements_方法。find_element_方法返回一个 WebElement 对象，代表页面中匹配查询的第一个元素。find_elements_方法返回 WebElement_*对象的列表，包含页面中所有匹配的元素。selenium 的 WebDriver 方法，">
+<meta name="twitter:description" content="chromedriver: http://chromedriver.storage.googleapis.com/index.html firefoxdriver: https://github.com/mozilla/geckodriver/releases/ WebDriver方法WebDriver对象有好几种方法，用于在页面中寻找元素。它们被分成find_element_和find_elem">
     
     
         
@@ -78,10 +78,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -139,7 +139,9 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="WebDriver方法"><a href="#WebDriver方法" class="headerlink" title="WebDriver方法"></a>WebDriver方法</h2><p>WebDriver对象有好几种方法，用于在页面中寻找元素。它们被分成find_element_<em>和find_elements_</em>方法。find_element_<em>方法返回一个 WebElement 对象，代表页面中<br>匹配查询的第一个元素。find_elements_</em>方法返回 WebElement_*对象的列表，包含页面中所有匹配的元素。<br>selenium 的 WebDriver 方法，用于寻找元素：</p>
+    <p>chromedriver: <a href="http://chromedriver.storage.googleapis.com/index.html" target="_blank" rel="noopener">http://chromedriver.storage.googleapis.com/index.html</a></p>
+<p>firefoxdriver: <a href="https://github.com/mozilla/geckodriver/releases/" target="_blank" rel="noopener">https://github.com/mozilla/geckodriver/releases/</a></p>
+<h2 id="WebDriver方法"><a href="#WebDriver方法" class="headerlink" title="WebDriver方法"></a>WebDriver方法</h2><p>WebDriver对象有好几种方法，用于在页面中寻找元素。它们被分成find_element_<em>和find_elements_</em>方法。find_element_<em>方法返回一个 WebElement 对象，代表页面中<br>匹配查询的第一个元素。find_elements_</em>方法返回 WebElement_*对象的列表，包含页面中所有匹配的元素。<br>selenium 的 WebDriver 方法，用于寻找元素：</p>
 <table>
 <thead>
 <tr>
@@ -386,10 +388,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
