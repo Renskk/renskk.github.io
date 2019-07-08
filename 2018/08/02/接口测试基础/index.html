@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="借口测试基础接口测试概念 代码级接口测试的基本原理：调用源代码，比较预期结果与实际结果 协议级接口测试的基本原理：模拟协议的通讯过程，建立通讯的连接，发请求，获取响应，对相应结果进行断言（实际结果和预期结果对比） 接口测试的方法：利用黑盒测试方法，脚本实现测试 接口测试的优势：较UI比较稳定，后期代码维护的成本比较低，门槛低（简单易学），自动化实施落实落地比较靠谱 接口测试的劣处：需要模拟的参数比">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-25T16:46:24.029Z">
+<meta property="og:updated_time" content="2019-07-08T13:31:06.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="接口测试基础">
 <meta name="twitter:description" content="借口测试基础接口测试概念 代码级接口测试的基本原理：调用源代码，比较预期结果与实际结果 协议级接口测试的基本原理：模拟协议的通讯过程，建立通讯的连接，发请求，获取响应，对相应结果进行断言（实际结果和预期结果对比） 接口测试的方法：利用黑盒测试方法，脚本实现测试 接口测试的优势：较UI比较稳定，后期代码维护的成本比较低，门槛低（简单易学），自动化实施落实落地比较靠谱 接口测试的劣处：需要模拟的参数比">
@@ -163,6 +163,12 @@
 <li>网络访问层</li>
 </ul>
 <h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><p>面向连接、可靠的、基于字节流、三次握手 - 建立连接 ；四次挥手 - 关闭连接；安全，但费事费资源</p>
+<p>之所以将TCP称为可靠的传输协议是因为TCP向调用者承诺了三件事情：</p>
+<ol>
+<li>数据不传丢不传错（利用握手、校验和重传机制可以实现）</li>
+<li>流量控制（通过滑动窗口匹配数据发送者和接收者之间的传输速度）</li>
+<li>拥塞控制（通过RTT时间以及对滑动窗口的控制缓解网络拥堵）。</li>
+</ol>
 <h3 id="三次握手：SYN"><a href="#三次握手：SYN" class="headerlink" title="三次握手：SYN"></a>三次握手：SYN</h3><ul>
 <li>第一次握手：主机A发送位码为SYN＝1,随机产生seq number=200的数据包到服务器，主机B由SYN=1知道，A要求建立联机；</li>
 <li>第二次握手：主机B收到请求后要确认联机信息，向A发送ack number=(主机A的seq+1),SYN=1,ACK=1,随机产生seq number=500的包；</li>

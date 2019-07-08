@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="heapq使用heapq模块的nlargest()和nsmallest()来查找最大或最小的N个元素    方法名 简介    nsmallest(n,iterable,key=None) 获取列表里面最小的几个值   nlargest(n,iterable,key=None) 获取列表里面最大的几个值   123456789101112131415Import heapqnums=[1,8,5,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python常用模块">
+<meta property="og:url" content="http://yoursite.com/2018/10/13/python常用模块/index.html">
+<meta property="og:site_name" content="TOMBNOTES">
+<meta property="og:description" content="heapq使用heapq模块的nlargest()和nsmallest()来查找最大或最小的N个元素    方法名 简介    nsmallest(n,iterable,key=None) 获取列表里面最小的几个值   nlargest(n,iterable,key=None) 获取列表里面最大的几个值   123456789101112131415Import heapqnums=[1,8,5,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-07-08T17:21:04.696Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python常用模块">
+<meta name="twitter:description" content="heapq使用heapq模块的nlargest()和nsmallest()来查找最大或最小的N个元素    方法名 简介    nsmallest(n,iterable,key=None) 获取列表里面最小的几个值   nlargest(n,iterable,key=None) 获取列表里面最大的几个值   123456789101112131415Import heapqnums=[1,8,5,">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Python常用模块</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/10/29/nmon监控/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/10/12/python进阶/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/10/13/python常用模块/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/10/13/python常用模块/&text=Python常用模块"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/10/13/python常用模块/&is_video=false&description=Python常用模块"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python常用模块&body=Check out this article: http://yoursite.com/2018/10/13/python常用模块/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/10/13/python常用模块/&name=Python常用模块&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#heapq"><span class="toc-number">1.</span> <span class="toc-text">heapq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#collections"><span class="toc-number">2.</span> <span class="toc-text">collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BeautifulSoup"><span class="toc-number">3.</span> <span class="toc-text">BeautifulSoup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json"><span class="toc-number">4.</span> <span class="toc-text">json</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Python常用模块
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">TOMBNOTES</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-10-13T10:31:52.000Z" itemprop="datePublished">2018-10-13</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="heapq"><a href="#heapq" class="headerlink" title="heapq"></a>heapq</h2><p><strong>使用heapq模块的nlargest()和nsmallest()来查找最大或最小的N个元素</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">方法名</th>
+<th align="left">简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">nsmallest(n,iterable,key=None)</td>
+<td align="left">获取列表里面最小的几个值</td>
+</tr>
+<tr>
+<td align="left">nlargest(n,iterable,key=None)</td>
+<td align="left">获取列表里面最大的几个值</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Import heapq</span><br><span class="line">nums=[<span class="number">1</span>,<span class="number">8</span>,<span class="number">5</span>,<span class="number">-3</span>,<span class="number">-78</span>,<span class="number">23</span>,<span class="number">9</span>,<span class="number">45</span>]</span><br><span class="line">print(heapq.nlargest(<span class="number">3</span>,nums)) 	<span class="comment"># 获取列表里面最大的几个值</span></span><br><span class="line">print(heapq.nsmallest(<span class="number">3</span>,nums))  <span class="comment"># 获取列表里面最小的几个值</span></span><br><span class="line">portfolio=[</span><br><span class="line">&#123;<span class="string">'name'</span>:<span class="string">'IBM'</span>,<span class="string">'shares'</span>:<span class="number">100</span>,<span class="string">'price'</span>:<span class="number">91.1</span>&#125;,</span><br><span class="line">&#123;<span class="string">'name'</span>:<span class="string">'AAPL'</span>,<span class="string">'shares'</span>:<span class="number">50</span>,<span class="string">'price'</span>:<span class="number">543.22</span>&#125;,</span><br><span class="line">&#123;<span class="string">'name'</span>:<span class="string">'FB'</span>,<span class="string">'shares'</span>:<span class="number">200</span>,<span class="string">'price'</span>:<span class="number">21.09</span>&#125;,</span><br><span class="line">&#123;<span class="string">'name'</span>:<span class="string">'HPQ'</span>,<span class="string">'shares'</span>:<span class="number">35</span>,<span class="string">'price'</span>:<span class="number">31.75</span>&#125;,</span><br><span class="line">&#123;<span class="string">'name'</span>:<span class="string">'YHOO'</span>,<span class="string">'shares'</span>:<span class="number">45</span>,<span class="string">'price'</span>:<span class="number">16.35</span>&#125;,</span><br><span class="line">&#123;<span class="string">'name'</span>:<span class="string">'ACME'</span>,<span class="string">'shares'</span>:<span class="number">75</span>,<span class="string">'price'</span>:<span class="number">115.65</span>&#125;</span><br><span class="line">]</span><br><span class="line">Cheap = heapq.nsmallest(<span class="number">3</span>,portfolio,key=lambdas:s[<span class="string">'shares'</span>])</span><br><span class="line">Expensive = heapq.nlargest(<span class="number">3</span>,portfolio,key=lambdas:s[<span class="string">'price'</span>])</span><br><span class="line">print(cheap)</span><br></pre></td></tr></table></figure>
+
+<h2 id="collections"><a href="#collections" class="headerlink" title="collections"></a>collections</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"><span class="comment"># 获得列表出现次数最多的元素</span></span><br><span class="line">words = [</span><br><span class="line">    <span class="string">'look'</span>, <span class="string">'into'</span>, <span class="string">'my'</span>, <span class="string">'eyes'</span>, <span class="string">'look'</span>, <span class="string">'into'</span>, <span class="string">'my'</span>, <span class="string">'eyes'</span>,</span><br><span class="line">    <span class="string">'the'</span>, <span class="string">'eyes'</span>, <span class="string">'the'</span>, <span class="string">'eyes'</span>, <span class="string">'the'</span>, <span class="string">'eyes'</span>, <span class="string">'not'</span>, <span class="string">'around'</span>,</span><br><span class="line">    <span class="string">'the'</span>, <span class="string">'eyes'</span>, <span class="string">"don't"</span>, <span class="string">'look'</span>, <span class="string">'around'</span>, <span class="string">'the'</span>, <span class="string">'eyes'</span>,</span><br><span class="line">    <span class="string">'look'</span>, <span class="string">'into'</span>, <span class="string">'my'</span>, <span class="string">'eyes'</span>, <span class="string">"you're"</span>, <span class="string">'under'</span></span><br><span class="line">]</span><br><span class="line">counter = Counter(words)</span><br><span class="line">print(counter.most_common(<span class="number">3</span>)) <span class="comment"># 获得出现次数最多的三个元素</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[(<span class="string">'eyes'</span>, <span class="number">8</span>), (<span class="string">'the'</span>, <span class="number">5</span>), (<span class="string">'look'</span>, <span class="number">4</span>)]</span><br></pre></td></tr></table></figure>
+
+<h2 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h2><p>解析HTML</p>
+<p> <strong>select()方法寻找元素：</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>传递给</strong> select()方法的选择器</th>
+<th>将匹配…</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>soup.select(‘div’)</td>
+<td>所有名为&lt;div&gt;的元素</td>
+</tr>
+<tr>
+<td>soup.select(‘#author’)</td>
+<td>带有 id 属性为 author 的元素</td>
+</tr>
+<tr>
+<td>soup.select(‘.notice’)</td>
+<td>所有使用 CSS class 属性名为 notice 的元素</td>
+</tr>
+<tr>
+<td>soup.select(‘div span’)</td>
+<td>所有在&lt;div&gt;元素之内的&lt;span&gt;元素</td>
+</tr>
+<tr>
+<td>soup.select(‘div &gt; span’)</td>
+<td>所有直接在&lt;div&gt;元素之内的&lt;span&gt;元素，中间没有其他元素</td>
+</tr>
+<tr>
+<td>soup.select(‘input[name]’)</td>
+<td>所有名为&lt;input&gt;，并有一个 name 属性，其值无所谓的元素</td>
+</tr>
+<tr>
+<td>soup.select(‘input[type=”button”]’)</td>
+<td>所有名为&lt;input&gt;，并有一个 type 属性，其值为 button 的元素</td>
+</tr>
+</tbody></table>
+<h2 id="json"><a href="#json" class="headerlink" title="json"></a>json</h2><ul>
+<li><strong>loads()</strong> - 将json数据转化成dict数据</li>
+<li><strong>dumps()</strong> - 将dict数据转化成json数据</li>
+<li><strong>load()</strong> - 读取json文件数据，转成dict数据</li>
+<li><strong>dump()</strong> - 将dict数据转化成json数据后写入json文件</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dict字典转json数据</span></span><br><span class="line">dt = &#123;<span class="string">'name'</span>:<span class="string">'tom'</span>,<span class="string">'age'</span>:<span class="string">'11'</span>&#125;</span><br><span class="line">js = json.dumps(dt)</span><br><span class="line"><span class="comment"># json数据转dict字典</span></span><br><span class="line">d = json.loads(js)</span><br></pre></td></tr></table></figure>
+
+<p>## </p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#heapq"><span class="toc-number">1.</span> <span class="toc-text">heapq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#collections"><span class="toc-number">2.</span> <span class="toc-text">collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BeautifulSoup"><span class="toc-number">3.</span> <span class="toc-text">BeautifulSoup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json"><span class="toc-number">4.</span> <span class="toc-text">json</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/10/13/python常用模块/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/10/13/python常用模块/&text=Python常用模块"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/10/13/python常用模块/&is_video=false&description=Python常用模块"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python常用模块&body=Check out this article: http://yoursite.com/2018/10/13/python常用模块/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/10/13/python常用模块/&title=Python常用模块"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/10/13/python常用模块/&name=Python常用模块&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Renskk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
