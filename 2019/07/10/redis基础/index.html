@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="部分内容摘录自：https://github.com/Renskk/Python-100-Days/blob/master/Day36-40/39-40.NoSQL%E5%85%A5%E9%97%A8.md 简介Redis是一个开源（BSD许可），内存存储的数据结构服务器，可用作数据库，高速缓存和消息队列代理。它支持字符串、哈希表、列表、集合、有序集合，位图，hyperloglogs等数据类型。内">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-07-10T17:21:00.297Z">
+<meta property="og:updated_time" content="2019-07-10T17:21:40.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis基础">
 <meta name="twitter:description" content="部分内容摘录自：https://github.com/Renskk/Python-100-Days/blob/master/Day36-40/39-40.NoSQL%E5%85%A5%E9%97%A8.md 简介Redis是一个开源（BSD许可），内存存储的数据结构服务器，可用作数据库，高速缓存和消息队列代理。它支持字符串、哈希表、列表、集合、有序集合，位图，hyperloglogs等数据类型。内">
@@ -98,7 +98,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">1.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-number">1.2.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">1.3.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在Python程序中使用Redis"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">在Python程序中使用Redis</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-number">3.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">4.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在Python程序中使用Redis"><span class="toc-number">4.0.1.</span> <span class="toc-text">在Python程序中使用Redis</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -138,7 +138,7 @@
 
   <div class="content" itemprop="articleBody">
     <p>部分内容摘录自：<a href="https://github.com/Renskk/Python-100-Days/blob/master/Day36-40/39-40.NoSQL入门.md" target="_blank" rel="noopener">https://github.com/Renskk/Python-100-Days/blob/master/Day36-40/39-40.NoSQL%E5%85%A5%E9%97%A8.md</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Redis是一个开源（BSD许可），内存存储的数据结构服务器，可用作数据库，高速缓存和消息队列代理。它支持<a href="https://www.redis.net.cn/tutorial/3508.html" target="_blank" rel="noopener">字符串</a>、<a href="https://www.redis.net.cn/tutorial/3509.html" target="_blank" rel="noopener">哈希表</a>、<a href="https://www.redis.net.cn/tutorial/3510.html" target="_blank" rel="noopener">列表</a>、<a href="https://www.redis.net.cn/tutorial/3511.html" target="_blank" rel="noopener">集合</a>、<a href="https://www.redis.net.cn/tutorial/3512.html" target="_blank" rel="noopener">有序集合</a>，<a href="https://www.redis.net.cn/tutorial/3508.html" target="_blank" rel="noopener">位图</a>，<a href="https://www.redis.net.cn/tutorial/3513.html" target="_blank" rel="noopener">hyperloglogs</a>等数据类型。内置复制、<a href="https://www.redis.net.cn/tutorial/3516.html" target="_blank" rel="noopener">Lua脚本</a>、LRU收回、<a href="https://www.redis.net.cn/tutorial/3515.html" target="_blank" rel="noopener">事务</a>以及不同级别磁盘持久化功能，同时通过Redis Sentinel提供高可用，通过Redis Cluster提供自动<a href="https://www.redis.net.cn/tutorial/3524.html" target="_blank" rel="noopener">分区</a>。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Redis是一个开源（BSD许可），内存存储的数据结构服务器，可用作数据库，高速缓存和消息队列代理。它支持<a href="https://www.redis.net.cn/tutorial/3508.html" target="_blank" rel="noopener">字符串</a>、<a href="https://www.redis.net.cn/tutorial/3509.html" target="_blank" rel="noopener">哈希表</a>、<a href="https://www.redis.net.cn/tutorial/3510.html" target="_blank" rel="noopener">列表</a>、<a href="https://www.redis.net.cn/tutorial/3511.html" target="_blank" rel="noopener">集合</a>、<a href="https://www.redis.net.cn/tutorial/3512.html" target="_blank" rel="noopener">有序集合</a>，<a href="https://www.redis.net.cn/tutorial/3508.html" target="_blank" rel="noopener">位图</a>，<a href="https://www.redis.net.cn/tutorial/3513.html" target="_blank" rel="noopener">hyperloglogs</a>等数据类型。内置复制、<a href="https://www.redis.net.cn/tutorial/3516.html" target="_blank" rel="noopener">Lua脚本</a>、LRU收回、<a href="https://www.redis.net.cn/tutorial/3515.html" target="_blank" rel="noopener">事务</a>以及不同级别磁盘持久化功能，同时通过Redis Sentinel提供高可用，通过Redis Cluster提供自动<a href="https://www.redis.net.cn/tutorial/3524.html" target="_blank" rel="noopener">分区</a>。</p>
 <h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>Redis是REmote DIctionary Server的缩写，它是一个用ANSI C编写的高性能的key-value存储系统，与其他的key-value存储系统相比，Redis有以下一些特点（也是优点）：</p>
 <ul>
 <li>Redis的读写性能极高，并且有丰富的特性（发布/订阅、事务、通知等）。</li>
@@ -184,7 +184,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">1.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-number">1.2.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">1.3.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在Python程序中使用Redis"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">在Python程序中使用Redis</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-number">3.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">4.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在Python程序中使用Redis"><span class="toc-number">4.0.1.</span> <span class="toc-text">在Python程序中使用Redis</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
