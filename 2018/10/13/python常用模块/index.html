@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="heapq使用heapq模块的nlargest()和nsmallest()来查找最大或最小的N个元素    方法名 简介    nsmallest(n,iterable,key=None) 获取列表里面最小的几个值   nlargest(n,iterable,key=None) 获取列表里面最大的几个值   123456789101112131415Import heapqnums=[1,8,5,">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-07-08T17:21:04.696Z">
+<meta property="og:updated_time" content="2019-07-18T13:48:43.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python常用模块">
 <meta name="twitter:description" content="heapq使用heapq模块的nlargest()和nsmallest()来查找最大或最小的N个元素    方法名 简介    nsmallest(n,iterable,key=None) 获取列表里面最小的几个值   nlargest(n,iterable,key=None) 获取列表里面最大的几个值   123456789101112131415Import heapqnums=[1,8,5,">
@@ -78,10 +78,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -100,7 +100,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#heapq"><span class="toc-number">1.</span> <span class="toc-text">heapq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#collections"><span class="toc-number">2.</span> <span class="toc-text">collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BeautifulSoup"><span class="toc-number">3.</span> <span class="toc-text">BeautifulSoup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json"><span class="toc-number">4.</span> <span class="toc-text">json</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#heapq"><span class="toc-number">1.</span> <span class="toc-text">heapq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#collections"><span class="toc-number">2.</span> <span class="toc-text">collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BeautifulSoup"><span class="toc-number">3.</span> <span class="toc-text">BeautifulSoup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json"><span class="toc-number">4.</span> <span class="toc-text">json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抛出异常"><span class="toc-number">5.</span> <span class="toc-text">抛出异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志模块"><span class="toc-number">6.</span> <span class="toc-text">日志模块</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -206,7 +206,129 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dict字典转json数据</span></span><br><span class="line">dt = &#123;<span class="string">'name'</span>:<span class="string">'tom'</span>,<span class="string">'age'</span>:<span class="string">'11'</span>&#125;</span><br><span class="line">js = json.dumps(dt)</span><br><span class="line"><span class="comment"># json数据转dict字典</span></span><br><span class="line">d = json.loads(js)</span><br></pre></td></tr></table></figure>
 
-<p>## </p>
+<h2 id="抛出异常"><a href="#抛出异常" class="headerlink" title="抛出异常"></a>抛出异常</h2><p>抛出异常使用 raise 语句。在代码中，raise 语句包含以下部分：</p>
+<ul>
+<li>raise 关键字</li>
+<li>对 Exception 函数的调用</li>
+<li>传递给 Exception 函数的字符串，包含有用的出错信息</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raiseException(<span class="string">'Thisistheerrormessage.'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="日志模块"><a href="#日志模块" class="headerlink" title="日志模块"></a>日志模块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> logging</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>logging.basicConfig(level=logging.DEBUG,</span><br><span class="line">                        format=<span class="string">'%(asctime)s-%(levelname)s-%(message)s'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>logging.debug(<span class="string">'Startofprogram'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>logging.debug(<span class="string">'Endofprogram'</span>)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>filename</td>
+<td>指定日志文件名</td>
+</tr>
+<tr>
+<td>filemode</td>
+<td>和file函数意义相同，指定日志文件的打开模式，’w’或’a’</td>
+</tr>
+<tr>
+<td>format</td>
+<td>指定输出的格式和内容，format可以输出很多有用信息，如上例所示</td>
+</tr>
+<tr>
+<td>%(levelno)s</td>
+<td>打印日志级别的数值</td>
+</tr>
+<tr>
+<td>%(levelname)s</td>
+<td>打印日志级别名称</td>
+</tr>
+<tr>
+<td>%(pathname)s</td>
+<td>打印当前执行程序的路径，其实就是sys.argv[0]</td>
+</tr>
+<tr>
+<td>%(filename)s</td>
+<td>打印当前执行程序名</td>
+</tr>
+<tr>
+<td>%(funcName)s</td>
+<td>打印日志的当前函数</td>
+</tr>
+<tr>
+<td>%(lineno)d</td>
+<td>打印日志的当前行号</td>
+</tr>
+<tr>
+<td>%(asctime)s</td>
+<td>打印日志的时间</td>
+</tr>
+<tr>
+<td>%(thread)d</td>
+<td>打印线程ID</td>
+</tr>
+<tr>
+<td>%             (threadName)s</td>
+<td>打印线程名称</td>
+</tr>
+<tr>
+<td>%(process)d</td>
+<td>打印进程ID</td>
+</tr>
+<tr>
+<td>%(message)s</td>
+<td>打印日志信息</td>
+</tr>
+<tr>
+<td>datefmt</td>
+<td>指定时间格式，同time.strftime()</td>
+</tr>
+<tr>
+<td>level</td>
+<td>设置日志级别，默认为logging.WARNING</td>
+</tr>
+<tr>
+<td>stream</td>
+<td>指定将日志的输出流，可以指定输出到sys.stderr,sys.stdout或者文件，默认输出到sys.stderr，当stream和filename同时指定时，stream被忽略</td>
+</tr>
+</tbody></table>
+<p>日志级别:</p>
+<table>
+<thead>
+<tr>
+<th>级别</th>
+<th>日志函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DEBUG</td>
+<td>logging.debug()</td>
+<td>最低级别。用于小细节。通常只有在诊断问题时，你才会关心这些消息</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>logging.info()</td>
+<td>用于记录程序中一般事件的信息，或确认一切工作正常</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>logging.warning()</td>
+<td>用于表示可能的问题，它不会阻止程序的工作，但将来可能会</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>logging.error()</td>
+<td>用于记录错误，它导致程序做某事失败</td>
+</tr>
+<tr>
+<td>CRITICAL</td>
+<td>logging.critical()</td>
+<td>最高级别。用于表示致命的错误，它导致或将要导致程序完全停止工作</td>
+</tr>
+</tbody></table>
+<p>禁用日志:</p>
+<p>在调试完程序后，你可能不希望所有这些日志消息出现在屏幕上。logging.disable() 函数禁用了这些消息，这样就不必进入到程序中，手工删除所有的日志调用。只要向 logging.disable() 传入一个日志级别，它就会禁止该级别和更低级别的所有日志消息。所以，如果想要禁用所有日志，只要在程序中添加 logging. disable（logging.CRITICAL）</p>
 
   </div>
 </article>
@@ -230,7 +352,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#heapq"><span class="toc-number">1.</span> <span class="toc-text">heapq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#collections"><span class="toc-number">2.</span> <span class="toc-text">collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BeautifulSoup"><span class="toc-number">3.</span> <span class="toc-text">BeautifulSoup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json"><span class="toc-number">4.</span> <span class="toc-text">json</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#heapq"><span class="toc-number">1.</span> <span class="toc-text">heapq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#collections"><span class="toc-number">2.</span> <span class="toc-text">collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BeautifulSoup"><span class="toc-number">3.</span> <span class="toc-text">BeautifulSoup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json"><span class="toc-number">4.</span> <span class="toc-text">json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抛出异常"><span class="toc-number">5.</span> <span class="toc-text">抛出异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志模块"><span class="toc-number">6.</span> <span class="toc-text">日志模块</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -250,10 +372,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
     </div>
 
   </div>

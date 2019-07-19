@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="Linux树形结构目录   / 根目录    ├── bin 存放用户二进制文件   ├── boot 存放内核引导配置文件   ├── dev 存放设备文件   ├── etc 存放系统配置文件   ├── home 用户主目录   ├── lib 动态共享库   ├── lost+found 文件系统恢复时的恢复文件   ├── media 可卸载存储介质挂载点   ├── mnt 文件系统临">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-07-02T06:56:03.311Z">
+<meta property="og:updated_time" content="2019-07-18T05:31:18.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础命令">
 <meta name="twitter:description" content="Linux树形结构目录   / 根目录    ├── bin 存放用户二进制文件   ├── boot 存放内核引导配置文件   ├── dev 存放设备文件   ├── etc 存放系统配置文件   ├── home 用户主目录   ├── lib 动态共享库   ├── lost+found 文件系统恢复时的恢复文件   ├── media 可卸载存储介质挂载点   ├── mnt 文件系统临">
@@ -78,10 +78,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -100,7 +100,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux杀进程"><span class="toc-number"></span> <span class="toc-text">linux杀进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux常用命令"><span class="toc-number">1.</span> <span class="toc-text">linux常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux打包压缩"><span class="toc-number">2.</span> <span class="toc-text">linux打包压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux用户及组管理"><span class="toc-number">3.</span> <span class="toc-text">linux用户及组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux文件权限"><span class="toc-number">4.</span> <span class="toc-text">linux文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux管道"><span class="toc-number">5.</span> <span class="toc-text">linux管道</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux杀进程"><span class="toc-number"></span> <span class="toc-text">linux杀进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux常用命令"><span class="toc-number">1.</span> <span class="toc-text">linux常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux打包压缩"><span class="toc-number">2.</span> <span class="toc-text">linux打包压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux用户及组管理"><span class="toc-number">3.</span> <span class="toc-text">linux用户及组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux文件权限"><span class="toc-number">4.</span> <span class="toc-text">linux文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux管道"><span class="toc-number">5.</span> <span class="toc-text">linux管道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-sort"><span class="toc-number">6.</span> <span class="toc-text">linux sort</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -438,6 +438,28 @@
 </ul>
 </li>
 </ul>
+<h2 id="linux-sort"><a href="#linux-sort" class="headerlink" title="linux sort"></a>linux sort</h2><p>工作原理：</p>
+<p>sort将文件的每一行作为一个单位，相互比较，比较原则是从首字符向后，依次按ASCII码值进行比较，最后将他们按升序输出。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ll | sort -rnk 5|head -3</span><br><span class="line"><span class="meta">#</span> 将文件按顺序输出</span><br><span class="line"><span class="meta">$</span> cat test.txt</span><br><span class="line">a</span><br><span class="line">c</span><br><span class="line">b</span><br><span class="line"><span class="meta">$</span> sort test.txt</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br></pre></td></tr></table></figure>
+
+<p>sort  -u    —    去除重复行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cat test</span><br><span class="line">a</span><br><span class="line">c</span><br><span class="line">c</span><br><span class="line">b</span><br><span class="line"><span class="meta">$</span> sort -u test</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br></pre></td></tr></table></figure>
+
+<p>sort   -r    —     排序方式改为降序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cat test</span><br><span class="line">a</span><br><span class="line">c</span><br><span class="line">b</span><br><span class="line"><span class="meta">$</span> sort -r test</span><br><span class="line">c</span><br><span class="line">b</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+<p>sort   -r text.txt -o text.txt    —    将输出结果写入原文件</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ cat test</span><br><span class="line">a</span><br><span class="line">c</span><br><span class="line">b</span><br><span class="line">$ sort - r test -o test</span><br><span class="line">c</span><br><span class="line">b</span><br><span class="line">a</span><br><span class="line">$ cat test</span><br><span class="line">c</span><br><span class="line">b</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+<p>sort   -n test.txt     —     sort默认字符排序，-n 告诉sort 要以数值排序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cat test</span><br><span class="line">1</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line"><span class="meta">$</span> sort -n test</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p><strong>其他的sort常用选项</strong>:</p>
+<p>-f    会将小写字母都转换为大写字母来进行比较，亦即忽略大小写</p>
+<p>-c    会检查文件是否已排好序，如果乱序，则输出第一个乱序的行的相关信息，最后返回1</p>
+<p>-C    会检查文件是否已排好序，如果乱序，不输出内容，仅返回1</p>
+<p>-M    会以月份来排序，比如JAN小于FEB等等</p>
+<p>-b    会忽略每一行前面的所有空白部分，从第一个可见字符开始比较。</p>
 
   </div>
 </article>
@@ -461,7 +483,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux杀进程"><span class="toc-number"></span> <span class="toc-text">linux杀进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux常用命令"><span class="toc-number">1.</span> <span class="toc-text">linux常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux打包压缩"><span class="toc-number">2.</span> <span class="toc-text">linux打包压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux用户及组管理"><span class="toc-number">3.</span> <span class="toc-text">linux用户及组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux文件权限"><span class="toc-number">4.</span> <span class="toc-text">linux文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux管道"><span class="toc-number">5.</span> <span class="toc-text">linux管道</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux树形结构目录"><span class="toc-number">1.</span> <span class="toc-text">Linux树形结构目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux杀进程"><span class="toc-number"></span> <span class="toc-text">linux杀进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux常用命令"><span class="toc-number">1.</span> <span class="toc-text">linux常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux打包压缩"><span class="toc-number">2.</span> <span class="toc-text">linux打包压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux用户及组管理"><span class="toc-number">3.</span> <span class="toc-text">linux用户及组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux文件权限"><span class="toc-number">4.</span> <span class="toc-text">linux文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux管道"><span class="toc-number">5.</span> <span class="toc-text">linux管道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-sort"><span class="toc-number">6.</span> <span class="toc-text">linux sort</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -481,10 +503,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
     </div>
 
   </div>
