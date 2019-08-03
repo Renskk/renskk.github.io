@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="Object类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------public fi">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-08-02T07:24:04.420Z">
+<meta property="og:updated_time" content="2019-08-03T01:50:07.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java常用API">
 <meta name="twitter:description" content="Object类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------public fi">
@@ -76,10 +76,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -98,7 +98,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">7.</span> <span class="toc-text">Integer类</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">9.</span> <span class="toc-text">System类</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -262,28 +262,18 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</li>
+</ul>
+<h2 id="Character类"><a href="#Character类" class="headerlink" title="Character类"></a>Character类</h2><ul>
+<li><p>成员方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isUpperCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 判断字符是否是大写</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLowerCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 判断字符是否是小写</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isDigit</span><span class="params">(<span class="keyword">char</span> ch)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 判断字符是不是数字</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">toUpperCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span></span><br><span class="line"><span class="function"><span class="comment">// </span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">toLowerCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span></span><br></pre></td></tr></table></figure>
 
 
 
 </li>
 </ul>
+<h2 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">gc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 内存清理</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exit</span><span class="params">(<span class="keyword">int</span> status)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 退出程序，习惯退出参数为0</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">currentTimeMillis</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 当前时间戳，1970-1-1起计时，单位：毫秒</span></span></span><br></pre></td></tr></table></figure>
+
 
   </div>
 </article>
@@ -307,7 +297,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">7.</span> <span class="toc-text">Integer类</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">9.</span> <span class="toc-text">System类</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -327,10 +317,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
     </div>
 
   </div>
