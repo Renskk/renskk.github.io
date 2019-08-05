@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Object类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------public fi">
+    <meta name="description" content="基础APIObject类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------publ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java常用API">
 <meta property="og:url" content="http://yoursite.com/2019/07/31/java常用API/index.html">
 <meta property="og:site_name" content="TOMBNOTES">
-<meta property="og:description" content="Object类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------public fi">
+<meta property="og:description" content="基础APIObject类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------publ">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-08-03T01:50:07.528Z">
+<meta property="og:updated_time" content="2019-08-04T15:50:16.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java常用API">
-<meta name="twitter:description" content="Object类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------public fi">
+<meta name="twitter:description" content="基础APIObject类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------publ">
     
     
         
@@ -98,7 +98,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">9.</span> <span class="toc-text">System类</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础API"><span class="toc-number">1.</span> <span class="toc-text">基础API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">1.2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">1.3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">1.4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">1.5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">1.6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">1.7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">1.8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">1.9.</span> <span class="toc-text">System类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigInteger类"><span class="toc-number">1.10.</span> <span class="toc-text">BigInteger类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigDecemal类"><span class="toc-number">1.11.</span> <span class="toc-text">BigDecemal类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date类"><span class="toc-number">1.12.</span> <span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateFormat类"><span class="toc-number">1.13.</span> <span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calender类"><span class="toc-number">1.14.</span> <span class="toc-text">Calender类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-O"><span class="toc-number">2.</span> <span class="toc-text">I/O</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异常"><span class="toc-number">2.1.</span> <span class="toc-text">异常</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-number">3.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection类"><span class="toc-number">3.1.</span> <span class="toc-text">Collection类</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -137,7 +137,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数</span></span></span><br><span class="line"><span class="function"><span class="comment">// 两个字符串的内存不同，但是哈希编码可能一样 例如："Aa"和"BB" 。</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Class <span class="title">getClass</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// Class与反射有关，代表类的字节码对象</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 重写该方法自定义对象的输出格式</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 引用类型比较相等，默认比地址</span></span></span><br><span class="line"><span class="function"><span class="comment">// 重写方法，按照属性值比较内容相等</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 清理资源、记录日志</span></span></span><br><span class="line"><span class="function"><span class="comment">// 手动启动垃圾回收  System.gc()</span></span></span><br><span class="line"><span class="function">-------------------------------------------------------- </span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 必须实现Cloneable接口（这个接口什么都没有） -- 标记接口</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br></pre></td></tr></table></figure>
+    <h1 id="基础API"><a href="#基础API" class="headerlink" title="基础API"></a>基础API</h1><h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数</span></span></span><br><span class="line"><span class="function"><span class="comment">// 两个字符串的内存不同，但是哈希编码可能一样 例如："Aa"和"BB" 。</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Class <span class="title">getClass</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// Class与反射有关，代表类的字节码对象</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 重写该方法自定义对象的输出格式</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 引用类型比较相等，默认比地址</span></span></span><br><span class="line"><span class="function"><span class="comment">// 重写方法，按照属性值比较内容相等</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 清理资源、记录日志</span></span></span><br><span class="line"><span class="function"><span class="comment">// 手动启动垃圾回收  System.gc()</span></span></span><br><span class="line"><span class="function">-------------------------------------------------------- </span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 必须实现Cloneable接口（这个接口什么都没有） -- 标记接口</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h2><ul>
 <li><p>概述</p>
@@ -274,6 +274,183 @@
 </ul>
 <h2 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">gc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 内存清理</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exit</span><span class="params">(<span class="keyword">int</span> status)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 退出程序，习惯退出参数为0</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">currentTimeMillis</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 当前时间戳，1970-1-1起计时，单位：毫秒</span></span></span><br></pre></td></tr></table></figure>
 
+<h2 id="BigInteger类"><a href="#BigInteger类" class="headerlink" title="BigInteger类"></a>BigInteger类</h2><ul>
+<li><p>描述</p>
+<ul>
+<li>可以让超过Integer范围内的数据进行运算</li>
+</ul>
+</li>
+<li><p>构造方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">BigInteger</span><span class="params">(String val)</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="BigDecemal类"><a href="#BigDecemal类" class="headerlink" title="BigDecemal类"></a>BigDecemal类</h2><ul>
+<li><p>描述</p>
+<ul>
+<li>解决小数运算精度问题</li>
+</ul>
+</li>
+<li><p>构造方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">BigDecemal</span><span class="params">(String val)</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><ul>
+<li><p>概述</p>
+<ul>
+<li>类Date表示特定的瞬间，精确到毫秒</li>
+</ul>
+</li>
+<li><p>构造方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public Date()</span><br><span class="line">public Date(long date)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>成员方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getTime</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTime</span><span class="params">(<span class="keyword">long</span> time)</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h2><ul>
+<li><p>概述</p>
+<ul>
+<li>DateFormat 是日期/时间格式化子类的抽象类，它以与语言无关的方式格式化并解析日期或时间</li>
+<li>是抽象类，所以使用其子类SimpleDateFormat</li>
+</ul>
+</li>
+<li><p>SimpleDateFormat构造方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">SimpleDateFormat</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">SimpleDateFormat</span><span class="params">(String pattern)</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>成员方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> String <span class="title">format</span><span class="params">(Date date)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 日期转字符串</span></span></span><br><span class="line"><span class="function">DateFormat df </span>= <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd hh:mm:ss"</span>);</span><br><span class="line">Date date = <span class="keyword">new</span> Date();</span><br><span class="line">String strdate = df.format(date);</span><br><span class="line">System.out.println(strdate);</span><br><span class="line"><span class="function"><span class="keyword">public</span> Date <span class="title">parse</span><span class="params">(String source)</span></span></span><br><span class="line"><span class="function">----------------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="comment">// 字符串转日期</span></span></span><br><span class="line"><span class="function">Scanner sc </span>= <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd hh:mm:ss"</span>);</span><br><span class="line">System.out.println(<span class="string">"输入日期："</span>);</span><br><span class="line">String strdate = sc.nextLine();</span><br><span class="line">Date date = df.parse(strdate);</span><br><span class="line">System.out.println(date);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="Calender类"><a href="#Calender类" class="headerlink" title="Calender类"></a>Calender类</h2><ul>
+<li><p>概述</p>
+<ul>
+<li>Calendar类是一个抽象类，它为指定瞬间与一组诸如YEAR、MONTH、HOUR等日历字段之前的转换提供了一些方法，并为操作日历字段提供了一些方法</li>
+</ul>
+</li>
+<li><p>成员方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Calender <span class="title">getInstance</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> field)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 获取日历中的指定部分</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> field, <span class="keyword">int</span> amount)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 日期加减运算</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month, <span class="keyword">int</span> date)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 设置日日为指定的日期</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h1><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><ul>
+<li><p>概述</p>
+<ul>
+<li>异常就是java在运行过程中出现错误</li>
+<li>我们常见异常： 角标越界异常、空指针异常</li>
+</ul>
+</li>
+<li><p>常见错误</p>
+<ul>
+<li>编译错误： 语法错误，编译器无法通过.class文件都没有</li>
+<li>逻辑错误： 编译通过，正常运行，结果和预想不一致</li>
+<li>异常： 程序运行时出错，有些宜昌市无法避免的，出现异常，程序应该能正常继续运行</li>
+</ul>
+</li>
+<li><p>异常结构</p>
+<ul>
+<li><p>Throwable</p>
+<ul>
+<li><p>Error： 严重的系统级错误，层序员不管</p>
+</li>
+<li><p>Exception： 程序员处理</p>
+<ul>
+<li><p>RuntimeException及其子类 </p>
+<p>运行时异常： 编译器不会强制检查 - 非受查异常</p>
+</li>
+<li><p>非RuntimeException及其子类 </p>
+<p>编译时异常： 编译会检查异常是否处理，没有处理编译报错- 受查异常</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>异常处理</p>
+<p>一个try可以跟</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">	// 可能发生异常的代码</span><br><span class="line">&#125;catch (Exception e)&#123;  </span><br><span class="line">	// 异常发生后的处理</span><br><span class="line">&#125;finally&#123;</span><br><span class="line">	// 最后要做的事情</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>代替数组</p>
+<ul>
+<li><p>集合和数组的区别</p>
+<ul>
+<li>数组虽然也可以存储对象，但是长度是固定的，集合的长度是可变的</li>
+<li>数组中可以存储任何类型，集合只能存储对象</li>
+</ul>
+</li>
+<li><p>集合的特点</p>
+<ul>
+<li>集合只用于存储对象，集合长度是可变的，集合可以存储不同类型的对象</li>
+<li>如果要存储基本类型必须使用包装类（自动装箱）</li>
+<li>非泛型集合：集合中可以存储任意类型的数据</li>
+<li>泛型集合：定义集合时，必须规定集合中的元素类型</li>
+</ul>
+</li>
+<li><p>集合框架</p>
+<ul>
+<li>Collection<ul>
+<li>List<ul>
+<li>ArraryList（重点）</li>
+<li>LinkedList</li>
+</ul>
+</li>
+<li>Set<ul>
+<li>HashSet（重点）</li>
+<li>TreeSet</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>HashMap（重点）</li>
+<li>TreMap</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Collection类"><a href="#Collection类" class="headerlink" title="Collection类"></a>Collection类</h2><p>有些可重复，有些不可重复，有些有序，有些无序</p>
+<ul>
+<li><p>接口成员方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 添加元素</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 删除元素</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 清空元素</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Objest o)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 集合是否包含某个元素</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 集合实都为空</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 获取集合中元素的个数</span></span></span><br><span class="line"><span class="function">Objest[] <span class="title">toArray</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 把集合转成数组，可以实现集合的遍历</span></span></span><br><span class="line"><span class="function">Iterator <span class="title">iterator</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 迭代器，集合的专用遍历方式</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+</ul>
 
   </div>
 </article>
@@ -297,7 +474,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">9.</span> <span class="toc-text">System类</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础API"><span class="toc-number">1.</span> <span class="toc-text">基础API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">1.2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">1.3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">1.4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">1.5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">1.6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">1.7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">1.8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">1.9.</span> <span class="toc-text">System类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigInteger类"><span class="toc-number">1.10.</span> <span class="toc-text">BigInteger类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigDecemal类"><span class="toc-number">1.11.</span> <span class="toc-text">BigDecemal类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date类"><span class="toc-number">1.12.</span> <span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateFormat类"><span class="toc-number">1.13.</span> <span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calender类"><span class="toc-number">1.14.</span> <span class="toc-text">Calender类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-O"><span class="toc-number">2.</span> <span class="toc-text">I/O</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异常"><span class="toc-number">2.1.</span> <span class="toc-text">异常</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-number">3.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection类"><span class="toc-number">3.1.</span> <span class="toc-text">Collection类</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
