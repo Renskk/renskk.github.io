@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="基础APIObject类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------publ">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-08-04T15:50:16.439Z">
+<meta property="og:updated_time" content="2019-08-07T04:53:32.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java常用API">
 <meta name="twitter:description" content="基础APIObject类123456789101112131415161718192021public int hashCode()// 哈希编码： 跟内存地址有关，根据内存地址按照哈希算法计算出一个数// 两个字符串的内存不同，但是哈希编码可能一样 例如：&quot;Aa&quot;和&quot;BB&quot; 。--------------------------------------------------------publ">
@@ -98,7 +98,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础API"><span class="toc-number">1.</span> <span class="toc-text">基础API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">1.2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">1.3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">1.4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">1.5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">1.6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">1.7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">1.8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">1.9.</span> <span class="toc-text">System类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigInteger类"><span class="toc-number">1.10.</span> <span class="toc-text">BigInteger类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigDecemal类"><span class="toc-number">1.11.</span> <span class="toc-text">BigDecemal类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date类"><span class="toc-number">1.12.</span> <span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateFormat类"><span class="toc-number">1.13.</span> <span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calender类"><span class="toc-number">1.14.</span> <span class="toc-text">Calender类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-O"><span class="toc-number">2.</span> <span class="toc-text">I/O</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异常"><span class="toc-number">2.1.</span> <span class="toc-text">异常</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-number">3.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection类"><span class="toc-number">3.1.</span> <span class="toc-text">Collection类</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础API"><span class="toc-number">1.</span> <span class="toc-text">基础API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">1.2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">1.3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">1.4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">1.5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">1.6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">1.7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">1.8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">1.9.</span> <span class="toc-text">System类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigInteger类"><span class="toc-number">1.10.</span> <span class="toc-text">BigInteger类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigDecemal类"><span class="toc-number">1.11.</span> <span class="toc-text">BigDecemal类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date类"><span class="toc-number">1.12.</span> <span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateFormat类"><span class="toc-number">1.13.</span> <span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calender类"><span class="toc-number">1.14.</span> <span class="toc-text">Calender类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-O"><span class="toc-number">2.</span> <span class="toc-text">I/O</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异常"><span class="toc-number">2.1.</span> <span class="toc-text">异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Throwable类"><span class="toc-number">2.2.</span> <span class="toc-text">Throwable类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-number">3.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection类"><span class="toc-number">3.1.</span> <span class="toc-text">Collection类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List接口"><span class="toc-number">3.2.</span> <span class="toc-text">List接口</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -383,8 +383,42 @@
 <p>一个try可以跟</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">	// 可能发生异常的代码</span><br><span class="line">&#125;catch (Exception e)&#123;  </span><br><span class="line">	// 异常发生后的处理</span><br><span class="line">&#125;finally&#123;</span><br><span class="line">	// 最后要做的事情</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
 </li>
 </ul>
+<p>  throw : 抛出异常：我的代码不处理异常，调用者来处理</p>
+<ul>
+<li><p>异常体系</p>
+<ul>
+<li>Throwable<ul>
+<li>Error</li>
+<li>Exception<ul>
+<li>RuntimeException及其子类：非受查异常- 编译器不检查</li>
+<li>受查异常 - 编译器强制检查</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>throws和throw区别</p>
+<ul>
+<li>throws<ol>
+<li>用在方法声明后面，跟的是异常类名</li>
+<li>可以跟多个异常类名，用逗号隔开</li>
+<li>表示抛出异常，由该方法的调用者来处理</li>
+<li>throws表示出现的异常的一种可能性，并不一定会发生这些异常</li>
+</ol>
+</li>
+<li>throw<pre><code>1. 用在方法体内，跟的是异常对象名
+ 2. 只能抛出一个异常对象名
+ 3. 表示抛出异常，有方法体内的语句处理
+ 4. throw则是抛出了异常，执行throw则一定抛出了某种异常</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="Throwable类"><a href="#Throwable类" class="headerlink" title="Throwable类"></a>Throwable类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getMessage()</span><br><span class="line"><span class="comment">// 获取异常信息，返回字符串</span></span><br><span class="line">toString()</span><br><span class="line"><span class="comment">// 获取异常类名和异常信息，返回字符串</span></span><br><span class="line">printStackTrace()</span><br><span class="line"><span class="comment">// 获取异常类名和异常信息，以及异常出现在程序中的位置。返回值void</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>代替数组</p>
 <ul>
 <li><p>集合和数组的区别</p>
@@ -428,6 +462,45 @@
 <ul>
 <li><p>接口成员方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 添加元素</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 删除元素</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 清空元素</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Objest o)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 集合是否包含某个元素</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 集合实都为空</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 获取集合中元素的个数</span></span></span><br><span class="line"><span class="function">Objest[] <span class="title">toArray</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 把集合转成数组，可以实现集合的遍历</span></span></span><br><span class="line"><span class="function">Iterator <span class="title">iterator</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 迭代器，集合的专用遍历方式</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>泛型集合</p>
+<ul>
+<li><p>数组：数据类型[]    数组名</p>
+</li>
+<li><p>泛型集合：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;类型&gt; 集合对象 = <span class="keyword">new</span> ArrayList&lt;类型&gt;()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>泛型类 ： 泛型集合</p>
+</li>
+<li><p>泛型方法</p>
+</li>
+<li><p>泛型接口</p>
+</li>
+</ul>
+<h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><p>list的底层就是数组，提供了针对下标操作的方法</p>
+<ul>
+<li><p>概述</p>
+<ul>
+<li><p>有序的collection（也称为序列）。此接口的用户可以对列表中的每一个元素的插入进行精确的控制。用户可以根据元素的整数索引（在列表中的位置）访问元素，并搜索列表的元素</p>
+</li>
+<li><p>与set不同，列表通常允许重复的元素</p>
+</li>
+</ul>
+</li>
+<li><p>案例</p>
+<ul>
+<li>储存字符串并遍历</li>
+<li>储存自定义对象并遍历</li>
+</ul>
+</li>
+<li><p>接口成员方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void add(int index, E element)</span><br><span class="line">// 添加元素到指定下标</span><br><span class="line">E remove(int index)</span><br><span class="line">// 删除指定下标元素</span><br><span class="line">E get(int index)</span><br><span class="line">// 获取指定下标的元素</span><br><span class="line">E set(int index, E element)</span><br><span class="line">// 修改指定下标的元素</span><br><span class="line">ListIterator listIterator()</span><br><span class="line">// 遍历元素</span><br></pre></td></tr></table></figure>
+
+
+
+
 
 
 
@@ -474,7 +547,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础API"><span class="toc-number">1.</span> <span class="toc-text">基础API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">1.2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">1.3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">1.4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">1.5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">1.6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">1.7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">1.8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">1.9.</span> <span class="toc-text">System类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigInteger类"><span class="toc-number">1.10.</span> <span class="toc-text">BigInteger类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigDecemal类"><span class="toc-number">1.11.</span> <span class="toc-text">BigDecemal类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date类"><span class="toc-number">1.12.</span> <span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateFormat类"><span class="toc-number">1.13.</span> <span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calender类"><span class="toc-number">1.14.</span> <span class="toc-text">Calender类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-O"><span class="toc-number">2.</span> <span class="toc-text">I/O</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异常"><span class="toc-number">2.1.</span> <span class="toc-text">异常</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-number">3.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection类"><span class="toc-number">3.1.</span> <span class="toc-text">Collection类</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础API"><span class="toc-number">1.</span> <span class="toc-text">基础API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.1.</span> <span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类"><span class="toc-number">1.2.</span> <span class="toc-text">String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer类"><span class="toc-number">1.3.</span> <span class="toc-text">StringBuffer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-StringBuffer-StringBuilder"><span class="toc-number">1.4.</span> <span class="toc-text">String, StringBuffer, StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays类"><span class="toc-number">1.5.</span> <span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">1.6.</span> <span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer类"><span class="toc-number">1.7.</span> <span class="toc-text">Integer类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Character类"><span class="toc-number">1.8.</span> <span class="toc-text">Character类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System类"><span class="toc-number">1.9.</span> <span class="toc-text">System类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigInteger类"><span class="toc-number">1.10.</span> <span class="toc-text">BigInteger类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BigDecemal类"><span class="toc-number">1.11.</span> <span class="toc-text">BigDecemal类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date类"><span class="toc-number">1.12.</span> <span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateFormat类"><span class="toc-number">1.13.</span> <span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calender类"><span class="toc-number">1.14.</span> <span class="toc-text">Calender类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-O"><span class="toc-number">2.</span> <span class="toc-text">I/O</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异常"><span class="toc-number">2.1.</span> <span class="toc-text">异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Throwable类"><span class="toc-number">2.2.</span> <span class="toc-text">Throwable类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-number">3.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection类"><span class="toc-number">3.1.</span> <span class="toc-text">Collection类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List接口"><span class="toc-number">3.2.</span> <span class="toc-text">List接口</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
