@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="多线程多线程概述 进程： 正在允许中的程序，是系统进行资源分配和调用的独立单位 每一个进程都有它自己的内存空间和系统资源   线程： 是进程中的单个顺序控制流，是一条执行路径 一个进程如果只有一条执行路径，则称为单线程程序 一个进程如果有多条执行路径，则称为多线程程序   并行和并发 并行是逻辑上同时发生，指在某一个时间内同时运行多个程序 并发是物理上同时发生，只在某一个时间点同时运行多个程序">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-08-12T03:39:23.041Z">
+<meta property="og:updated_time" content="2019-08-13T04:06:24.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java多线程">
 <meta name="twitter:description" content="多线程多线程概述 进程： 正在允许中的程序，是系统进行资源分配和调用的独立单位 每一个进程都有它自己的内存空间和系统资源   线程： 是进程中的单个顺序控制流，是一条执行路径 一个进程如果只有一条执行路径，则称为单线程程序 一个进程如果有多条执行路径，则称为多线程程序   并行和并发 并行是逻辑上同时发生，指在某一个时间内同时运行多个程序 并发是物理上同时发生，只在某一个时间点同时运行多个程序">
@@ -98,7 +98,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程"><span class="toc-number">1.</span> <span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程概述"><span class="toc-number">1.1.</span> <span class="toc-text">多线程概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启多线程-方法一"><span class="toc-number">1.2.</span> <span class="toc-text">开启多线程 - 方法一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取和设置多线程名称"><span class="toc-number">1.3.</span> <span class="toc-text">获取和设置多线程名称</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程"><span class="toc-number">1.</span> <span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程概述"><span class="toc-number">1.1.</span> <span class="toc-text">多线程概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启多线程-方法一"><span class="toc-number">1.2.</span> <span class="toc-text">开启多线程 - 方法一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取和设置多线程名称"><span class="toc-number">1.2.1.</span> <span class="toc-text">获取和设置多线程名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程调度"><span class="toc-number">1.2.2.</span> <span class="toc-text">线程调度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程控制"><span class="toc-number">1.2.3.</span> <span class="toc-text">线程控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启多线程-方法二"><span class="toc-number">1.3.</span> <span class="toc-text">开启多线程 - 方法二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决线程安全的思想"><span class="toc-number">1.4.</span> <span class="toc-text">解决线程安全的思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁问题"><span class="toc-number">1.5.</span> <span class="toc-text">死锁问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程通信"><span class="toc-number">1.6.</span> <span class="toc-text">线程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单例模式-多线程"><span class="toc-number">1.7.</span> <span class="toc-text">单例模式 - 多线程</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -161,14 +161,138 @@
 <li>创建对象</li>
 <li>启动线程</li>
 </ol>
-<h2 id="获取和设置多线程名称"><a href="#获取和设置多线程名称" class="headerlink" title="获取和设置多线程名称"></a>获取和设置多线程名称</h2><ul>
+<h3 id="获取和设置多线程名称"><a href="#获取和设置多线程名称" class="headerlink" title="获取和设置多线程名称"></a>获取和设置多线程名称</h3><ul>
 <li><p>Thread类的基本获取和设置方式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> String <span class="title">getNmae</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 通过构建方法也可以给线程起名字</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Thread <span class="title">currentThread</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<h3 id="线程调度"><a href="#线程调度" class="headerlink" title="线程调度"></a>线程调度</h3><ul>
+<li><p>线程调度的两种调度模式</p>
+<ul>
+<li>分时调度模型，所有线程轮流使用CPU的使用权，平均分配给每个线程占CPU的时间片</li>
+<li>抢占式调度模型，有限让优先级高的线程使用CPU，如果线程的优先级相同，那么会随机选择一个，优先级高的线程获取的CPU时间片相对多一些</li>
+</ul>
+</li>
+<li><p>java使用的是抢占式调度模型</p>
+</li>
+<li><p>设置和获取线程优先级</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getPriority</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 获取当前线程优先级</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setPriority</span><span class="params">(<span class="keyword">int</span> newPriority)</span></span></span><br><span class="line"><span class="function"><span class="comment">// 设置线程优先级 1-10</span></span></span><br></pre></td></tr></table></figure>
 
 
 
+</li>
+</ul>
+<h3 id="线程控制"><a href="#线程控制" class="headerlink" title="线程控制"></a>线程控制</h3><ul>
+<li><p>线程休眠</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">(<span class="keyword">long</span> millis)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>线程加入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">join</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>线程礼让</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">yield</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>后台线程 - 守护线程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setDaemon</span><span class="params">(<span class="keyword">boolean</span> on)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>中断线程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 过时方法 - 不建议使用：不能捕获异常</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interrupt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// 可以捕获异常</span></span></span><br></pre></td></tr></table></figure>
 
+
+
+</li>
+</ul>
+<h2 id="开启多线程-方法二"><a href="#开启多线程-方法二" class="headerlink" title="开启多线程 - 方法二"></a>开启多线程 - 方法二</h2><ol>
+<li>创建myRunnable类实现Runnable接口</li>
+<li>Thread类的构造方法传入myRunnable类</li>
+<li>调用Thread的start()方法来启动线程</li>
+</ol>
+<h2 id="解决线程安全的思想"><a href="#解决线程安全的思想" class="headerlink" title="解决线程安全的思想"></a>解决线程安全的思想</h2><ul>
+<li><p>首先想为什么出现问题？</p>
+<ul>
+<li>是否是多线程环境</li>
+<li>是否有共享数据</li>
+<li>是否有多条语言操作共享数据</li>
+</ul>
+</li>
+<li><p>如何解决多线程安全问题？</p>
+<p>加同步锁</p>
+<ul>
+<li>基本思想：让程序处于没有安全问题的环境</li>
+<li>怎么实现？<ul>
+<li>把多个语句操作共享数据的代码给锁起来，让任意时刻只能有一个线程秩序即可</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>同步锁是谁？</p>
+<ul>
+<li>实例方法 : this</li>
+<li>静态方法 : 类.class - 当前类的字节码对象</li>
+</ul>
+</li>
+</ul>
+<h2 id="死锁问题"><a href="#死锁问题" class="headerlink" title="死锁问题"></a>死锁问题</h2><ul>
+<li>同步弊端<ul>
+<li>效率低</li>
+<li>如果出现同步嵌套，就容易产生死锁问题</li>
+</ul>
+</li>
+<li>死锁问题及其代码<ul>
+<li>是指产生两个或者两个以上的线程在执行的过程中，因争夺资源产生的一种互相等待现象</li>
+<li>同步代码块的嵌套案例</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程通信"><a href="#线程通信" class="headerlink" title="线程通信"></a>线程通信</h2><p>针对统一个资源的操作有不同的线程</p>
+<ul>
+<li>生产者和消费者问题<ul>
+<li>获取学生对象<ul>
+<li>生产者：创建学生对象线程</li>
+<li>消费者：获取学生对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>生产者和消费者模型</strong></p>
+<ul>
+<li><p>创建Student类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">boolean</span> flag;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Student&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建SetStudent生产者类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SetStudent</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Student s;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    SetStudent(Student s) &#123;</span><br><span class="line">        <span class="keyword">this</span>.s = s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (s)&#123;</span><br><span class="line">                <span class="keyword">if</span> (s.flag)&#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        s.wait(); <span class="comment">// 等待，归还锁，下次被唤醒，就从此处开始执行</span></span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (count %<span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="comment">// 学生类赋值</span></span><br><span class="line">                    s.setName(<span class="string">"tim"</span>);</span><br><span class="line">                    s.setAge(<span class="number">11</span>);</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    s.setName(<span class="string">"tom"</span>);</span><br><span class="line">                    s.setAge(<span class="number">12</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                count++;</span><br><span class="line">                s.flag = <span class="keyword">true</span>;</span><br><span class="line">                s.notify(); <span class="comment">// 唤醒消费者</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建GetStudent消费者类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GetStudent</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Student s;</span><br><span class="line">    GetStudent(Student s) &#123;</span><br><span class="line">        <span class="keyword">this</span>.s = s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (s)&#123;</span><br><span class="line">                <span class="keyword">if</span> (!s.flag)&#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        s.wait(); <span class="comment">// 等待，归还锁，下次被唤醒，就从此处开始执行</span></span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(s);</span><br><span class="line">                s.flag = <span class="keyword">false</span>;</span><br><span class="line">                s.notify(); <span class="comment">// 唤醒生产者</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建测试类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student s = <span class="keyword">new</span> Student();</span><br><span class="line">        SetStudent s1 = <span class="keyword">new</span> SetStudent(s);</span><br><span class="line">        GetStudent s2 = <span class="keyword">new</span> GetStudent(s);</span><br><span class="line">        Thread t1 = <span class="keyword">new</span> Thread(s1);</span><br><span class="line">        Thread t2 = <span class="keyword">new</span> Thread(s2);</span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="单例模式-多线程"><a href="#单例模式-多线程" class="headerlink" title="单例模式 - 多线程"></a>单例模式 - 多线程</h2><ul>
+<li><p>懒汉式</p>
+<ul>
+<li><p>优点： 不会占用过多的系统资源</p>
+</li>
+<li><p>缺点： 第一次访问慢，第一次惩罚，延迟加载</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySingletonLazy</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 懒汉式 - 不会创建一个对象，而是在调用的时候再创建</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MySingletonLazy mySingleton;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 懒汉式需要加锁来保证线程安全，相比饿汉式执行效率低</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">synchronized</span> MySingletonLazy <span class="title">createInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mySingleton == <span class="keyword">null</span>)&#123;</span><br><span class="line">            mySingleton = <span class="keyword">new</span> MySingletonLazy();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mySingleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>饿汉式</p>
+<ul>
+<li><p>优点： 第一次使用加载快</p>
+</li>
+<li><p>缺点：会占用过多资源</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 饿汉式 - 上来就创建好对象等待调用，以空间换时间</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MySingleton mySingleton= <span class="keyword">new</span> MySingleton();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">static</span> MySingleton <span class="title">createMySingleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mySingleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
 </li>
 </ul>
 
@@ -194,7 +318,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程"><span class="toc-number">1.</span> <span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程概述"><span class="toc-number">1.1.</span> <span class="toc-text">多线程概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启多线程-方法一"><span class="toc-number">1.2.</span> <span class="toc-text">开启多线程 - 方法一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取和设置多线程名称"><span class="toc-number">1.3.</span> <span class="toc-text">获取和设置多线程名称</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程"><span class="toc-number">1.</span> <span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程概述"><span class="toc-number">1.1.</span> <span class="toc-text">多线程概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启多线程-方法一"><span class="toc-number">1.2.</span> <span class="toc-text">开启多线程 - 方法一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取和设置多线程名称"><span class="toc-number">1.2.1.</span> <span class="toc-text">获取和设置多线程名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程调度"><span class="toc-number">1.2.2.</span> <span class="toc-text">线程调度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程控制"><span class="toc-number">1.2.3.</span> <span class="toc-text">线程控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启多线程-方法二"><span class="toc-number">1.3.</span> <span class="toc-text">开启多线程 - 方法二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决线程安全的思想"><span class="toc-number">1.4.</span> <span class="toc-text">解决线程安全的思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁问题"><span class="toc-number">1.5.</span> <span class="toc-text">死锁问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程通信"><span class="toc-number">1.6.</span> <span class="toc-text">线程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单例模式-多线程"><span class="toc-number">1.7.</span> <span class="toc-text">单例模式 - 多线程</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
