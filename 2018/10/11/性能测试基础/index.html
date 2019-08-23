@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="性能测试分类 负载测试（Load testing） 负载测试是不断增加系统的负载，直到负载达到阈值——评估系统在预期工作负载下的性能的测试。   压力测试（Stress Testing） 压力测试是指当硬件资源如cpu、内存、磁盘空间等不充足时对软件稳定性的检查。 压力测试属于负面测试（Negative testing），使大量并发用户/进程加载软件以使系统硬件资源不能应付。这个测试也被称为是疲劳">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-06-28T09:05:11.160Z">
+<meta property="og:updated_time" content="2019-08-21T01:42:21.069Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="性能测试基础">
 <meta name="twitter:description" content="性能测试分类 负载测试（Load testing） 负载测试是不断增加系统的负载，直到负载达到阈值——评估系统在预期工作负载下的性能的测试。   压力测试（Stress Testing） 压力测试是指当硬件资源如cpu、内存、磁盘空间等不充足时对软件稳定性的检查。 压力测试属于负面测试（Negative testing），使大量并发用户/进程加载软件以使系统硬件资源不能应付。这个测试也被称为是疲劳">
@@ -100,7 +100,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分类"><span class="toc-number">1.</span> <span class="toc-text">性能测试分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标"><span class="toc-number">2.</span> <span class="toc-text">性能指标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试初级"><span class="toc-number"></span> <span class="toc-text">性能测试初级</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案"><span class="toc-number">1.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试场景"><span class="toc-number">2.</span> <span class="toc-text">性能测试场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标体系"><span class="toc-number">3.</span> <span class="toc-text">性能指标体系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分析"><span class="toc-number">4.</span> <span class="toc-text">性能测试分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统性能优化"><span class="toc-number">5.</span> <span class="toc-text">系统性能优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器环境"><span class="toc-number">6.</span> <span class="toc-text">服务器环境</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试高级篇"><span class="toc-number"></span> <span class="toc-text">性能测试高级篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模拟真实场景"><span class="toc-number">1.</span> <span class="toc-text">模拟真实场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存"><span class="toc-number">1.1.</span> <span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络带宽"><span class="toc-number">1.2.</span> <span class="toc-text">网络带宽</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指标监控与分析"><span class="toc-number">2.</span> <span class="toc-text">指标监控与分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案-1"><span class="toc-number">3.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试报告"><span class="toc-number">4.</span> <span class="toc-text">性能测试报告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web前端性能分析"><span class="toc-number">5.</span> <span class="toc-text">Web前端性能分析</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分类"><span class="toc-number">1.</span> <span class="toc-text">性能测试分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标"><span class="toc-number">2.</span> <span class="toc-text">性能指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不同角色看待性能的角度"><span class="toc-number">3.</span> <span class="toc-text">不同角色看待性能的角度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试初级"><span class="toc-number"></span> <span class="toc-text">性能测试初级</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案"><span class="toc-number">1.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试场景"><span class="toc-number">2.</span> <span class="toc-text">性能测试场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标体系"><span class="toc-number">3.</span> <span class="toc-text">性能指标体系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分析"><span class="toc-number">4.</span> <span class="toc-text">性能测试分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统性能优化"><span class="toc-number">5.</span> <span class="toc-text">系统性能优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器环境"><span class="toc-number">6.</span> <span class="toc-text">服务器环境</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试高级篇"><span class="toc-number"></span> <span class="toc-text">性能测试高级篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模拟真实场景"><span class="toc-number">1.</span> <span class="toc-text">模拟真实场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存"><span class="toc-number">1.1.</span> <span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络带宽"><span class="toc-number">1.2.</span> <span class="toc-text">网络带宽</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指标监控与分析"><span class="toc-number">2.</span> <span class="toc-text">指标监控与分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案-1"><span class="toc-number">3.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试报告"><span class="toc-number">4.</span> <span class="toc-text">性能测试报告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web前端性能分析"><span class="toc-number">5.</span> <span class="toc-text">Web前端性能分析</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -169,10 +169,53 @@
 </li>
 </ul>
 <h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><ul>
-<li>响应时间 RT Response Time 首屏时间–客户端请求服务器 发首页请求的响应时间</li>
-<li>吞吐量：BPS RPS</li>
-<li>事务处理能力 TPS  </li>
-<li>系统资源消耗情况：CPU MEMORY DISK NETWORDK</li>
+<li><p>响应时间 RT Response Time 首屏时间–客户端请求服务器 发首页请求的响应时间</p>
+</li>
+<li><p>吞吐量：BPS RPS</p>
+</li>
+<li><p>事务处理能力 TPS  </p>
+</li>
+<li><p>系统资源消耗情况：CPU MEMORY DISK NETWORDK</p>
+<h2 id="不同角色看待性能的角度"><a href="#不同角色看待性能的角度" class="headerlink" title="不同角色看待性能的角度"></a>不同角色看待性能的角度</h2></li>
+<li><p>黑盒测试的角度</p>
+<ol>
+<li>黑盒测试操作应用界面 - 数据请求经过网络发送 - 服务器前端接受处理 - 在DB server获取相关数据 - 前端处理后返回数据 - 应用界面收到数据响应下一步</li>
+<li>黑盒测试只关心应用程序的单步响应时间，性能好坏就看应用时间多少，也就是数据流经过服务器/服务器集群经过网络传输后往返的时间总和。</li>
+</ol>
+</li>
+<li><p>开发角度</p>
+<ol>
+<li>架构合理性</li>
+<li>数据库设计合理性</li>
+<li>代码</li>
+<li>系统里内存的使用方式</li>
+<li>系统里线程使用方式</li>
+<li>系统资源是否有恶性，不合理竞争</li>
+</ol>
+</li>
+<li><p>系统管理员角度</p>
+<ol>
+<li>硬件资源利用率</li>
+<li>JVM</li>
+<li>DB</li>
+<li>换那些硬件提高系统性能</li>
+<li>7*24服务</li>
+<li>扩展性，兼容性，最大容量，可能的瓶颈</li>
+</ol>
+</li>
+<li><p>性能测试角度</p>
+<ol>
+<li>服务器硬件性能</li>
+<li>根据需求和历史数据制定性能目标</li>
+<li>建立性能通过模型</li>
+<li>对开发代码框架和硬件框架进行性能分析</li>
+<li>针对开发发布版本的基准测试</li>
+<li>执行软件性能验收及稳定性测试</li>
+<li>生产环境的配置和优化</li>
+<li>制定性能测试的测试用例</li>
+<li>制定性能测试的场景设计</li>
+</ol>
+</li>
 </ul>
 <h1 id="性能测试初级"><a href="#性能测试初级" class="headerlink" title="性能测试初级"></a>性能测试初级</h1><p>工具永远只能解决1/3的问题</p>
 <ul>
@@ -351,7 +394,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分类"><span class="toc-number">1.</span> <span class="toc-text">性能测试分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标"><span class="toc-number">2.</span> <span class="toc-text">性能指标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试初级"><span class="toc-number"></span> <span class="toc-text">性能测试初级</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案"><span class="toc-number">1.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试场景"><span class="toc-number">2.</span> <span class="toc-text">性能测试场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标体系"><span class="toc-number">3.</span> <span class="toc-text">性能指标体系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分析"><span class="toc-number">4.</span> <span class="toc-text">性能测试分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统性能优化"><span class="toc-number">5.</span> <span class="toc-text">系统性能优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器环境"><span class="toc-number">6.</span> <span class="toc-text">服务器环境</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试高级篇"><span class="toc-number"></span> <span class="toc-text">性能测试高级篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模拟真实场景"><span class="toc-number">1.</span> <span class="toc-text">模拟真实场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存"><span class="toc-number">1.1.</span> <span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络带宽"><span class="toc-number">1.2.</span> <span class="toc-text">网络带宽</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指标监控与分析"><span class="toc-number">2.</span> <span class="toc-text">指标监控与分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案-1"><span class="toc-number">3.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试报告"><span class="toc-number">4.</span> <span class="toc-text">性能测试报告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web前端性能分析"><span class="toc-number">5.</span> <span class="toc-text">Web前端性能分析</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分类"><span class="toc-number">1.</span> <span class="toc-text">性能测试分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标"><span class="toc-number">2.</span> <span class="toc-text">性能指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不同角色看待性能的角度"><span class="toc-number">3.</span> <span class="toc-text">不同角色看待性能的角度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试初级"><span class="toc-number"></span> <span class="toc-text">性能测试初级</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案"><span class="toc-number">1.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试场景"><span class="toc-number">2.</span> <span class="toc-text">性能测试场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标体系"><span class="toc-number">3.</span> <span class="toc-text">性能指标体系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试分析"><span class="toc-number">4.</span> <span class="toc-text">性能测试分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统性能优化"><span class="toc-number">5.</span> <span class="toc-text">系统性能优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器环境"><span class="toc-number">6.</span> <span class="toc-text">服务器环境</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能测试高级篇"><span class="toc-number"></span> <span class="toc-text">性能测试高级篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模拟真实场景"><span class="toc-number">1.</span> <span class="toc-text">模拟真实场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存"><span class="toc-number">1.1.</span> <span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络带宽"><span class="toc-number">1.2.</span> <span class="toc-text">网络带宽</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指标监控与分析"><span class="toc-number">2.</span> <span class="toc-text">指标监控与分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试方案-1"><span class="toc-number">3.</span> <span class="toc-text">性能测试方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能测试报告"><span class="toc-number">4.</span> <span class="toc-text">性能测试报告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web前端性能分析"><span class="toc-number">5.</span> <span class="toc-text">Web前端性能分析</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
