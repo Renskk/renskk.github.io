@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="准备工作 更新Git 安装Maven 安装JDK 安装python3  安装jenkins1、安装12wget https://pkg.jenkins.io/redhat/jenkins-2.176.2-1.1.noarch.rpmrpm -ivh jenkins-2.176.2-1.1.noarch.rpm  2、配置1234# 编辑jenkins配置文件vim /etc/sysconfig/j">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins + Gitlab + 钉钉推送">
+<meta property="og:url" content="http://yoursite.com/2019/08/22/jenkins部署/index.html">
+<meta property="og:site_name" content="TOMBNOTES">
+<meta property="og:description" content="准备工作 更新Git 安装Maven 安装JDK 安装python3  安装jenkins1、安装12wget https://pkg.jenkins.io/redhat/jenkins-2.176.2-1.1.noarch.rpmrpm -ivh jenkins-2.176.2-1.1.noarch.rpm  2、配置1234# 编辑jenkins配置文件vim /etc/sysconfig/j">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzxkn.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzzYq.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzUL4.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBztQU.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzsW6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzOmQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzfwd.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzcQO.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzDF1.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzgyD.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzXwj.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzjTs.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzhTA.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzIYt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzww9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzb6S.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBz0oR.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/23/mBzofP.png">
+<meta property="og:updated_time" content="2019-08-23T05:55:17.979Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jenkins + Gitlab + 钉钉推送">
+<meta name="twitter:description" content="准备工作 更新Git 安装Maven 安装JDK 安装python3  安装jenkins1、安装12wget https://pkg.jenkins.io/redhat/jenkins-2.176.2-1.1.noarch.rpmrpm -ivh jenkins-2.176.2-1.1.noarch.rpm  2、配置1234# 编辑jenkins配置文件vim /etc/sysconfig/j">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/23/mBzxkn.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Jenkins + Gitlab + 钉钉推送</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/08/11/java多线程/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/08/22/jenkins部署/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/08/22/jenkins部署/&text=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/08/22/jenkins部署/&is_video=false&description=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Jenkins + Gitlab + 钉钉推送&body=Check out this article: http://yoursite.com/2019/08/22/jenkins部署/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/08/22/jenkins部署/&name=Jenkins + Gitlab + 钉钉推送&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jenkins"><span class="toc-number">2.</span> <span class="toc-text">安装jenkins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装"><span class="toc-number">2.1.</span> <span class="toc-text">1、安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、配置"><span class="toc-number">2.2.</span> <span class="toc-text">2、配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、权限"><span class="toc-number">2.3.</span> <span class="toc-text">3、权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、启动"><span class="toc-number">2.4.</span> <span class="toc-text">4、启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、设置"><span class="toc-number">2.5.</span> <span class="toc-text">5、设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）设置全局变量"><span class="toc-number">2.5.1.</span> <span class="toc-text">（1）设置全局变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）设置安全设置"><span class="toc-number">2.5.2.</span> <span class="toc-text">（2）设置安全设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）安装插件"><span class="toc-number">2.6.</span> <span class="toc-text">（3）安装插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目"><span class="toc-number">3.</span> <span class="toc-text">创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）准备工作"><span class="toc-number">3.0.1.</span> <span class="toc-text">（1）准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）新建"><span class="toc-number">3.0.2.</span> <span class="toc-text">（2）新建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）项目设置"><span class="toc-number">3.0.3.</span> <span class="toc-text">（3）项目设置</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Jenkins + Gitlab + 钉钉推送
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">TOMBNOTES</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-08-22T04:21:02.000Z" itemprop="datePublished">2019-08-22</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>更新Git</li>
+<li>安装Maven</li>
+<li>安装JDK</li>
+<li>安装python3</li>
+</ol>
+<h2 id="安装jenkins"><a href="#安装jenkins" class="headerlink" title="安装jenkins"></a>安装jenkins</h2><h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://pkg.jenkins.io/redhat/jenkins-2.176.2-1.1.noarch.rpm</span><br><span class="line">rpm -ivh jenkins-2.176.2-1.1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 编辑jenkins配置文件</span><br><span class="line">vim /etc/sysconfig/jenkins</span><br><span class="line"><span class="meta">#</span> 更改端口 - 初始端口是8080与tomcat冲突</span><br><span class="line">JENKINS_PORT="8088"</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、权限"><a href="#3、权限" class="headerlink" title="3、权限"></a>3、权限</h3><p>修改用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 修改权限为root 避免以后的权限坑</span><br><span class="line">vim /etc/sysconfig/jenkins</span><br><span class="line"><span class="meta">$</span>JENKINS_USER="root"</span><br></pre></td></tr></table></figure>
+
+<p>修改目录权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chown -R root:root /var/lib/jenkins</span><br><span class="line">chown -R root:root /var/cache/jenkins</span><br><span class="line">chown -R root:root /var/log/jenkins</span><br></pre></td></tr></table></figure>
+
+<p>重启jenkins</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 重启</span><br><span class="line">service jenkins restart</span><br><span class="line"><span class="meta">#</span> 查看jenkins是否已经改为root用户</span><br><span class="line">ps -ef | grep jenkins</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、启动"><a href="#4、启动" class="headerlink" title="4、启动"></a>4、启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl start jenkins</span><br><span class="line"><span class="meta">#</span> 访问jenkins地址</span><br><span class="line">http://localhost:8088</span><br></pre></td></tr></table></figure>
+
+<p>按jenkins提示进行安装 - 插件选择安装推荐的插件</p>
+<h3 id="5、设置"><a href="#5、设置" class="headerlink" title="5、设置"></a>5、设置</h3><h4 id="（1）设置全局变量"><a href="#（1）设置全局变量" class="headerlink" title="（1）设置全局变量"></a>（1）设置全局变量</h4><ol>
+<li><p>进入全局变量设置</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzxkn.png" alt="设置1"></p>
+</li>
+<li><p>设置Maven</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzzYq.png" alt="设置2"></p>
+</li>
+<li><p>设置JDK</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzUL4.png" alt="JDK设置"></p>
+</li>
+<li><p>设置GIT</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBztQU.png" alt="GIT设置"></p>
+</li>
+<li><p>设置Maven</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzsW6.png" alt="Maven设置"></p>
+</li>
+</ol>
+<h4 id="（2）设置安全设置"><a href="#（2）设置安全设置" class="headerlink" title="（2）设置安全设置"></a>（2）设置安全设置</h4><ol>
+<li><p>进入安全设置</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzOmQ.png" alt="进入安全设置"></p>
+</li>
+<li><p>根据下图进行设置</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzfwd.png" alt="安全设置"></p>
+</li>
+</ol>
+<h3 id="（3）安装插件"><a href="#（3）安装插件" class="headerlink" title="（3）安装插件"></a>（3）安装插件</h3><ol>
+<li><a href="http://wiki.jenkins-ci.org/display/JENKINS/Python+Plugin" target="_blank" rel="noopener">Python Plugin</a></li>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/SSH+Slaves+plugin" target="_blank" rel="noopener">SSH Slaves plugin</a></li>
+<li><a href="http://wiki.jenkins-ci.org/display/JENKINS/Deploy+Plugin" target="_blank" rel="noopener">Deploy to container Plugin</a></li>
+</ol>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><h4 id="（1）准备工作"><a href="#（1）准备工作" class="headerlink" title="（1）准备工作"></a>（1）准备工作</h4><ol>
+<li><p>生成ssh key</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 在jenkins服务器生成ssh -key</span><br><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取ssh 公钥</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzcQO.png" alt="ssh公钥"></p>
+</li>
+<li><p>在gitlab项目中添加ssh公钥</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzDF1.png" alt="gitlabSSH"></p>
+</li>
+<li><p>获取ssh密钥</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzgyD.png" alt="ssh密钥"></p>
+</li>
+<li><p>在jenkins中添加ssh密钥</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzXwj.png" alt="凭据1"></p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzjTs.png" alt="凭据2"></p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzhTA.png" alt="创建凭据"></p>
+<h4 id="（2）新建"><a href="#（2）新建" class="headerlink" title="（2）新建"></a>（2）新建</h4></li>
+<li><p><strong>新建Item</strong></p>
+</li>
+<li><p>输入项目名称，选择自由项目</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzIYt.png" alt="创建项目"></p>
+</li>
+<li><p>点击确认</p>
+</li>
+</ol>
+<h4 id="（3）项目设置"><a href="#（3）项目设置" class="headerlink" title="（3）项目设置"></a>（3）项目设置</h4><ol>
+<li><p><strong>源码管理</strong></p>
+<p>Repository URL 为gitlab中clone地址</p>
+<p>Credentials 为添加的SSH</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzww9.png" alt="git源码"></p>
+</li>
+<li><p><strong>构建触发器</strong></p>
+<ul>
+<li>构建远程触发，输入身份令牌，拼写为红字网址</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzb6S.png" alt="构建触发器"></p>
+<ul>
+<li><p>利用gitlab webhook进行触发</p>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBz0oR.png" alt="gtilabWebhook"></p>
+<p>​    </p>
+</li>
+<li><p>gitlab添加webhook需要用管理员账号打开</p>
+<p>设置-网络-外部发送-允许来自钩子和服务的对本地网络的请求</p>
+</li>
+</ul>
+</li>
+<li><p>构建**</p>
+<ul>
+<li>调用maven,执行shell命令</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/08/23/mBzofP.png" alt="构建"></p>
+<ul>
+<li><p>Execute shell</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">cd /home/test/</span><br><span class="line">echo "执行脚本"</span><br><span class="line">sh stop.sh</span><br><span class="line">sh replace.sh</span><br><span class="line">BUILD_ID=dontKillMe nohup /home/test/startup.sh &amp;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>stop.sh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pid=`ps -ef | grep elk-1.0.jar | grep -v grep | awk '&#123;print $2&#125;'`</span><br><span class="line">if [ -n "$pid" ]</span><br><span class="line">then</span><br><span class="line">   echo "kill -9 的pid:" $pid</span><br><span class="line">   kill -9 $pid</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>replace.sh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /home/test/dingTalkPush.py /var/lib/jenkins/workspace/test/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>startup.sh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo "执行jar包"</span><br><span class="line">nohup java -jar /home/test/elk-1.0.jar &gt;/dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<ol start="4">
+<li><p>钉钉推送</p>
+<p><a href="https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq" target="_blank" rel="noopener">钉钉开发文档</a></p>
+<ul>
+<li>添加Execute Python script</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span>  os,json,sys</span><br><span class="line">sys.path.append(<span class="string">'/usr/local/lib/python3.7/site-packages'</span>)</span><br><span class="line"><span class="keyword">import</span> jenkins</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sendding</span><span class="params">(title,content)</span>:</span></span><br><span class="line">  </span><br><span class="line">  	</span><br><span class="line">  	<span class="comment"># 钉钉的webhook地址</span></span><br><span class="line">    url = <span class="string">"https://oapi.dingtalk.com/robot/send?access_token=e7421b716227c02f0a5f8f02f341118e1c5bb7c3f19967f58acc866f6e9103e9"</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 钉钉发送的消息</span></span><br><span class="line">    pagrem = &#123;</span><br><span class="line">        <span class="string">"msgtype"</span>: <span class="string">"markdown"</span>,</span><br><span class="line">        <span class="string">"markdown"</span>: &#123;</span><br><span class="line">            <span class="string">"title"</span>:title,</span><br><span class="line">            <span class="string">"text"</span>: content,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">#"at": &#123;</span></span><br><span class="line">        <span class="comment">#    "atMobiles": [</span></span><br><span class="line">        <span class="comment">#         "156xxxx8827", </span></span><br><span class="line">        <span class="comment">#         "189xxxx8325"</span></span><br><span class="line">        <span class="comment">#     ], </span></span><br><span class="line">        <span class="comment">#     "isAtAll": false # @全体成员</span></span><br><span class="line">        <span class="comment"># &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 钉钉传参的头部信息</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">"charset"</span>: <span class="string">"utf-8"</span>,</span><br><span class="line">        <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span></span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># 向钉钉推送请求</span></span><br><span class="line">    requests.post(url, data=json.dumps(pagrem), headers=headers)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">notification</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">  	<span class="comment"># 获取最近一个仓库提交人的名字</span></span><br><span class="line">    LastPushName = os.popen(<span class="string">"git log"</span>).read().split()[<span class="number">3</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取commit信息</span></span><br><span class="line">    LastCommit = os.popen(<span class="string">"git log"</span>).read().split()[<span class="number">13</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取推送年份</span></span><br><span class="line">    yy = os.popen(<span class="string">"git log"</span>).read().split()[<span class="number">10</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取推送月份</span></span><br><span class="line">    mm = os.popen(<span class="string">"git log"</span>).read().split()[<span class="number">7</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取推送日期</span></span><br><span class="line">    dd = os.popen(<span class="string">"git log"</span>).read().split()[<span class="number">8</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取推送时间</span></span><br><span class="line">    hh = os.popen(<span class="string">"git log"</span>).read().split()[<span class="number">9</span>]</span><br><span class="line">    </span><br><span class="line">    months = &#123;<span class="string">'Jan'</span>:<span class="string">'1'</span>,<span class="string">'Feb'</span>:<span class="string">'2'</span>,<span class="string">'Mar'</span>:<span class="string">'3'</span>,<span class="string">'Apr'</span>:<span class="string">'4'</span>,<span class="string">'May'</span>:<span class="string">'5'</span>,<span class="string">'June'</span>:<span class="string">'6'</span>,<span class="string">'July'</span>:<span class="string">'7'</span>,<span class="string">'Aug'</span>:<span class="string">'8'</span>,<span class="string">'Sept'</span>:<span class="string">'9'</span>,<span class="string">'Oct'</span>:<span class="string">'10'</span>,<span class="string">'Nov'</span>:<span class="string">'11'</span>,<span class="string">'Dec'</span>:<span class="string">'12'</span>&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 时间字符串</span></span><br><span class="line">    _time = <span class="string">"time ： "</span>+yy+<span class="string">"-"</span>+months[mm]+<span class="string">"-"</span>+dd+<span class="string">"  "</span>+hh</span><br><span class="line"></span><br><span class="line">	<span class="comment"># jenkins的请求</span></span><br><span class="line">    server = jenkins.Jenkins(<span class="string">'http://192.168.1.180:8081/'</span>, username=<span class="string">'admin'</span>, password=<span class="string">'123456'</span>)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 获取上次构建的项目序号</span></span><br><span class="line">    build_number = server.get_job_info(<span class="string">'test'</span>)[<span class="string">'lastBuild'</span>][<span class="string">'number'</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取Jenkins构建时的日志</span></span><br><span class="line">    jenkinsLog = server.get_build_console_output(<span class="string">'test'</span>,build_number)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'BUILD SUCCESS'</span> <span class="keyword">in</span> jenkinsLog:</span><br><span class="line">        ruselt = <span class="string">'成功！'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        ruselt = <span class="string">'失败！'</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 打印上次构建的序号</span></span><br><span class="line">    print(<span class="string">"BUILD_NUMBER："</span>+ str(build_number))</span><br><span class="line">    print(<span class="string">'------------------------------------------------------------------------------'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 钉钉推送的消息title</span></span><br><span class="line">    title=LastPushName+<span class="string">' [elk]项目第'</span>+str(build_number)+<span class="string">'次构建'</span>+ruselt</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 钉钉推送的消息内容</span></span><br><span class="line">    content =<span class="string">"### "</span> + title+<span class="string">"\n"</span>+ <span class="string">"&gt; "</span>+ _time + <span class="string">"\n\n"</span> +<span class="string">"&gt; commit ： "</span>+LastCommit+ <span class="string">"\n\n"</span> + <span class="string">"&gt; [jenkins 控制台输出](http://192.168.1.180:8081/job/test/lastBuild/consoleFull)\n"</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 调用钉钉推送方法</span></span><br><span class="line">    sendding(title,content)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    notification()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>点击保存，完成项目配置</p>
+</li>
+</ol>
+<p>​        </p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jenkins"><span class="toc-number">2.</span> <span class="toc-text">安装jenkins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装"><span class="toc-number">2.1.</span> <span class="toc-text">1、安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、配置"><span class="toc-number">2.2.</span> <span class="toc-text">2、配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、权限"><span class="toc-number">2.3.</span> <span class="toc-text">3、权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、启动"><span class="toc-number">2.4.</span> <span class="toc-text">4、启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、设置"><span class="toc-number">2.5.</span> <span class="toc-text">5、设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）设置全局变量"><span class="toc-number">2.5.1.</span> <span class="toc-text">（1）设置全局变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）设置安全设置"><span class="toc-number">2.5.2.</span> <span class="toc-text">（2）设置安全设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）安装插件"><span class="toc-number">2.6.</span> <span class="toc-text">（3）安装插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目"><span class="toc-number">3.</span> <span class="toc-text">创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）准备工作"><span class="toc-number">3.0.1.</span> <span class="toc-text">（1）准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）新建"><span class="toc-number">3.0.2.</span> <span class="toc-text">（2）新建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）项目设置"><span class="toc-number">3.0.3.</span> <span class="toc-text">（3）项目设置</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/08/22/jenkins部署/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/08/22/jenkins部署/&text=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/08/22/jenkins部署/&is_video=false&description=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Jenkins + Gitlab + 钉钉推送&body=Check out this article: http://yoursite.com/2019/08/22/jenkins部署/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/08/22/jenkins部署/&title=Jenkins + Gitlab + 钉钉推送"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/08/22/jenkins部署/&name=Jenkins + Gitlab + 钉钉推送&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Renskk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
