@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="简介什么是魔法方法呢？它们在面向对象的Python的处处皆是。它们是一些可以让你对类添加“魔法”的特殊方法。 它们经常是两个下划线包围来命名的（比如 init ， lt）。 构造方法 _new_(cls,[…) __new__ 是对象实例化时第一个调用的方法，它只取下 cls 参数，并把其他参数传给 _init_   _init_(self,[…]) 类的初始化方法。它获取任何传给构造器的参数（比">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-09-03T05:37:55.806Z">
+<meta property="og:updated_time" content="2019-09-03T08:37:19.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python魔法函数">
 <meta name="twitter:description" content="简介什么是魔法方法呢？它们在面向对象的Python的处处皆是。它们是一些可以让你对类添加“魔法”的特殊方法。 它们经常是两个下划线包围来命名的（比如 init ， lt）。 构造方法 _new_(cls,[…) __new__ 是对象实例化时第一个调用的方法，它只取下 cls 参数，并把其他参数传给 _init_   _init_(self,[…]) 类的初始化方法。它获取任何传给构造器的参数（比">
@@ -70,6 +70,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" href="/2019/09/23/docker 下使用nginx/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" href="/2019/08/22/jenkins部署/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
@@ -77,8 +79,8 @@
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-next" class="info" style="display:none;">Post Siguiente</span>
+      <span id="i-top" class="info" style="display:none;">Arriba</span>
       <span id="i-share" class="info" style="display:none;">Compartir Post</span>
     </span>
     <br/>
@@ -152,139 +154,139 @@
 <h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><p>使用Python魔法方法的一个巨大优势就是可以构建一个拥有Python内置类型行为的对象。这意味着你可以避免使用非标准的、丑陋的方式来表达简单的操作。</p>
 <h3 id="比较操作符"><a href="#比较操作符" class="headerlink" title="比较操作符"></a>比较操作符</h3><p>Python包含了一系列的魔法方法，用于实现对象之间直接比较，而不需要采用方法调用。同样也可以重载Python默认的比较方法，改变它们的行为。下面是这些方法的列表：</p>
 <ul>
-<li><p>_<em>cmp_</em>(self, other)</p>
-<p>_<em>cmp_</em> 是所有比较魔法方法中最基础的一个，它实际上定义了所有比较操作符的行为（&lt;,==,!=,等等），但是它可能不能按照你需要的方式工作（例如，判断一个实例和另一个实例是否相等采用一套标准，而与判断一个实例是否大于另一实例采用另一套）。 __cmp__ 应该在 self &lt; other 时返回一个负整数，在 self == other时返回0，在 self &gt; other 时返回正整数。最好只定义你所需要的比较形式，而不是一次定义全部。 如果你需要实现所有的比较形式，而且它们的判断标准类似，那么 __cmp__ 是一个很好的方法，可以减少代码重复，让代码更简洁。</p>
+<li><p>__cmp__(self, other)</p>
+<p>__cmp__ 是所有比较魔法方法中最基础的一个，它实际上定义了所有比较操作符的行为（&lt;,==,!=,等等），但是它可能不能按照你需要的方式工作（例如，判断一个实例和另一个实例是否相等采用一套标准，而与判断一个实例是否大于另一实例采用另一套）。 __cmp__ 应该在 self &lt; other 时返回一个负整数，在 self == other时返回0，在 self &gt; other 时返回正整数。最好只定义你所需要的比较形式，而不是一次定义全部。 如果你需要实现所有的比较形式，而且它们的判断标准类似，那么 __cmp__ 是一个很好的方法，可以减少代码重复，让代码更简洁。</p>
 </li>
-<li><p>_<em>eq_</em>(self, other)</p>
+<li><p>__eq__(self, other)</p>
 <p>定义等于操作符(==)的行为。</p>
 </li>
-<li><p>_<em>ne_</em>(self, other)</p>
+<li><p>__ne__(self, other)</p>
 <p>定义不等操作符(!=)的行为。</p>
 </li>
-<li><p>_<em>lt_</em>(self, other)</p>
+<li><p>__lt__(self, other)</p>
 <p>定义小于操作符(&lt;)的行为。</p>
 </li>
-<li><p>_<em>gt_</em>(self, other)</p>
+<li><p>__gt__(self, other)</p>
 <p>定义大于操作符(&gt;)的行为。</p>
 </li>
-<li><p>_<em>le_</em>(self, other)</p>
+<li><p>__le__(self, other)</p>
 <p>定义小于等于操作符(&lt;)的行为。</p>
 </li>
-<li><p>_<em>ge_</em>(self, other)</p>
+<li><p>__ge__(self, other)</p>
 <p>定义大于等于操作符(&gt;)的行为。</p>
 </li>
 </ul>
 <h3 id="数值操作符"><a href="#数值操作符" class="headerlink" title="数值操作符"></a>数值操作符</h3><ul>
-<li><p>_<em>pos_</em>(self)</p>
+<li><p>__pos__(self)</p>
 <p>实现取正操作，例如 +some_object。</p>
 </li>
-<li><p>_<em>neg_</em>(self)</p>
+<li><p>__neg__(self)</p>
 <p>实现取负操作，例如 -some_object。</p>
 </li>
-<li><p>_<em>abs_</em>(self)</p>
+<li><p>__abs__(self)</p>
 <p>实现内建绝对值函数 abs() 操作。</p>
 </li>
-<li><p>_<em>invert_</em>(self)</p>
+<li><p>__invert__(self)</p>
 <p>实现取反操作符 ~。</p>
 </li>
-<li><p>_<em>round_</em>(self， n)</p>
+<li><p>__round__(self， n)</p>
 <p>实现内建函数 round() ，n 是近似小数点的位数。</p>
 </li>
-<li><p>_<em>floor_</em>(self)</p>
+<li><p>__floor__(self)</p>
 <p>实现 math.floor() 函数，即向下取整。</p>
 </li>
-<li><p>_<em>ceil_</em>(self)</p>
+<li><p>__ceil__(self)</p>
 <p>实现 math.ceil() 函数，即向上取整。</p>
 </li>
-<li><p>_<em>trunc_</em>(self)</p>
+<li><p>__trunc__(self)</p>
 <p>实现 math.trunc() 函数，即距离零最近的整数。</p>
 </li>
 </ul>
 <h3 id="算数操作符"><a href="#算数操作符" class="headerlink" title="算数操作符"></a>算数操作符</h3><ul>
-<li><p>_<em>add_</em>(self, other)</p>
+<li><p>__add__(self, other)</p>
 <p>实现加法操作。</p>
 </li>
-<li><p>_<em>sub_</em>(self, other)</p>
+<li><p>__sub__(self, other)</p>
 <p>实现减法操作。</p>
 </li>
-<li><p>_<em>mul_</em>(self, other)</p>
+<li><p>__mul__(self, other)</p>
 <p>实现乘法操作。</p>
 </li>
-<li><p>_<em>floordiv_</em>(self, other)</p>
+<li><p>__floordiv__(self, other)</p>
 <p>实现使用 // 操作符的整数除法。</p>
 </li>
-<li><p>_<em>div_</em>(self, other)</p>
+<li><p>__div__(self, other)</p>
 <p>实现使用 / 操作符的除法。</p>
 </li>
-<li><p>_<em>truediv_</em>(self, other)</p>
+<li><p>__truediv__(self, other)</p>
 <p>实现 <em>true</em> 除法，这个函数只有使用 from <strong>future</strong> import division 时才有作用。</p>
 </li>
-<li><p>_<em>mod_</em>(self, other)</p>
+<li><p>__mod__(self, other)</p>
 <p>实现 % 取余操作。</p>
 </li>
-<li><p>_<em>divmod_</em>(self, other)</p>
+<li><p>__divmod__(self, other)</p>
 <p>实现 divmod 内建函数。</p>
 </li>
-<li><p>_<em>pow_</em></p>
+<li><p>__pow__</p>
 <p>实现 ** 操作符。</p>
 </li>
-<li><p>_<em>lshift_</em>(self, other)</p>
+<li><p>__lshift__(self, other)</p>
 <p>实现左移位运算符 &lt;&lt; 。</p>
 </li>
-<li><p>_<em>rshift_</em>(self, other)</p>
+<li><p>__rshift__(self, other)</p>
 <p>实现右移位运算符 &gt;&gt; 。</p>
 </li>
-<li><p>_<em>and_</em>(self, other)</p>
+<li><p>__and__(self, other)</p>
 <p>实现按位与运算符 &amp; 。</p>
 </li>
-<li><p>_<em>or_</em>(self, other)</p>
+<li><p>__or__(self, other)</p>
 <p>实现按位或运算符 | 。</p>
 </li>
-<li><p>_<em>xor_</em>(self, other)</p>
+<li><p>__xor__(self, other)</p>
 <p>实现按位异或运算符 ^ 。</p>
 </li>
 </ul>
 <h3 id="反射算数运算符"><a href="#反射算数运算符" class="headerlink" title="反射算数运算符"></a>反射算数运算符</h3><ul>
-<li><p>_<em>radd_</em>(self, other)</p>
+<li><p>__radd__(self, other)</p>
 <p>实现反射加法操作。</p>
 </li>
-<li><p>_<em>rsub_</em>(self, other)</p>
+<li><p>__rsub__(self, other)</p>
 <p>实现反射减法操作。</p>
 </li>
-<li><p>_<em>rmul_</em>(self, other)</p>
+<li><p>__rmul__(self, other)</p>
 <p>实现反射乘法操作。</p>
 </li>
-<li><p>_<em>rfloordiv_</em>(self, other)</p>
+<li><p>__rfloordiv__(self, other)</p>
 <p>实现使用 // 操作符的整数反射除法。</p>
 </li>
-<li><p>_<em>rdiv_</em>(self, other)</p>
+<li><p>__rdiv__(self, other)</p>
 <p>实现使用 / 操作符的反射除法。</p>
 </li>
-<li><p>_<em>rtruediv_</em>(self, other)</p>
+<li><p>__rtruediv__(self, other)</p>
 <p>实现 <em>true</em> 反射除法，这个函数只有使用 from _<em>future_</em> import division时才有作用。</p>
 </li>
-<li><p>_<em>rmod_</em>(self, other)</p>
+<li><p>__rmod__(self, other)</p>
 <p>实现 % 反射取余操作符。</p>
 </li>
-<li><p>_<em>rdivmod_</em>(self, other)</p>
+<li><p>__rdivmod__(self, other)</p>
 <p>实现调用 divmod(other, self) 时 divmod 内建函数的操作。</p>
 </li>
-<li><p>_<em>rpow_</em></p>
+<li><p>__rpow__</p>
 <p>实现 ** 反射操作符。</p>
 </li>
-<li><p>_<em>rlshift_</em>(self, other)</p>
+<li><p>__rlshift__(self, other)</p>
 <p>实现反射左移位运算符 &lt;&lt; 的作用。</p>
 </li>
-<li><p>_<em>rshift_</em>(self, other)</p>
+<li><p>__rshift__(self, other)</p>
 <p>实现反射右移位运算符 &gt;&gt; 的作用。</p>
 </li>
-<li><p>_<em>rand_</em>(self, other)</p>
+<li><p>__rand__(self, other)</p>
 <p>实现反射按位与运算符 &amp; 。</p>
 </li>
-<li><p>_<em>ror_</em>(self, other)</p>
+<li><p>__ror__(self, other)</p>
 <p>实现反射按位或运算符 | 。</p>
 </li>
-<li><p>_<em>rxor_</em>(self, other)</p>
+<li><p>__rxor__(self, other)</p>
 <p>实现反射按位异或运算符 ^ 。</p>
 </li>
 </ul>
@@ -292,92 +294,92 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = 5</span><br><span class="line">x += 1 # 也就是 x = x + 1</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>_<em>iadd_</em>(self, other)</p>
+<li><p>__iadd__(self, other)</p>
 <p>实现加法赋值操作。</p>
 </li>
-<li><p>_<em>isub_</em>(self, other)</p>
+<li><p>__isub__(self, other)</p>
 <p>实现减法赋值操作。</p>
 </li>
-<li><p>_<em>imul_</em>(self, other)</p>
+<li><p>__imul__(self, other)</p>
 <p>实现乘法赋值操作。</p>
 </li>
-<li><p>_<em>ifloordiv_</em>(self, other)</p>
+<li><p>__ifloordiv__(self, other)</p>
 <p>实现使用 //= 操作符的整数除法赋值操作。</p>
 </li>
-<li><p>_<em>idiv_</em>(self, other)</p>
+<li><p>__idiv__(self, other)</p>
 <p>实现使用 /= 操作符的除法赋值操作。</p>
 </li>
-<li><p>_<em>itruediv_</em>(self, other)</p>
+<li><p>__itruediv__(self, other)</p>
 <p>实现 <em>true</em> 除法赋值操作，这个函数只有使用 from _<em>future_</em> import division 时才有作用。</p>
 </li>
-<li><p>_<em>imod_</em>(self, other)</p>
+<li><p>__imod__(self, other)</p>
 <p>实现 %= 取余赋值操作。</p>
 </li>
-<li><p>_<em>ipow_</em></p>
+<li><p>__ipow__</p>
 <p>实现 **= 操作。</p>
 </li>
-<li><p>_<em>ilshift_</em>(self, other)</p>
+<li><p>__ilshift__(self, other)</p>
 <p>实现左移位赋值运算符 &lt;&lt;= 。</p>
 </li>
-<li><p>_<em>irshift_</em>(self, other)</p>
+<li><p>__irshift__(self, other)</p>
 <p>实现右移位赋值运算符 &gt;&gt;= 。</p>
 </li>
-<li><p>_<em>iand_</em>(self, other)</p>
+<li><p>__iand__(self, other)</p>
 <p>实现按位与运算符 &amp;= 。</p>
 </li>
-<li><p>_<em>ior_</em>(self, other)</p>
+<li><p>__ior__(self, other)</p>
 <p>实现按位或赋值运算符 | 。</p>
 </li>
-<li><p>_<em>ixor_</em>(self, other)</p>
+<li><p>__ixor__(self, other)</p>
 <p>实现按位异或赋值运算符 ^= 。</p>
 </li>
 </ul>
 <h3 id="类型转换操作符"><a href="#类型转换操作符" class="headerlink" title="类型转换操作符"></a>类型转换操作符</h3><ul>
-<li><p>_<em>int_</em>(self)</p>
+<li><p>__int__(self)</p>
 <p>实现到int的类型转换。</p>
 </li>
-<li><p>_<em>long_</em>(self)</p>
+<li><p>__long__(self)</p>
 <p>实现到long的类型转换。</p>
 </li>
-<li><p>_<em>float_</em>(self)</p>
+<li><p>__float__(self)</p>
 <p>实现到float的类型转换。</p>
 </li>
-<li><p>_<em>complex_</em>(self)</p>
+<li><p>__complex__(self)</p>
 <p>实现到complex的类型转换。</p>
 </li>
-<li><p>_<em>oct_</em>(self)</p>
+<li><p>__oct__(self)</p>
 <p>实现到八进制数的类型转换。</p>
 </li>
-<li><p>_<em>hex_</em>(self)</p>
+<li><p>__hex__(self)</p>
 <p>实现到十六进制数的类型转换。</p>
 </li>
-<li><p>_<em>index_</em>(self)</p>
+<li><p>__index__(self)</p>
 <p>实现当对象用于切片表达式时到一个整数的类型转换。如果你定义了一个可能会用于切片操作的数值类型，你应该定义 __index__。</p>
 </li>
-<li><p>_<em>trunc_</em>(self)</p>
+<li><p>__trunc__(self)</p>
 <p>当调用 math.trunc(self) 时调用该方法， _<em>trunc_</em> 应该返回 self 截取到一个整数类型（通常是long类型）的值。</p>
 </li>
-<li><p>_<em>coerce_</em>(self)</p>
+<li><p>__coerce__(self)</p>
 <p>该方法用于实现混合模式算数运算，如果不能进行类型转换，_<em>coerce_</em> 应该返回 None 。反之，它应该返回一个二元组 self 和 other ，这两者均已被转换成相同的类型。</p>
 </li>
 </ul>
 <h2 id="类的表示"><a href="#类的表示" class="headerlink" title="类的表示"></a>类的表示</h2><ul>
-<li><p>_<em>str_</em>(self)</p>
+<li><p>__str__(self)</p>
 <p>定义对类的实例调用 str() 时的行为。</p>
 </li>
-<li><p>_<em>repr_</em>(self)</p>
+<li><p>__repr__(self)</p>
 <p>定义对类的实例调用 repr() 时的行为。 str() 和 repr() 最主要的差别在于“目标用户”。 repr() 的作用是产生机器可读的输出（大部分情况下，其输出可以作为有效的Python代码），而 str() 则产生人类可读的输出。</p>
 </li>
-<li><p>_<em>format_</em>(self)</p>
+<li><p>__format__(self)</p>
 <p>定义当类的实例用于新式字符串格式化时的行为，例如， “Hello, 0:abc!”.format(a) 会导致调用 a._<em>format_</em>(“abc”) 。当定义你自己的数值类型或字符串类型时，你可能想提供某些特殊的格式化选项，这种情况下这个魔法方法会非常有用。</p>
 </li>
-<li><p>_<em>hash_</em>(self)</p>
+<li><p>__hash__(self)</p>
 <p>定义对类的实例调用 hash() 时的行为。它必须返回一个整数，其结果会被用于字典中键的快速比较。同时注意一点，实现这个魔法方法通常也需要实现 _<em>eq_</em> ，并且遵守如下的规则： a == b 意味着 hash(a) == hash(b)。</p>
 </li>
-<li><p>_<em>nonzero_</em>(self)</p>
+<li><p>__nonzero__(self)</p>
 <p>定义对类的实例调用 bool() 时的行为，根据你自己对类的设计，针对不同的实例，这个魔法方法应该相应地返回True或False。</p>
 </li>
-<li><p>_<em>dir_</em>(self)</p>
+<li><p>__dir__(self)</p>
 <p>定义对类的实例调用 dir() 时的行为，这个方法应该向调用者返回一个属性列表。一般来说，没必要自己实现 _<em>dir_</em> 。但是如果你重定义了 _<em>getattr_</em> 或者 _<em>getattribute_</em> （下个部分会介绍），乃至使用动态生成的属性，以实现类的交互式使用，那么这个魔法方法是必不可少的。</p>
 </li>
 </ul>
@@ -424,10 +426,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
         <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
