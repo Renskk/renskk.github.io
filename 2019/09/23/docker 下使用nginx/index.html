@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="docker中搜索可用镜像1$ docker search nginx  获取Nginx官方镜像1$ docker pull nginx  vue项目打包12345# 安装cnpm$ npm install -g cnpm --registry=https://registry.npm.taobao.org# 安装&amp;amp;打包项目$ cnpm install$ cnpm run build  使">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-09-24T03:40:55.520Z">
+<meta property="og:updated_time" content="2019-09-24T09:10:59.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker下使用Nginx">
 <meta name="twitter:description" content="docker中搜索可用镜像1$ docker search nginx  获取Nginx官方镜像1$ docker pull nginx  vue项目打包12345# 安装cnpm$ npm install -g cnpm --registry=https://registry.npm.taobao.org# 安装&amp;amp;打包项目$ cnpm install$ cnpm run build  使">
@@ -70,6 +70,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" href="/2019/09/27/centos修改系统时间为北京时间/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" href="/2019/09/03/python魔法函数/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
@@ -77,8 +79,8 @@
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Siguiente</span>
-      <span id="i-top" class="info" style="display:none;">Arriba</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
       <span id="i-share" class="info" style="display:none;">Compartir Post</span>
     </span>
     <br/>
@@ -148,7 +150,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> vim Dockerfile</span><br></pre></td></tr></table></figure>
 
 <p>内容如下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COPY dist/ /usr/share/nginx/html/</span><br><span class="line">COPY default.conf /etc/nginx/conf.d/default.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FROM nginx</span><br><span class="line">COPY dist/ /usr/share/nginx/html/</span><br><span class="line">COPY default.conf /etc/nginx/conf.d/default.conf</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在在项目根目录（dist所在目录）编写配置文件default.conf</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> vim default.conf</span><br></pre></td></tr></table></figure>
@@ -206,10 +208,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
         <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
     </div>
 
   </div>
