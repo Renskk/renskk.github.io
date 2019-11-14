@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Cypress 简介               – 摘录自Cypress文档*Cypress是为现代网络打造的下一代前端测试工具。解决了开发人员和QA工程师在测试现代应用程序时面临的关键难点问题。 * Cypress允许你编写所有类型的测试：  端到端测试 集成测试 单元测试  Cypress可以测试任何在浏览器中运行的内容。 展示Demo1234567891011121314151617181">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cypress基础">
+<meta property="og:url" content="http://yoursite.com/2019/11/13/cypress基础/index.html">
+<meta property="og:site_name" content="TOMBNOTES">
+<meta property="og:description" content="Cypress 简介               – 摘录自Cypress文档*Cypress是为现代网络打造的下一代前端测试工具。解决了开发人员和QA工程师在测试现代应用程序时面临的关键难点问题。 * Cypress允许你编写所有类型的测试：  端到端测试 集成测试 单元测试  Cypress可以测试任何在浏览器中运行的内容。 展示Demo1234567891011121314151617181">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-11-14T02:30:22.306Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cypress基础">
+<meta name="twitter:description" content="Cypress 简介               – 摘录自Cypress文档*Cypress是为现代网络打造的下一代前端测试工具。解决了开发人员和QA工程师在测试现代应用程序时面临的关键难点问题。 * Cypress允许你编写所有类型的测试：  端到端测试 集成测试 单元测试  Cypress可以测试任何在浏览器中运行的内容。 展示Demo1234567891011121314151617181">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Cypress基础</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/11/03/js基础/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/11/13/cypress基础/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/11/13/cypress基础/&text=Cypress基础"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/11/13/cypress基础/&is_video=false&description=Cypress基础"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Cypress基础&body=Check out this article: http://yoursite.com/2019/11/13/cypress基础/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/11/13/cypress基础/&name=Cypress基础&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cypress-简介-–-摘录自Cypress文档"><span class="toc-number">1.</span> <span class="toc-text">Cypress 简介               – 摘录自Cypress文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#展示Demo"><span class="toc-number">2.</span> <span class="toc-text">展示Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找元素"><span class="toc-number">3.</span> <span class="toc-text">查找元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令链接机制"><span class="toc-number">4.</span> <span class="toc-text">命令链接机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#元素交互"><span class="toc-number">4.1.</span> <span class="toc-text">元素交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元素相关的断言"><span class="toc-number">4.2.</span> <span class="toc-text">元素相关的断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题管理"><span class="toc-number">4.3.</span> <span class="toc-text">主题管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#断言"><span class="toc-number">5.</span> <span class="toc-text">断言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用英语进行断言"><span class="toc-number">5.1.</span> <span class="toc-text">用英语进行断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#默认断言"><span class="toc-number">5.2.</span> <span class="toc-text">默认断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写断言"><span class="toc-number">5.3.</span> <span class="toc-text">编写断言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#超时"><span class="toc-number">6.</span> <span class="toc-text">超时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用超时"><span class="toc-number">6.1.</span> <span class="toc-text">应用超时</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#默认值"><span class="toc-number">6.1.1.</span> <span class="toc-text">默认值</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Cypress基础
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">TOMBNOTES</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-11-13T01:31:52.000Z" itemprop="datePublished">2019-11-13</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Cypress-简介-–-摘录自Cypress文档"><a href="#Cypress-简介-–-摘录自Cypress文档" class="headerlink" title="Cypress 简介               – 摘录自Cypress文档"></a>Cypress 简介               – 摘录自Cypress文档</h2><p>*<em>Cypress是为现代网络打造的下一代前端测试工具。解决了开发人员和QA工程师在测试现代应用程序时面临的关键难点问题。 *</em></p>
+<p>Cypress允许你编写所有类型的测试：</p>
+<ul>
+<li>端到端测试</li>
+<li>集成测试</li>
+<li>单元测试</li>
+</ul>
+<p>Cypress可以测试任何在浏览器中运行的内容。</p>
+<h2 id="展示Demo"><a href="#展示Demo" class="headerlink" title="展示Demo"></a>展示Demo</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'Post Resource'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  it(<span class="string">'Creating a New Post'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    cy.visit(<span class="string">'/posts/new'</span>)     <span class="comment">// 查找/posts/new地址</span></span><br><span class="line"></span><br><span class="line">    cy.get(<span class="string">'input.post-title'</span>) <span class="comment">// 找到类为'input.post-title'的输入框</span></span><br><span class="line">      .type(<span class="string">'My First Post'</span>)   <span class="comment">// 为这个元素输入参数'My First Post'</span></span><br><span class="line"></span><br><span class="line">    cy.get(<span class="string">'input.post-body'</span>)  <span class="comment">// 找到类为'input.post-body'的元输入框</span></span><br><span class="line">      .type(<span class="string">'Hello, world!'</span>)   <span class="comment">// 为这个元素输入参数'Hello, world!'</span></span><br><span class="line"></span><br><span class="line">    cy.contains(<span class="string">'Submit'</span>)      <span class="comment">// 找到含有'Submit'的文本</span></span><br><span class="line">      .click()                 <span class="comment">// 点击这个文本</span></span><br><span class="line"></span><br><span class="line">    cy.url()                   <span class="comment">// 获取url地址，断言地址中是否含有'/posts/my-first-post'字段</span></span><br><span class="line">      .should(<span class="string">'include'</span>, <span class="string">'/posts/my-first-post'</span>) </span><br><span class="line"></span><br><span class="line">    cy.get(<span class="string">'h1'</span>)               <span class="comment">// 找到H1标签，断言内容中是否包含有'My First Post'字段</span></span><br><span class="line">      .should(<span class="string">'contain'</span>, <span class="string">'My First Post'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h2><p>** Cypress捆绑了jQuery并公开许多Dom遍历方法**</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每个方法都等同于它的jQuery对应方法。用你所知道的！</span></span><br><span class="line">cy.get(<span class="string">'#main-content'</span>)</span><br><span class="line">  .find(<span class="string">'.article'</span>)</span><br><span class="line">  .children(<span class="string">'img[src^="/static"]'</span>)</span><br><span class="line">  .first()</span><br></pre></td></tr></table></figure>
+
+<p><strong>当Cypress无法从其选择器中找到任何匹配的DOM元素时，Cypress将启用重复机制</strong></p>
+<ul>
+<li><p>元素被找到</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cy</span><br><span class="line">  <span class="comment">// cy.get() 查找'#element'元素,重复查询,直到...</span></span><br><span class="line">  .get(<span class="string">'#element'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ...它找到元素!</span></span><br><span class="line">  <span class="comment">// 您现在也可以通过使用.then方式使用它</span></span><br><span class="line">  .then(<span class="function">(<span class="params">$myElement</span>) =&gt;</span> &#123;</span><br><span class="line">    doSomething($myElement)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>查找超时</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cy</span><br><span class="line">  <span class="comment">// cy.get() 查找'#my-nonexistent-selector'元素,重复查询直到...</span></span><br><span class="line">  <span class="comment">// ...达到超时它还没有找到元素.</span></span><br><span class="line">  <span class="comment">// Cypress 停止并且标记测试失败.</span></span><br><span class="line">  .get(<span class="string">'#element-does-not-exist'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ...这段代码不会运行...</span></span><br><span class="line">  .then(<span class="function">(<span class="params">$myElement</span>) =&gt;</span> &#123;</span><br><span class="line">    doSomething($myElement)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong>通过文本内容查询</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在文档里查找文本为'New Post'的元素</span></span><br><span class="line">cy.contains(<span class="string">'New Post'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找'.main'的元素且文本内容为'New Post'</span></span><br><span class="line">cy.get(<span class="string">'.main'</span>).contains(<span class="string">'New Post'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>我们也可以通过设置超时时间来确保在规定时间内找到查找数据</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给这个元素10秒的超时时间</span></span><br><span class="line">cy.get(<span class="string">'.my-slow-selector'</span>, &#123; <span class="attr">timeout</span>: <span class="number">10000</span> &#125;)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">默认值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>defaultCommandTimeout</code></td>
+<td align="left"><code>4000</code></td>
+<td align="left">等待时间(以毫秒为单位)，直到大多数基于DOM的命令被认为超时</td>
+</tr>
+<tr>
+<td align="left"><code>execTimeout</code></td>
+<td align="left"><code>60000</code></td>
+<td align="left"><a href="https://docs.cypress.io/api/commands/exec.html" target="_blank" rel="noopener"><code>cy.exec()</code></a>命令期间等待系统命令执行结束的时间(以毫秒为单位)</td>
+</tr>
+<tr>
+<td align="left"><code>taskTimeout</code></td>
+<td align="left"><code>60000</code></td>
+<td align="left"><a href="https://docs.cypress.io/api/commands/task.html" target="_blank" rel="noopener"><code>cy.task()</code></a>命令期间等待任务执行结束的时间(以毫秒为单位)</td>
+</tr>
+<tr>
+<td align="left"><code>pageLoadTimeout</code></td>
+<td align="left"><code>60000</code></td>
+<td align="left">等待<code>页面转换事件</code>或<a href="https://docs.cypress.io/api/commands/visit.html" target="_blank" rel="noopener"><code>cy.visit()</code></a>、<a href="https://docs.cypress.io/api/commands/go.html" target="_blank" rel="noopener"><code>cy.go()</code></a>、<a href="https://docs.cypress.io/api/commands/reload.html" target="_blank" rel="noopener"><code>cy.reload()</code></a>命令来触发它们的页面<code>加载</code>事件的时间(以毫秒为单位)。网络请求受底层操作系统的限制，即使这个值增加，仍然可能超时。</td>
+</tr>
+<tr>
+<td align="left"><code>requestTimeout</code></td>
+<td align="left"><code>5000</code></td>
+<td align="left">等待<a href="https://docs.cypress.io/api/commands/wait.html" target="_blank" rel="noopener"><code>cy.wait()</code></a>命令发出XHR请求的时间(以毫秒为单位)</td>
+</tr>
+<tr>
+<td align="left"><code>responseTimeout</code></td>
+<td align="left"><code>30000</code></td>
+<td align="left">等待响应的时间(以毫秒为单位)，直到<a href="https://docs.cypress.io/api/commands/request.html" target="_blank" rel="noopener"><code>cy.request()</code></a>、<a href="https://docs.cypress.io/api/commands/wait.html" target="_blank" rel="noopener"><code>cy.wait()</code></a>、<a href="https://docs.cypress.io/api/commands/fixture.html" target="_blank" rel="noopener"><code>cy.fixture()</code></a>、<a href="https://docs.cypress.io/api/commands/getcookie.html" target="_blank" rel="noopener"><code>cy.getCookie()</code></a>、<a href="https://docs.cypress.io/api/commands/getcookies.html" target="_blank" rel="noopener"><code>cy.getCookies()</code></a>、<a href="https://docs.cypress.io/api/commands/setcookie.html" target="_blank" rel="noopener"><code>cy.setCookie()</code></a>、<a href="https://docs.cypress.io/api/commands/clearcookie.html" target="_blank" rel="noopener"><code>cy.clearCookie()</code></a>、<a href="https://docs.cypress.io/api/commands/clearcookies.html" target="_blank" rel="noopener"><code>cy.clearCookies()</code></a>和<a href="https://docs.cypress.io/api/commands/screenshot.html" target="_blank" rel="noopener"><code>cy.screenshot()</code></a>中的一个返回响应。</td>
+</tr>
+</tbody></table>
+<h2 id="命令链接机制"><a href="#命令链接机制" class="headerlink" title="命令链接机制"></a>命令链接机制</h2><p><strong>了解Cypress用于将命令链接在一起的机制非常重要。它代表您管理Promise链，每个命令都会产生下一个命令的”主题”，直到链结束或遇到错误</strong></p>
+<h3 id="元素交互"><a href="#元素交互" class="headerlink" title="元素交互"></a>元素交互</h3><p> Cypress通过<a href="https://docs.cypress.io/api/commands/click.html" target="_blank" rel="noopener"><code>.click()</code></a>和<a href="https://docs.cypress.io/api/commands/type.html" target="_blank" rel="noopener"><code>.type()</code></a>命令配合使用<a href="https://docs.cypress.io/api/commands/get.html" target="_blank" rel="noopener"><code>cy.get()</code></a>或 <a href="https://docs.cypress.io/api/commands/contains.html" target="_blank" rel="noopener"><code>cy.contains()</code></a>命令，可以轻松对页面上的元素进行点击并输入。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cy.get(<span class="string">'textarea.post-body'</span>)</span><br><span class="line">  .type(<span class="string">'This is an excellent post.'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>以下是Cypress提供的与您的应用进行交互的更多动作命令：</p>
+<ul>
+<li><a href="https://docs.cypress.io/api/commands/blur.html" target="_blank" rel="noopener"><code>.blur()</code></a> - 使焦点DOM元素模糊.</li>
+<li><a href="https://docs.cypress.io/api/commands/focus.html" target="_blank" rel="noopener"><code>.focus()</code></a> - 聚焦DOM元素.</li>
+<li><a href="https://docs.cypress.io/api/commands/clear.html" target="_blank" rel="noopener"><code>.clear()</code></a> - 清除输入或文本区域的值.</li>
+<li><a href="https://docs.cypress.io/api/commands/check.html" target="_blank" rel="noopener"><code>.check()</code></a> - 选中复选框或者单选框.</li>
+<li><a href="https://docs.cypress.io/api/commands/uncheck.html" target="_blank" rel="noopener"><code>.uncheck()</code></a> - 取消选中复选框.</li>
+<li><a href="https://docs.cypress.io/api/commands/select.html" target="_blank" rel="noopener"><code>.select()</code></a> - 选择一个含有 <code>属性的</code>元素.</li>
+<li><a href="https://docs.cypress.io/api/commands/dblclick.html" target="_blank" rel="noopener"><code>.dblclick()</code></a> - 双击DOM元素.</li>
+</ul>
+<h3 id="元素相关的断言"><a href="#元素相关的断言" class="headerlink" title="元素相关的断言"></a>元素相关的断言</h3><p>实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cy.get(<span class="string">':checkbox'</span>).should(<span class="string">'be.disabled'</span>)</span><br><span class="line"></span><br><span class="line">cy.get(<span class="string">'form'</span>).should(<span class="string">'have.class'</span>, <span class="string">'form-horizontal'</span>)</span><br><span class="line"></span><br><span class="line">cy.get(<span class="string">'input'</span>).should(<span class="string">'not.have.value'</span>, <span class="string">'US'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="主题管理"><a href="#主题管理" class="headerlink" title="主题管理"></a>主题管理</h3><p> **<a href="https://docs.cypress.io/api/commands/then.html" target="_blank" rel="noopener"><code>cy.then()</code></a> **</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">cy</span><br><span class="line">  <span class="comment">// 找到一个id为 'some-link'元素</span></span><br><span class="line">  .get(<span class="string">'#some-link'</span>)</span><br><span class="line"></span><br><span class="line">  .then(<span class="function">(<span class="params">$myElement</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// ...模拟任意主题的一段代码</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取它的 href 属性</span></span><br><span class="line">    <span class="keyword">const</span> href = $myElement.prop(<span class="string">'href'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 替换'hash'字符和它之后的一切</span></span><br><span class="line">    <span class="keyword">return</span> href.replace(<span class="regexp">/(#.*)/</span>, <span class="string">''</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">href</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// href 是现在的新主题</span></span><br><span class="line">    <span class="comment">// 现在我们可以干我们想干的</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用别名来引用以前的主题</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cy</span><br><span class="line">  .get(<span class="string">'.my-selector'</span>)</span><br><span class="line">  .as(<span class="string">'myElement'</span>) <span class="comment">// 设置别名</span></span><br><span class="line">  .click()</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 更多操作 */</span></span><br><span class="line"></span><br><span class="line">cy</span><br><span class="line">  .get(<span class="string">'@myElement'</span>) <span class="comment">// 像以前那样重新查询DOM(仅在必要时)</span></span><br><span class="line">  .click()</span><br></pre></td></tr></table></figure>
+
+<h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><h3 id="用英语进行断言"><a href="#用英语进行断言" class="headerlink" title="用英语进行断言"></a>用英语进行断言</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果我们点击一个 &lt;botton&gt; 后，我们期望它的类属性最终为 active</span></span><br><span class="line">cy.get(<span class="string">'button'</span>).click().should(<span class="string">'have.class'</span>, <span class="string">'active'</span>)</span><br><span class="line"><span class="comment">// 向我的服务器发送一个 HTTP 请求后，我期望的返回内容等于 &#123;name: 'Jane'&#125;</span></span><br><span class="line">cy.request(<span class="string">'/users/1'</span>).its(<span class="string">'body'</span>).should(<span class="string">'deep.eq'</span>, &#123; <span class="attr">name</span>: <span class="string">'Jane'</span> &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="默认断言"><a href="#默认断言" class="headerlink" title="默认断言"></a>默认断言</h3><ul>
+<li><a href="https://docs.cypress.io/api/commands/visit.html" target="_blank" rel="noopener"><code>cy.visit()</code></a> 预期这个页面是状态为<code>200</code>的 <code>text/html</code>内容页。</li>
+<li><a href="https://docs.cypress.io/api/commands/request.html" target="_blank" rel="noopener"><code>cy.request()</code></a> 预期远程服务器存在并提供响应。</li>
+<li><a href="https://docs.cypress.io/api/commands/contains.html" target="_blank" rel="noopener"><code>cy.contains()</code></a> 预期包含内容的元素最终存在于DOM中。</li>
+<li><a href="https://docs.cypress.io/api/commands/get.html" target="_blank" rel="noopener"><code>cy.get()</code></a> 预期元素最终存在于DOM中。</li>
+<li><a href="https://docs.cypress.io/api/commands/find.html" target="_blank" rel="noopener"><code>.find()</code></a> 预期元素最终存在于DOM 中。</li>
+<li><a href="https://docs.cypress.io/api/commands/type.html" target="_blank" rel="noopener"><code>.type()</code></a> 预期元素最终为 <em>可输入</em> 状态。</li>
+<li><a href="https://docs.cypress.io/api/commands/click.html" target="_blank" rel="noopener"><code>.click()</code></a> 预期元素最终为 <em>可操作</em> 状态。</li>
+<li><a href="https://docs.cypress.io/api/commands/its.html" target="_blank" rel="noopener"><code>.its()</code></a> 预期最终找到当前主题的一个属性。</li>
+</ul>
+<p><strong>使Cypress推翻其元素等待存在的规则</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认元素一直存在存在</span></span><br><span class="line">cy.get(<span class="string">'button.close'</span>).click().should(<span class="string">'exist'</span>)</span><br><span class="line"><span class="comment">// -----------------------------------------------</span></span><br><span class="line"><span class="comment">// Cypress将一直等待直到</span></span><br><span class="line"><span class="comment">// 点击&lt;button&gt; 按钮后，它不再存在</span></span><br><span class="line">cy.get(<span class="string">'button.close'</span>).click().should(<span class="string">'not.exist'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 确认这个 #modal 元素不在DOM里存在</span></span><br><span class="line"><span class="comment">// 自动等待,直到它消失!</span></span><br><span class="line">cy.get(<span class="string">'#modal'</span>).should(<span class="string">'not.exist'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="编写断言"><a href="#编写断言" class="headerlink" title="编写断言"></a>编写断言</h3><p>在 Cypress 中有两种断言写法:</p>
+<ul>
+<li><p><strong>隐式主题:</strong> </p>
+<p>使用 <a href="https://docs.cypress.io/api/commands/should.html" target="_blank" rel="noopener"><code>.should()</code></a> 或者 <a href="https://docs.cypress.io/api/commands/and.html" target="_blank" rel="noopener"><code>.and()</code></a>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cy.get(<span class="string">'#header a'</span>)</span><br><span class="line">  .should(<span class="string">'have.class'</span>, <span class="string">'active'</span>)</span><br><span class="line">  .and(<span class="string">'have.attr'</span>, <span class="string">'href'</span>, <span class="string">'/users'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示主题:</strong> </p>
+<p>使用 <code>expect</code>. 通常我们使用显示的目的是</p>
+<ul>
+<li>对同一主题进行多次断言</li>
+<li>在做出断言之前,以某种方式预估主题</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cy.get(<span class="string">'tbody tr:first'</span>).should(<span class="function">(<span class="params">$tr</span>) =&gt;</span> &#123;</span><br><span class="line">  expect($tr).to.have.class(<span class="string">'active'</span>)</span><br><span class="line">  expect($tr).to.have.attr(<span class="string">'href'</span>, <span class="string">'/users'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="超时"><a href="#超时" class="headerlink" title="超时"></a>超时</h2><h3 id="应用超时"><a href="#应用超时" class="headerlink" title="应用超时"></a>应用超时</h3><p><strong>默认超时时长为4秒</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 因为 .get()有一个默认断言</span></span><br><span class="line"><span class="comment">// 直到找到元素,或者它超时并标记失败</span></span><br><span class="line"><span class="comment">// 默认断言时间为4秒</span></span><br><span class="line">cy.get(<span class="string">'.mobile-nav'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改超长时长</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们已经修改了默认断言和添加断言的超时时长</span></span><br><span class="line"><span class="comment">// 添加&#123; timeout: 10000 &#125; 所有断言的超时时长都变成10秒</span></span><br><span class="line">cy</span><br><span class="line">  .get(<span class="string">'.mobile-nav'</span>, &#123; <span class="attr">timeout</span>: <span class="number">10000</span> &#125;)</span><br><span class="line">  .should(<span class="string">'be.visible'</span>)</span><br><span class="line">  .and(<span class="string">'contain'</span>, <span class="string">'Home'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><p>Cypress 根据命令的类型提供了几种不同的超时值.</p>
+<p>我们根据某些操作预期确定的时长来设置默认超时时间。</p>
+<p>例如:</p>
+<ul>
+<li><a href="https://docs.cypress.io/api/commands/visit.html" target="_blank" rel="noopener"><code>cy.visit()</code></a> 加载远程页面,直到所有外部资源完成其加载阶段才能解析。这可能需要一段时间,所以它的默认时长设置为<code>60000ms</code>.</li>
+<li><a href="https://docs.cypress.io/api/commands/exec.html" target="_blank" rel="noopener"><code>cy.exec()</code></a> 执行一个系统命令，例如 <em>初始化数据库</em>。 我们预计这可能需要很长时间, 它的默认时长设置为<code>60000ms</code>.</li>
+<li><a href="https://docs.cypress.io/api/commands/wait.html" target="_blank" rel="noopener"><code>cy.wait()</code></a> 实际使用2个不同的超时。当等待 <a href="https://docs.cypress.io/guides/core-concepts/variables-and-aliases.html#Routes" target="_blank" rel="noopener">路由别名</a>时, 我们等待一个匹配的请求 <code>5000ms</code>, 紧接着等待服务器响应 <code>30000ms</code>. 我们预期你的应用程序能够快速发出匹配的请求,但我们预计服务器的响应可能会需要更长的时间。</li>
+</ul>
+<p>大多数其他命令(包括所有基于 DOM 的命令)默认在 4000ms 之后超时。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cypress-简介-–-摘录自Cypress文档"><span class="toc-number">1.</span> <span class="toc-text">Cypress 简介               – 摘录自Cypress文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#展示Demo"><span class="toc-number">2.</span> <span class="toc-text">展示Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找元素"><span class="toc-number">3.</span> <span class="toc-text">查找元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令链接机制"><span class="toc-number">4.</span> <span class="toc-text">命令链接机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#元素交互"><span class="toc-number">4.1.</span> <span class="toc-text">元素交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元素相关的断言"><span class="toc-number">4.2.</span> <span class="toc-text">元素相关的断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题管理"><span class="toc-number">4.3.</span> <span class="toc-text">主题管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#断言"><span class="toc-number">5.</span> <span class="toc-text">断言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用英语进行断言"><span class="toc-number">5.1.</span> <span class="toc-text">用英语进行断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#默认断言"><span class="toc-number">5.2.</span> <span class="toc-text">默认断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写断言"><span class="toc-number">5.3.</span> <span class="toc-text">编写断言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#超时"><span class="toc-number">6.</span> <span class="toc-text">超时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用超时"><span class="toc-number">6.1.</span> <span class="toc-text">应用超时</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#默认值"><span class="toc-number">6.1.1.</span> <span class="toc-text">默认值</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/11/13/cypress基础/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/11/13/cypress基础/&text=Cypress基础"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/11/13/cypress基础/&is_video=false&description=Cypress基础"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Cypress基础&body=Check out this article: http://yoursite.com/2019/11/13/cypress基础/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/11/13/cypress基础/&title=Cypress基础"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/11/13/cypress基础/&name=Cypress基础&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Renskk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
