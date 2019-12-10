@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="flask框架基础开启DEBUG开启debug模式一共有四种方式： 1234567891011121314# 第一种方式：使用app.debug=True开启DEBUG模式app.debug=True# ----------------------------------------# 第二种方式：加载配置文件开启DEBUG模式# config文件为项目根目录下的`config.py`文件# co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flask基础">
+<meta property="og:url" content="http://yoursite.com/2019/12/06/flask基础/index.html">
+<meta property="og:site_name" content="TOMBNOTES">
+<meta property="og:description" content="flask框架基础开启DEBUG开启debug模式一共有四种方式： 1234567891011121314# 第一种方式：使用app.debug=True开启DEBUG模式app.debug=True# ----------------------------------------# 第二种方式：加载配置文件开启DEBUG模式# config文件为项目根目录下的`config.py`文件# co">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-12-10T09:11:28.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flask基础">
+<meta name="twitter:description" content="flask框架基础开启DEBUG开启debug模式一共有四种方式： 1234567891011121314# 第一种方式：使用app.debug=True开启DEBUG模式app.debug=True# ----------------------------------------# 第二种方式：加载配置文件开启DEBUG模式# config文件为项目根目录下的`config.py`文件# co">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>flask基础</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/11/13/cypress基础/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/06/flask基础/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/06/flask基础/&text=flask基础"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/06/flask基础/&is_video=false&description=flask基础"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=flask基础&body=Check out this article: http://yoursite.com/2019/12/06/flask基础/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/06/flask基础/&name=flask基础&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#flask框架"><span class="toc-number">1.</span> <span class="toc-text">flask框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础"><span class="toc-number">1.1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#开启DEBUG"><span class="toc-number">1.1.1.</span> <span class="toc-text">开启DEBUG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载配置文件"><span class="toc-number">1.1.2.</span> <span class="toc-text">加载配置文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL"><span class="toc-number">1.2.</span> <span class="toc-text">URL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#两种传参方式"><span class="toc-number">1.2.1.</span> <span class="toc-text">两种传参方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL-FOR"><span class="toc-number">1.2.2.</span> <span class="toc-text">URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL转换器"><span class="toc-number">1.2.3.</span> <span class="toc-text">URL转换器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL重定向"><span class="toc-number">1.2.4.</span> <span class="toc-text">URL重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Respones返回值"><span class="toc-number">1.2.5.</span> <span class="toc-text">Respones返回值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.3.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.3.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.3.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.3.4.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">1.3.5.</span> <span class="toc-text">自定义过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板继承"><span class="toc-number">1.3.6.</span> <span class="toc-text">模板继承</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        flask基础
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">TOMBNOTES</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-12-06T04:21:02.000Z" itemprop="datePublished">2019-12-06</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="flask框架"><a href="#flask框架" class="headerlink" title="flask框架"></a>flask框架</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="开启DEBUG"><a href="#开启DEBUG" class="headerlink" title="开启DEBUG"></a>开启DEBUG</h3><p>开启debug模式一共有四种方式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一种方式：使用app.debug=True开启DEBUG模式</span></span><br><span class="line">app.debug=<span class="literal">True</span></span><br><span class="line"><span class="comment"># ----------------------------------------</span></span><br><span class="line"><span class="comment"># 第二种方式：加载配置文件开启DEBUG模式</span></span><br><span class="line"><span class="comment"># config文件为项目根目录下的`config.py`文件</span></span><br><span class="line"><span class="comment"># config中的配置为 `DEBUG=True`</span></span><br><span class="line">app.config.from_object(config)</span><br><span class="line"><span class="comment"># ----------------------------------------</span></span><br><span class="line"><span class="comment"># 第三种方式：通过配置参数的形式开启DEBUG模式</span></span><br><span class="line"><span class="comment"># 注意DEBUG为大写</span></span><br><span class="line">app.config.update(DEBUG=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># ----------------------------------------</span></span><br><span class="line"><span class="comment"># 第四种方式：传递一个参数debug=True来开启DEBUG模式</span></span><br><span class="line">app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="加载配置文件"><a href="#加载配置文件" class="headerlink" title="加载配置文件"></a>加载配置文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用from_object加载项目根目录下的`config.py`文件</span></span><br><span class="line">app.config.from_object(config)</span><br><span class="line"><span class="comment"># ----------------------------------------</span></span><br><span class="line"><span class="comment"># 使用from_pyfile加载项目根目录下的`config.py`文件</span></span><br><span class="line">app.config.from_pyfile(<span class="string">"config.py"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><h3 id="两种传参方式"><a href="#两种传参方式" class="headerlink" title="两种传参方式"></a>两种传参方式</h3><p>接受用户传递的字符串</p>
+<ul>
+<li><p>第一种：使用path形式（将字符串嵌入到路径中）</p>
+<ul>
+<li><p>@app.route(‘/article/&lt;int: article&gt;’) 必须传递整型</p>
+</li>
+<li><p>@app.route(‘/article/&lt;float: article&gt;’) 必须传递浮点数</p>
+</li>
+<li><p>@app.route(‘/article/&lt;path: article&gt;’) 可以接收路径包含’/‘</p>
+</li>
+<li><p>默认为string 可以接受任何没有‘/‘的 类型</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/article/&lt;int:article&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">artical_detail</span><span class="params">(article)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"请求的是&#123;&#125;"</span>.format(article)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/&lt;any(blog,user):url_path&gt;/&lt;id&gt;/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detail</span><span class="params">(url_path,id)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> url_path == <span class="string">'blog'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'博客：&#123;&#125;'</span>.format(id)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'用户：&#123;&#125;'</span>.format(id)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>第二种： 通过’?key=value‘的形式传递</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/d/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">d</span><span class="params">()</span>:</span></span><br><span class="line">    wd = request.args.get(<span class="string">'wd'</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'通过wd获取的字符是&#123;&#125;'</span>.format(wd)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="URL-FOR"><a href="#URL-FOR" class="headerlink" title="URL_FOR"></a>URL_FOR</h3><p>本质是根据函数名反向生成url，使用函数 url_for() 来针对一个特定的函数构建一个 URL。它能够接受函数名作为第一参数，以及一些关键字参数， 每一个关键字参数对应于 URL 规则的变量部分。未知变量部分被插入到 URL 中作为查询参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 视图函数</span></span><br><span class="line">    <span class="keyword">return</span> url_for(<span class="string">'my_list'</span>, page=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/liat/&lt;page&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_list</span><span class="params">(page)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'my list page: &#123;&#125;'</span>.format(page)</span><br></pre></td></tr></table></figure>
+
+<h3 id="URL转换器"><a href="#URL转换器" class="headerlink" title="URL转换器"></a>URL转换器</h3><p>   我们知道，flask的url规则是可以添加变量部分的，这个参数变量是写在尖括号里的，比如：<code>/item/&lt;id&gt;/</code>，如果需要指出参数的类型要符合<code>&lt;converter:vaiable_name&gt;</code>格式的，其中，converter有几种类型：</p>
+<ul>
+<li>string：接受不含有‘/’的文本</li>
+<li>int：接受整数</li>
+<li>float：接受浮点型</li>
+<li>path：接受含有‘/’的文本串</li>
+<li>uuid：只接受uuid串</li>
+</ul>
+<p>而当没有符合的转换器时，就需要自己定义一个转换器供我们使用，完成它只需要三步：</p>
+<ol>
+<li><p>自定义转换器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建TelephoneConverter转换器 继承 BaseConverter类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TelephoneConverter</span><span class="params">(BaseConverter)</span>:</span></span><br><span class="line">    regex = <span class="string">r'1[3456789]\d&#123;9&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建ListConverter转换器 继承 BaseConverter类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListConverter</span><span class="params">(BaseConverter)</span>:</span></span><br><span class="line">    <span class="comment"># 这个方法的返回值将会传递到视图函数中做返回值</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">to_python</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        <span class="comment"># 返回一个按+号分割的列表</span></span><br><span class="line">        <span class="keyword">return</span> value.split(<span class="string">'+'</span>)</span><br><span class="line">    <span class="comment"># 这个方法的返回值，将会在调用url_for函数时生成符合要求的URL形式</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">to_url</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"+"</span>.join(value)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>将自定义的转换器添加到flask的应用中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加新的转换器到`DEFAULT_CONVERTERS`中</span></span><br><span class="line">app.url_map.converters[<span class="string">'tel'</span>] = TelephoneConverter</span><br><span class="line">app.url_map.converters[<span class="string">'list'</span>] = ListConverter</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>使用转换器</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> url_for(<span class="string">'my_list'</span>, ab=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义传参类型不能有空格</span></span><br><span class="line"><span class="meta">@app.route('/telephone/&lt;tel:my_tel&gt;/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_tel</span><span class="params">(my_tel)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'my telephone number is : &#123;&#125;'</span>.format(my_tel)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/list/&lt;list:ab&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_list</span><span class="params">(ab)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'my list is: &#123;&#125;'</span>.format(ab)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="URL重定向"><a href="#URL重定向" class="headerlink" title="URL重定向"></a>URL重定向</h3><p>页面跳转和重定向</p>
+<ul>
+<li>永久性重定向：状态码为301，多用于一个网址废弃需要定向到新的网址</li>
+<li>暂时性重定向：状态码为302，表示页面的暂时跳转，比如访问一个需要登陆权限的页面，而用户没有登陆，就跳转到登陆页面</li>
+</ul>
+<p>在<code>flask</code>中，重定向通过<code>flask.redirect(loaction, code=302)</code>这个函数实现的，<code>localtion</code>表示需要定向到的URL，<br>应该配合前面的url_for一起使用，<code>code</code>表示采用那种定向方式，默认302，可以求改为301实现永久定向。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/login/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'login.html'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/profile/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">profile</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.args.get(<span class="string">'name'</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Personal Center'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> redirect(url_for(<span class="string">'login'</span>), code=<span class="number">301</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Respones返回值"><a href="#Respones返回值" class="headerlink" title="Respones返回值"></a>Respones返回值</h3><p>关于响应（Respones）:<br>视图函数的返回值会被自动转换为一个响应对象。<code>Flask</code>的转换逻辑如下：</p>
+<ul>
+<li>如果返回的是一个合法的响应对象，则直接返回</li>
+<li>如果返回的是一个字符串，那么<code>Flask</code>会重新创建一个<code>werkzeug.wrappers.Respones</code>对象，<code>Respones</code>将该字符串作为主体，状态码为200，<code>MIME</code>类型为<code>text/html</code>，然后返回该<code>Respones</code>对象。</li>
+<li>如果返回的是一个字典，那么页面返回<code>Content-Type</code>类型为<code>application/json</code>的json文件</li>
+<li>如果返回的是一个元组，元组中的数据类型是<code>（Respones, status, headers）</code>,<code>status</code>值会覆盖默认的200状态码，<code>headers</code>可以是一个列表或者字典作为消息头。</li>
+<li>如果以上条件都不满足，<code>Flask</code>会假设返回值是一个合法的<code>WSGI</code>应用程序，并通过<code>Respones.force_type(rv, request, environ)</code>转换为一个请求</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    hello = Response(response=<span class="string">'hello world'</span>, status=<span class="number">200</span>, mimetype=<span class="string">'text/html'</span>)</span><br><span class="line">    <span class="keyword">return</span> hello</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/login/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> Response(<span class="string">u'login'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># flask版本在1.1.1之前必须使用jsonify返回字典型数据</span></span><br><span class="line"><span class="meta">@app.route("/index1")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> jsonify(&#123;<span class="string">"name"</span>: <span class="string">"annie"</span>, <span class="string">"age"</span>: <span class="number">12</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在1.1.1之后可以直接返回字典型数据，版本向下兼容，也可以使用jsonify</span></span><br><span class="line"><span class="meta">@app.route("/index2")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">"name"</span>: <span class="string">"annie"</span>, <span class="string">"age"</span>: <span class="number">12</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/list/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">list</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> Response(&#123;<span class="string">'username'</span>:<span class="string">'test'</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Jinja2模板"><a href="#Jinja2模板" class="headerlink" title="Jinja2模板"></a>Jinja2模板</h2><h3 id="模板介绍"><a href="#模板介绍" class="headerlink" title="模板介绍"></a>模板介绍</h3><ul>
+<li>在渲染模板的时候，默认会从项目的根目录下<code>templates</code>目录下查找模板</li>
+<li>如果不想把模板文件放在<code>templatest</code>目录下，那么就在<code>Flask初始化的时候使用</code>templates_folder`来指定模板路径</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app = Flask(__name__, template_folder=<span class="string">r'D:\workspaces\Pythonspace\flask_learn\templates'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/posts/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">posts</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'posts/post_demo.html'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>post_demo.html</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>帖子<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    这是帖子页面</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="模板传参"><a href="#模板传参" class="headerlink" title="模板传参"></a>模板传参</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">param</span><span class="params">()</span>:</span></span><br><span class="line">    context = &#123;</span><br><span class="line">        <span class="string">'username'</span> :<span class="string">'tim'</span>,</span><br><span class="line">        <span class="string">'age'</span>:<span class="string">'18'</span>,</span><br><span class="line">        <span class="string">'sex'</span>:<span class="string">'female'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'template/template_param.html'</span>, **context)</span><br></pre></td></tr></table></figure>
+
+<p><strong>template_param.html</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>模板传参<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    模板传参：<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>  <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">cellpadding</span>=<span class="string">"0"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>username<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>age<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>sex<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;username&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;sex&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="模板URL-FOR"><a href="#模板URL-FOR" class="headerlink" title="模板URL_FOR"></a>模板URL_FOR</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'template/template_url_for.html'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/login/', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'GET'</span>:</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">'login.html'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'login succes!'</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>template_url_for.html</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>url_for跳转<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">" &#123;&#123;url_for('login')&#125;&#125; "</span>&gt;</span> 登陆 <span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p><a href="http://docs.jinkan.org/docs/jinja2/templates.html#builtin-filters" target="_blank" rel="noopener">http://docs.jinkan.org/docs/jinja2/templates.html#builtin-filters</a></p>
+<p>过滤器是通过管道符号（ | ）进行使用的，例如：0，将返回name的长度。过滤器相当于一个函数，把当前的变量传入到过滤器中，然后过滤器根据自己的功能，再返回相应的值，之后将结果渲染到页面中，然后过滤器根据自己的功能，再返回相应的值，之后再将结果渲染到页面中。</p>
+<ul>
+<li><p><code>abs(value)</code>：返回一个数的绝对值。 例如：<code>-1|abs</code></p>
+</li>
+<li><p><code>default(value, default_value, boolean=false)</code>：如果当前的变量没有值，则使用参数中的值来代替。 <code>name|default(&#39;ivy&#39;)</code> – 如果<code>name</code>不存在，则使用<code>ivy</code>来代替。<code>boolean=false</code>默认是在这个变量为<code>undefined</code>的时候才会使用的<code>default</code>的值。当这个变量又被定义，但是这个变量为<code>Flase(None , False</code>, 及其各种数据类型的空类型)时，会返回相应的值，这时候只要将<code>boolean=True</code>,就会渲染默认的值。</p>
+</li>
+<li><p><code>or</code>：<strong></strong>  和python自带的or一样。</p>
+</li>
+<li><p><code>escape(value)</code>或<code>e</code>：转义字符，会将 &lt; 、&gt; 等符号转义成html中的符号 <code>content|escape</code>  或者 <code>content|e</code></p>
+</li>
+<li><p><code>safe(value)</code>：关闭自动转义  <code>content|safe</code></p>
+</li>
+<li><p><code>first(value)</code>：返回一个序列的第一个元素。 <code>name|first</code></p>
+</li>
+<li><p><code>format(value, *args, **kwargs)</code> : 格式化字符串：</p>
+</li>
+<li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; <span class="string">"%s"</span>_<span class="string">"%s"</span>|format(<span class="string">'hello'</span>, <span class="string">'world'</span>) &#125;&#125; 输出 ： hello_world</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>last(value)</code>: 返回一个序列的最后一个元素 <code>name|last</code></p>
+</li>
+<li><p><code>length(value)</code>：返回一个序列或者字典的长度<code>name|length</code></p>
+</li>
+<li><p><code>join(value, format_key)</code>：跟python的join一样</p>
+</li>
+<li><p><code>int（value）</code>： 转换为int整型</p>
+</li>
+<li><p><code>float（value）</code>：转换为float类型</p>
+</li>
+<li><p><code>lower(value)</code>：转换为小写</p>
+</li>
+<li><p><code>upper(upper)</code>: 转换为大写</p>
+</li>
+<li><p><code>replace(value, old, new)</code>：字符串替换</p>
+</li>
+<li><p><code>truncate(value, length=255, killwords=False)</code>： 截取length长度的字符串</p>
+</li>
+<li><p><code>striptags（value）</code>：删除字符串中的所有html标签，如果出现空格，将替换成一个空格</p>
+</li>
+<li><p><code>trim</code>： 截取字符串前面和后面的空白字符串</p>
+</li>
+</ul>
+<h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><p>过滤器本质上就是一个函数，如果在模板中调用这个过滤器，那么就会将这个变量的值作为第一个参数传给过滤器函数，然后函数的返回值会作为这个过滤器的返回值，需要使用一个装饰器<code>@app.template_filter(&#39;过滤器名&#39;)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.template_filter('cut')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut</span><span class="params">(value)</span>:</span></span><br><span class="line">    value = value.replace(<span class="string">'hello'</span>,<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> value</span><br></pre></td></tr></table></figure>
+
+<h3 id="模板继承"><a href="#模板继承" class="headerlink" title="模板继承"></a>模板继承</h3><p>绝大多数Web应用程序在页面的顶部都有一个导航栏，其中带有一些常用的链接，例如编辑配置文件，登录，注销等。我可以轻松地用HTML标记语言将导航栏添加到<code>index.html</code>模板上，但随着应用程序的增长，我将需要在其他页面重复同样的工作。尽量不要编写重复的代码，这是一个良好的编程习惯，毕竟我真的不想在诸多HTML模板上保留同样的代码。</p>
+<p>Jinja2有一个模板继承特性，专门解决这个问题。从本质上来讲，就是将所有模板中相同的部分转移到一个基础模板中，然后再从它继承过来。</p>
+<p>所以我现在要做的是定义一个名为<code>base.html</code>的基本模板，其中包含一个简单的导航栏，以及我之前实现的标题逻辑。 您需要在模板文件<em>app/templates/base.html</em>中编写代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">      &#123;% if title %&#125;</span><br><span class="line">      &lt;title&gt;&#123;&#123; title &#125;&#125; - Microblog&lt;/title&gt;</span><br><span class="line">      &#123;% else %&#125;</span><br><span class="line">      &lt;title&gt;Welcome to Microblog&lt;/title&gt;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div&gt;Microblog: &lt;a href=&quot;/index&quot;&gt;Home&lt;/a&gt;&lt;/div&gt;</span><br><span class="line">        &lt;hr&gt;</span><br><span class="line">        &#123;% block content %&#125;&#123;% endblock %&#125;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在这个模板中，我使用<code>block</code>控制语句来定义派生模板可以插入代码的位置。 <em>block</em>被赋予一个唯一的名称，派生的模板可以在提供其内容时进行引用。</p>
+<p>通过从基础模板<em>base.html</em>继承HTML元素，我现在可以简化模板<em>index.html</em>了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends &quot;base.html&quot; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">    &lt;h1&gt;Hi, &#123;&#123; user.username &#125;&#125;!&lt;/h1&gt;</span><br><span class="line">    &#123;% for post in posts %&#125;</span><br><span class="line">    &lt;div&gt;&lt;p&gt;&#123;&#123; post.author.username &#125;&#125; says: &lt;b&gt;&#123;&#123; post.body &#125;&#125;&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自从基础模板<em>base.html</em>接手页面的布局之后，我就可以从<em>index.html</em>中删除所有这方面的元素，只留下内容部分。 <code>extends</code>语句用来建立了两个模板之间的继承关系，这样Jinja2才知道当要求呈现<code>index.html</code>时，需要将其嵌入到<code>base.html</code>中。 而两个模板中匹配的<code>block</code>语句和其名称<code>content</code>，让Jinja2知道如何将这两个模板合并成在一起。 现在，扩展应用程序的页面就变得极其方便了，我可以创建从同一个基础模板<em>base.html</em>继承的派生模板，这就是我让应用程序的所有页面拥有统一外观布局而不用重复编写代码的秘诀。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#flask框架"><span class="toc-number">1.</span> <span class="toc-text">flask框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础"><span class="toc-number">1.1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#开启DEBUG"><span class="toc-number">1.1.1.</span> <span class="toc-text">开启DEBUG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载配置文件"><span class="toc-number">1.1.2.</span> <span class="toc-text">加载配置文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL"><span class="toc-number">1.2.</span> <span class="toc-text">URL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#两种传参方式"><span class="toc-number">1.2.1.</span> <span class="toc-text">两种传参方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL-FOR"><span class="toc-number">1.2.2.</span> <span class="toc-text">URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL转换器"><span class="toc-number">1.2.3.</span> <span class="toc-text">URL转换器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL重定向"><span class="toc-number">1.2.4.</span> <span class="toc-text">URL重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Respones返回值"><span class="toc-number">1.2.5.</span> <span class="toc-text">Respones返回值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.3.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.3.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.3.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.3.4.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">1.3.5.</span> <span class="toc-text">自定义过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板继承"><span class="toc-number">1.3.6.</span> <span class="toc-text">模板继承</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/06/flask基础/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/06/flask基础/&text=flask基础"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/06/flask基础/&is_video=false&description=flask基础"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=flask基础&body=Check out this article: http://yoursite.com/2019/12/06/flask基础/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/06/flask基础/&title=flask基础"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/06/flask基础/&name=flask基础&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Renskk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
