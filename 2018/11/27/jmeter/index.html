@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="安装jmeter下载：https://jmeter.apache.org/download_jmeter.cgi jmeter工作原理jmeter可以作为web服务器与浏览器直接的代理网关，以便捕获浏览器的请求和web服务器的响应，如此就可以很容易地生成性能测试脚本。有了性能测试脚本，jmeter就可以通过线程来模拟真实用户对web服务器的访问压力， jmeter的基本原理是建立一个线程池，多线程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jmeter基础">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/jmeter/index.html">
+<meta property="og:site_name" content="TOMBNOTES">
+<meta property="og:description" content="安装jmeter下载：https://jmeter.apache.org/download_jmeter.cgi jmeter工作原理jmeter可以作为web服务器与浏览器直接的代理网关，以便捕获浏览器的请求和web服务器的响应，如此就可以很容易地生成性能测试脚本。有了性能测试脚本，jmeter就可以通过线程来模拟真实用户对web服务器的访问压力， jmeter的基本原理是建立一个线程池，多线程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-12-12T02:12:55.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jmeter基础">
+<meta name="twitter:description" content="安装jmeter下载：https://jmeter.apache.org/download_jmeter.cgi jmeter工作原理jmeter可以作为web服务器与浏览器直接的代理网关，以便捕获浏览器的请求和web服务器的响应，如此就可以很容易地生成性能测试脚本。有了性能测试脚本，jmeter就可以通过线程来模拟真实用户对web服务器的访问压力， jmeter的基本原理是建立一个线程池，多线程">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Jmeter基础</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/12/11/Bean Shell/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/11/19/servlet基础/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/11/27/jmeter/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/11/27/jmeter/&text=Jmeter基础"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/11/27/jmeter/&is_video=false&description=Jmeter基础"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Jmeter基础&body=Check out this article: http://yoursite.com/2018/11/27/jmeter/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/11/27/jmeter/&name=Jmeter基础&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jmeter"><span class="toc-number">1.</span> <span class="toc-text">安装jmeter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmeter工作原理"><span class="toc-number">2.</span> <span class="toc-text">jmeter工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmeter用法"><span class="toc-number">3.</span> <span class="toc-text">jmeter用法:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jmeter常用插件："><span class="toc-number">4.</span> <span class="toc-text">Jmeter常用插件：</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Jmeter基础
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">TOMBNOTES</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-11-27T04:21:02.000Z" itemprop="datePublished">2018-11-27</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="安装jmeter"><a href="#安装jmeter" class="headerlink" title="安装jmeter"></a>安装jmeter</h2><p>下载：<a href="https://jmeter.apache.org/download_jmeter.cgi" target="_blank" rel="noopener">https://jmeter.apache.org/download_jmeter.cgi</a></p>
+<h2 id="jmeter工作原理"><a href="#jmeter工作原理" class="headerlink" title="jmeter工作原理"></a>jmeter工作原理</h2><p>jmeter可以作为web服务器与浏览器直接的代理网关，以便捕获浏览器的请求和web服务器的响应，如此就可以很容易地生成性能测试脚本。有了性能测试脚本，jmeter就可以通过线程来模拟真实用户对web服务器的访问压力，</p>
+<p>jmeter的基本原理是建立一个线程池，多线程运行取样器产生大量的负载，再运行过程中通过断言来验证结果的准确性，通过监听器来记录测试结果。</p>
+<h2 id="jmeter用法"><a href="#jmeter用法" class="headerlink" title="jmeter用法:"></a>jmeter用法:</h2><p>添加线程组:      测试计划 - 添加 - Threads<br>添加请求:        线程组 - 添加 - Sample - HTTP请求<br>查看结果:        线程组 - 添加 - 监听器 - 查看结果树</p>
+<h2 id="Jmeter常用插件："><a href="#Jmeter常用插件：" class="headerlink" title="Jmeter常用插件："></a>Jmeter常用插件：</h2><table>
+<thead>
+<tr>
+<th>插件名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Active Threads Over Time</td>
+<td>活动线程随时间的变化</td>
+</tr>
+<tr>
+<td>Connect Times Over Time</td>
+<td>连接时间</td>
+</tr>
+<tr>
+<td>Response Times Over Time</td>
+<td>响应时间</td>
+</tr>
+<tr>
+<td>Transactions per Second</td>
+<td>每秒事务数</td>
+</tr>
+<tr>
+<td>PerfMon Metrics Collector</td>
+<td>性能指标收集器</td>
+</tr>
+<tr>
+<td>Response Times Percentiles</td>
+<td>响应时间百分位数</td>
+</tr>
+<tr>
+<td>Response Latencies Over Time</td>
+<td>响应延迟时间</td>
+</tr>
+<tr>
+<td>Response Times vs Threads</td>
+<td>响应时间vs线程</td>
+</tr>
+<tr>
+<td>Transaction Throughput vs Threads</td>
+<td>事务吞吐量vs线程</td>
+</tr>
+</tbody></table>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jmeter"><span class="toc-number">1.</span> <span class="toc-text">安装jmeter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmeter工作原理"><span class="toc-number">2.</span> <span class="toc-text">jmeter工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmeter用法"><span class="toc-number">3.</span> <span class="toc-text">jmeter用法:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jmeter常用插件："><span class="toc-number">4.</span> <span class="toc-text">Jmeter常用插件：</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/11/27/jmeter/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/11/27/jmeter/&text=Jmeter基础"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/11/27/jmeter/&is_video=false&description=Jmeter基础"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Jmeter基础&body=Check out this article: http://yoursite.com/2018/11/27/jmeter/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/11/27/jmeter/&title=Jmeter基础"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/11/27/jmeter/&name=Jmeter基础&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Renskk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="https://github.com/Renskk/meClass">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
