@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Jinja2模板模板介绍 在渲染模板的时候，默认会从项目的根目录下templates目录下查找模板 如果不想把模板文件放在templatest目录下，那么就在Flask初始化的时候使用templates_folder`来指定模板路径  12345app = Flask(__name__, template_folder=r&apos;D:\workspaces\Pythonspace\flask_learn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flask基础">
+<meta property="og:title" content="jinja2模板">
 <meta property="og:url" content="http://yoursite.com/2019/12/09/jinja2模板/index.html">
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="Jinja2模板模板介绍 在渲染模板的时候，默认会从项目的根目录下templates目录下查找模板 如果不想把模板文件放在templatest目录下，那么就在Flask初始化的时候使用templates_folder`来指定模板路径  12345app = Flask(__name__, template_folder=r&apos;D:\workspaces\Pythonspace\flask_learn">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-12-12T01:58:28.910Z">
+<meta property="og:updated_time" content="2019-12-12T02:01:27.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flask基础">
+<meta name="twitter:title" content="jinja2模板">
 <meta name="twitter:description" content="Jinja2模板模板介绍 在渲染模板的时候，默认会从项目的根目录下templates目录下查找模板 如果不想把模板文件放在templatest目录下，那么就在Flask初始化的时候使用templates_folder`来指定模板路径  12345app = Flask(__name__, template_folder=r&apos;D:\workspaces\Pythonspace\flask_learn">
     
     
@@ -36,7 +36,7 @@
         
     
     <!-- title -->
-    <title>flask基础</title>
+    <title>jinja2模板</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -77,28 +77,28 @@
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-next" class="info" style="display:none;">Post Siguiente</span>
+      <span id="i-top" class="info" style="display:none;">Arriba</span>
       <span id="i-share" class="info" style="display:none;">Compartir Post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/09/jinja2模板/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/09/jinja2模板/&text=flask基础"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/09/jinja2模板/&is_video=false&description=flask基础"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=flask基础&body=Check out this article: http://yoursite.com/2019/12/09/jinja2模板/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/09/jinja2模板/&name=flask基础&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/09/jinja2模板/&text=jinja2模板"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/09/jinja2模板/&is_video=false&description=jinja2模板"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=jinja2模板&body=Check out this article: http://yoursite.com/2019/12/09/jinja2模板/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/09/jinja2模板/&name=jinja2模板&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.4.</span> <span class="toc-text">过滤器</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.4.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">1.5.</span> <span class="toc-text">自定义过滤器</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -110,7 +110,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        flask基础
+        jinja2模板
     </h1>
 
 
@@ -198,6 +198,9 @@
 <li><p><code>trim</code>： 截取字符串前面和后面的空白字符串</p>
 </li>
 </ul>
+<h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><p>过滤器本质上就是一个函数，如果在模板中调用这个过滤器，那么就会将这个变量的值作为第一个参数传给过滤器函数，然后函数的返回值会作为这个过滤器的返回值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.template_filter('cut')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut</span><span class="params">(value)</span>:</span></span><br><span class="line">    value = value.replace(<span class="string">'hello'</span>,<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> value</span><br></pre></td></tr></table></figure>
+
 
   </div>
 </article>
@@ -221,30 +224,30 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.4.</span> <span class="toc-text">过滤器</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.4.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">1.5.</span> <span class="toc-text">自定义过滤器</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/09/jinja2模板/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/09/jinja2模板/&text=flask基础"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/09/jinja2模板/&is_video=false&description=flask基础"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=flask基础&body=Check out this article: http://yoursite.com/2019/12/09/jinja2模板/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=flask基础"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/09/jinja2模板/&name=flask基础&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/09/jinja2模板/&text=jinja2模板"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/09/jinja2模板/&is_video=false&description=jinja2模板"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=jinja2模板&body=Check out this article: http://yoursite.com/2019/12/09/jinja2模板/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/09/jinja2模板/&title=jinja2模板"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/09/jinja2模板/&name=jinja2模板&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
         <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
