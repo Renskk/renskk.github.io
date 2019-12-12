@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="Jinja2模板模板介绍 在渲染模板的时候，默认会从项目的根目录下templates目录下查找模板 如果不想把模板文件放在templatest目录下，那么就在Flask初始化的时候使用templates_folder`来指定模板路径  12345app = Flask(__name__, template_folder=r&apos;D:\workspaces\Pythonspace\flask_learn">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-12-12T02:01:27.822Z">
+<meta property="og:updated_time" content="2019-12-12T02:04:16.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jinja2模板">
 <meta name="twitter:description" content="Jinja2模板模板介绍 在渲染模板的时候，默认会从项目的根目录下templates目录下查找模板 如果不想把模板文件放在templatest目录下，那么就在Flask初始化的时候使用templates_folder`来指定模板路径  12345app = Flask(__name__, template_folder=r&apos;D:\workspaces\Pythonspace\flask_learn">
@@ -77,8 +77,8 @@
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Siguiente</span>
-      <span id="i-top" class="info" style="display:none;">Arriba</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
       <span id="i-share" class="info" style="display:none;">Compartir Post</span>
     </span>
     <br/>
@@ -98,7 +98,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.4.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">1.5.</span> <span class="toc-text">自定义过滤器</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.4.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">1.5.</span> <span class="toc-text">自定义过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set-with语句"><span class="toc-number">1.6.</span> <span class="toc-text">set/with语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载静态文件"><span class="toc-number">1.7.</span> <span class="toc-text">加载静态文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板继承"><span class="toc-number">1.8.</span> <span class="toc-text">模板继承</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -201,6 +201,62 @@
 <h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><p>过滤器本质上就是一个函数，如果在模板中调用这个过滤器，那么就会将这个变量的值作为第一个参数传给过滤器函数，然后函数的返回值会作为这个过滤器的返回值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.template_filter('cut')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut</span><span class="params">(value)</span>:</span></span><br><span class="line">    value = value.replace(<span class="string">'hello'</span>,<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> value</span><br></pre></td></tr></table></figure>
 
+<p>### </p>
+<p>模板中的宏跟python中的函数类似，可以传递参数，但是不能有返回值，可以将一些经常用到的代码片段放到宏中，然后把一些不固定的值抽取出来当成一个变量，以下将用一个例子来进行解释：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% macro input(name, value='', type='text') %&#125;        </span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"&#123;&#123; type &#125;&#125;"</span> <span class="attr">name</span>=<span class="string">"&#123;&#123; name &#125;&#125;"</span> <span class="attr">value</span>=<span class="string">"&#123;&#123; value|e &#125;&#125;"</span>&gt;</span>    </span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上例子可以抽取出了一个input标签，指定了一些默认参数。那么我们以后创建<code>input</code>标签的时候，可以通过他快速的创建：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; input('username') &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; input('password', type='password') &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>在真实的开发中，会将一些常用的宏单独放在一个文件中，在需要使用的时候，再从这个文件中进行导入。<code>import</code>语句的用法跟<code>python</code>中的<code>import</code>类似，可以直接<code>import...as...</code>，也可以<code>from...import...</code>或者<code>from...import...as...</code>，假设现在有一个文件，叫做<code>forms.html</code>，里面有两个宏分别为<code>input</code>和<code>textarea</code>，如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">forms.html：    </span><br><span class="line">	&#123;% macro input(name, value='', type='text') %&#125;        </span><br><span class="line">		<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"&#123;&#123; type &#125;&#125;"</span> <span class="attr">value</span>=<span class="string">"&#123;&#123; value|e &#125;&#125;"</span> <span class="attr">name</span>=<span class="string">"&#123;&#123; name &#125;&#125;"</span>&gt;</span>    </span><br><span class="line">	&#123;% endmacro %&#125;     </span><br><span class="line">	&#123;% macro textarea(name, value='', rows=10, cols=40) %&#125;        </span><br><span class="line">		<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"&#123;&#123; name &#125;&#125;"</span> <span class="attr">rows</span>=<span class="string">"&#123;&#123; rows &#125;&#125;"</span> <span class="attr">cols</span>=<span class="string">"&#123;&#123; cols &#125;&#125;"</span>&gt;</span>&#123;&#123; value|e &#125;&#125;<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span>    </span><br><span class="line">	&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ol>
+<li><p><code>import...as...</code>形式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% import 'forms.html' as forms %&#125;</span><br><span class="line">	<span class="tag">&lt;<span class="name">dl</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">dt</span>&gt;</span>  </span><br><span class="line">   		<span class="tag">&lt;<span class="name">dd</span>&gt;</span>&#123;&#123; forms.input('username') &#125;&#125;<span class="tag">&lt;/<span class="name">dd</span>&gt;</span>  </span><br><span class="line">    	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">dt</span>&gt;</span>  </span><br><span class="line">    	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>&#123;&#123; forms.input('password', type='password') &#125;&#125;<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;forms.textarea('comment') &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>from...import...as.../from...import...</code>形式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% from 'forms.html' import input as input_field, textarea %&#125;</span><br><span class="line">	<span class="tag">&lt;<span class="name">dl</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">dt</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>&#123;&#123; input_field('username') &#125;&#125;<span class="tag">&lt;/<span class="name">dd</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">dt</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>&#123;&#123; input_field('password', type='password') &#125;&#125;<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; textarea('comment') &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>另外需要注意的是，导入模板并不会把当前上下文中的变量添加到被导入的模板中，如果你想要导入一个需要访问当前上下文变量的宏，有两种可能的方法:</p>
+<ul>
+<li>显式地传入请求或请求对象的属性作为宏的参数。</li>
+<li>与上下文一起（with context）导入宏。</li>
+</ul>
+<p>与上下文中一起（with context）导入的方式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% from '_helpers.html' import my_macro with context %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="set-with语句"><a href="#set-with语句" class="headerlink" title="set/with语句"></a>set/with语句</h3><ul>
+<li><p><strong>set语句</strong></p>
+<p>在模板中可以使用<code>set</code>语句来定义变量：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% set username='tim'%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> name:&#123;&#123; username &#125;&#125; <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>with语句</strong></p>
+<p><code>with</code>语句定义的变量，只能在<code>with</code>代码块中使用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% with uasername='tim' %&#125;</span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span> name:&#123;&#123; username &#125;&#125; <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endwith%&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="加载静态文件"><a href="#加载静态文件" class="headerlink" title="加载静态文件"></a>加载静态文件</h3><p> 静态文件主要包括<code>css</code>，<code>JavaScript</code>等脚本文件、图片等，在加载文件的时候主要是用<code>url_for</code>方法。</p>
+<ul>
+<li>语法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; url_for(<span class="string">'文件夹'</span>, filename=<span class="string">'调用文件路径及扩展名'</span>) &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模板继承"><a href="#模板继承" class="headerlink" title="模板继承"></a>模板继承</h3><p>绝大多数Web应用程序在页面的顶部都有一个导航栏，其中带有一些常用的链接，例如编辑配置文件，登录，注销等。我可以轻松地用HTML标记语言将导航栏添加到<code>index.html</code>模板上，但随着应用程序的增长，我将需要在其他页面重复同样的工作。尽量不要编写重复的代码，这是一个良好的编程习惯，毕竟我真的不想在诸多HTML模板上保留同样的代码。</p>
+<p>Jinja2有一个模板继承特性，专门解决这个问题。从本质上来讲，就是将所有模板中相同的部分转移到一个基础模板中，然后再从它继承过来。</p>
+<p>所以我现在要做的是定义一个名为<code>base.html</code>的基本模板，其中包含一个简单的导航栏，以及我之前实现的标题逻辑。 您需要在模板文件<em>app/templates/base.html</em>中编写代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">      &#123;% if title %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;&#123; title &#125;&#125; - Microblog<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">      &#123;% else %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span>&gt;</span>Welcome to Microblog<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>Microblog: <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/index"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">        &#123;% block content %&#125;&#123;% endblock %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个模板中，我使用<code>block</code>控制语句来定义派生模板可以插入代码的位置。 <em>block</em>被赋予一个唯一的名称，派生的模板可以在提供其内容时进行引用。</p>
+<p>通过从基础模板<em>base.html</em>继承HTML元素，我现在可以简化模板<em>index.html</em>了：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends "base.html" %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hi, &#123;&#123; user.username &#125;&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    &#123;% for post in posts %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; post.author.username &#125;&#125; says: <span class="tag">&lt;<span class="name">b</span>&gt;</span>&#123;&#123; post.body &#125;&#125;<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自从基础模板<em>base.html</em>接手页面的布局之后，我就可以从<em>index.html</em>中删除所有这方面的元素，只留下内容部分。 <code>extends</code>语句用来建立了两个模板之间的继承关系，这样Jinja2才知道当要求呈现<code>index.html</code>时，需要将其嵌入到<code>base.html</code>中。 而两个模板中匹配的<code>block</code>语句和其名称<code>content</code>，让Jinja2知道如何将这两个模板合并成在一起。 现在，扩展应用程序的页面就变得极其方便了，我可以创建从同一个基础模板<em>base.html</em>继承的派生模板，这就是我让应用程序的所有页面拥有统一外观布局而不用重复编写代码的秘诀。</p>
 
   </div>
 </article>
@@ -224,7 +280,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.4.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">1.5.</span> <span class="toc-text">自定义过滤器</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jinja2模板"><span class="toc-number">1.</span> <span class="toc-text">Jinja2模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模板介绍"><span class="toc-number">1.1.</span> <span class="toc-text">模板介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板传参"><span class="toc-number">1.2.</span> <span class="toc-text">模板传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板URL-FOR"><span class="toc-number">1.3.</span> <span class="toc-text">模板URL_FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">1.4.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">1.5.</span> <span class="toc-text">自定义过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set-with语句"><span class="toc-number">1.6.</span> <span class="toc-text">set/with语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载静态文件"><span class="toc-number">1.7.</span> <span class="toc-text">加载静态文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板继承"><span class="toc-number">1.8.</span> <span class="toc-text">模板继承</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -244,10 +300,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
         <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
     </div>
 
   </div>
