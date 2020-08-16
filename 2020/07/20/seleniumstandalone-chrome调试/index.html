@@ -6,22 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="准备工作 selenium镜像 地址  selenium/base: 包含 Java 运行组件及 Selenium jar 文件的基础镜像 selenium/hub: 运行 Selenium Grid Hub 的镜像 selenium/node-base: 包含虚拟桌面环境及 VNC 支持的 Selenium Grid Node 基础镜像 selenium/node-chrome: 包含 Chro">
+    <meta name="description" content="准备工作 selenium镜像 地址    镜像名称 说明    selenium/base 包含 Java 运行组件及 Selenium jar 文件的基础镜像   selenium/hub 运行 Selenium Grid Hub 的镜像   selenium/node-base 包含虚拟桌面环境及 VNC 支持的 Selenium Grid Node 基础镜像   selenium/node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="selenium&#x2F;standalone-chrome调试">
 <meta property="og:url" content="http://yoursite.com/2020/07/20/seleniumstandalone-chrome调试/index.html">
 <meta property="og:site_name" content="TOMBNOTES">
-<meta property="og:description" content="准备工作 selenium镜像 地址  selenium/base: 包含 Java 运行组件及 Selenium jar 文件的基础镜像 selenium/hub: 运行 Selenium Grid Hub 的镜像 selenium/node-base: 包含虚拟桌面环境及 VNC 支持的 Selenium Grid Node 基础镜像 selenium/node-chrome: 包含 Chro">
+<meta property="og:description" content="准备工作 selenium镜像 地址    镜像名称 说明    selenium/base 包含 Java 运行组件及 Selenium jar 文件的基础镜像   selenium/hub 运行 Selenium Grid Hub 的镜像   selenium/node-base 包含虚拟桌面环境及 VNC 支持的 Selenium Grid Node 基础镜像   selenium/node">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/20/U4UqOK.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/20/U4Vqqf.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/20/U4duUe.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/20/U4dR54.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/20/U4dTr6.png">
-<meta property="og:updated_time" content="2020-07-20T11:30:18.574Z">
+<meta property="og:updated_time" content="2020-07-20T12:00:20.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="selenium&#x2F;standalone-chrome调试">
-<meta name="twitter:description" content="准备工作 selenium镜像 地址  selenium/base: 包含 Java 运行组件及 Selenium jar 文件的基础镜像 selenium/hub: 运行 Selenium Grid Hub 的镜像 selenium/node-base: 包含虚拟桌面环境及 VNC 支持的 Selenium Grid Node 基础镜像 selenium/node-chrome: 包含 Chro">
+<meta name="twitter:description" content="准备工作 selenium镜像 地址    镜像名称 说明    selenium/base 包含 Java 运行组件及 Selenium jar 文件的基础镜像   selenium/hub 运行 Selenium Grid Hub 的镜像   selenium/node-base 包含虚拟桌面环境及 VNC 支持的 Selenium Grid Node 基础镜像   selenium/node">
 <meta name="twitter:image" content="https://s1.ax1x.com/2020/07/20/U4UqOK.png">
     
     
@@ -75,6 +75,8 @@
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" href="/2020/08/16/nginx基础/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/2020/02/07/shell/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -145,19 +147,58 @@
   <div class="content" itemprop="articleBody">
     <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li><p><a href="https://hub.docker.com/search?q=selenium&type=image" target="_blank" rel="noopener">selenium镜像</a> 地址</p>
-<ul>
-<li><strong>selenium/base</strong>: 包含 Java 运行组件及 Selenium jar 文件的基础镜像</li>
-<li><strong>selenium/hub</strong>: 运行 Selenium Grid Hub 的镜像</li>
-<li><strong>selenium/node-base</strong>: 包含虚拟桌面环境及 VNC 支持的 Selenium Grid Node 基础镜像</li>
-<li><strong>selenium/node-chrome</strong>: 包含 Chrome 的 Selenium node 镜像。需要连接 Selenium Grid Hub 使用。</li>
-<li><strong>selenium/node-firefox</strong>: 包含 firefox 的 Selenium node 镜像。需要连接 Selenium Grid Hub 使用。</li>
-<li><strong>selenium/standalone-chrome</strong>: 包含 Chrome 的 Selenium standalone 镜像（不需要连接 Selenium Grid Hub）</li>
-<li><strong>selenium/standalone-firefox</strong>: 包含 Firefox 的 Selenium standalone 镜像（不需要连接 Selenium Grid Hub）</li>
-<li><strong>selenium/standalone-chrome-debug</strong>: 包含 Chrome 和 VNC Server 的 Selenium standalone 镜像</li>
-<li><strong>selenium/standalone-firefox-debug</strong>: 包含 Firefox 和 VNC Server 的 Selenium standalone 镜像</li>
-<li><strong>selenium/node-chrome-debug</strong>: 包含 Chrome 和 VNC Server 的 Selenium Grid Node 镜像，需要连接 Selenium Grid Hub 使用</li>
-<li><strong>selenium/node-firefox-debug</strong>: 包含 Firefox 和 VNC Server 的 Selenium Grid Node 镜像，需要连接 Selenium Grid Hub 使用</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>镜像名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>selenium/base</strong></td>
+<td>包含 Java 运行组件及 Selenium jar 文件的基础镜像</td>
+</tr>
+<tr>
+<td><strong>selenium/hub</strong></td>
+<td>运行 Selenium Grid Hub 的镜像</td>
+</tr>
+<tr>
+<td><strong>selenium/node-base</strong></td>
+<td>包含虚拟桌面环境及 VNC 支持的 Selenium Grid Node 基础镜像</td>
+</tr>
+<tr>
+<td><strong>selenium/node-chrome</strong></td>
+<td>包含 Chrome 的 Selenium node 镜像。需要连接 Selenium Grid Hub 使用</td>
+</tr>
+<tr>
+<td><strong>selenium/node-firefox</strong></td>
+<td>包含 firefox 的 Selenium node 镜像。需要连接 Selenium Grid Hub 使用</td>
+</tr>
+<tr>
+<td><strong>selenium/standalone-chrome</strong></td>
+<td>包含 Chrome 的 Selenium standalone 镜像</td>
+</tr>
+<tr>
+<td><strong>selenium/standalone-firefox</strong></td>
+<td>包含 Firefox 的 Selenium standalone 镜像</td>
+</tr>
+<tr>
+<td><strong>selenium/standalone-chrome-debug</strong></td>
+<td>包含 Chrome 和 VNC Server 的 Selenium standalone 镜像</td>
+</tr>
+<tr>
+<td><strong>selenium/standalone-firefox-debug</strong></td>
+<td>包含 Firefox 和 VNC Server 的 Selenium standalone 镜像</td>
+</tr>
+<tr>
+<td><strong>selenium/node-chrome-debug</strong></td>
+<td>包含 Chrome 和 VNC Server 的 Selenium Grid Node 镜像，需要连接 Selenium Grid Hub 使用</td>
+</tr>
+<tr>
+<td><strong>selenium/node-firefox-debug</strong></td>
+<td>包含 Firefox 和 VNC Server 的 Selenium Grid Node 镜像，需要连接 Selenium Grid Hub 使用</td>
+</tr>
+</tbody></table>
 </li>
 <li><p><a href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank" rel="noopener">VNC Viewer</a> 地址</p>
 </li>
