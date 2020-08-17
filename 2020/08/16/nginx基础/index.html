@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="Nginx介绍 Nginx (“engine x”) 是一个开源的，支持高性能、高并发的 Web 服务和代理服务软件。它是由俄罗斯人 Igor Sysoev 开发的，最初被应用在俄罗斯的大型网站 www.rambler.ru 上。后来作者将源代码以类 BSD 许可的形式开源出来供全球使用。  Nginx安装 安装nginx   12345678version: &apos;3.1&apos;services:">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2020-08-16T16:17:41.570Z">
+<meta property="og:updated_time" content="2020-08-17T13:54:42.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx基础">
 <meta name="twitter:description" content="Nginx介绍 Nginx (“engine x”) 是一个开源的，支持高性能、高并发的 Web 服务和代理服务软件。它是由俄罗斯人 Igor Sysoev 开发的，最初被应用在俄罗斯的大型网站 www.rambler.ru 上。后来作者将源代码以类 BSD 许可的形式开源出来供全球使用。  Nginx安装 安装nginx   12345678version: &apos;3.1&apos;services:">
@@ -77,8 +77,8 @@
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Siguiente</span>
-      <span id="i-top" class="info" style="display:none;">Arriba</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
       <span id="i-share" class="info" style="display:none;">Compartir Post</span>
     </span>
     <br/>
@@ -98,7 +98,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx介绍"><span class="toc-number">1.</span> <span class="toc-text">Nginx介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx安装"><span class="toc-number">2.</span> <span class="toc-text">Nginx安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx反向代理"><span class="toc-number">3.</span> <span class="toc-text">Nginx反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx负载均衡"><span class="toc-number">4.</span> <span class="toc-text">nginx负载均衡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx动静分离"><span class="toc-number">5.</span> <span class="toc-text">nginx动静分离</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx介绍"><span class="toc-number">1.</span> <span class="toc-text">Nginx介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx安装"><span class="toc-number">2.</span> <span class="toc-text">Nginx安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#worker-processes的数值越大，表示Nginx的并发能力越强"><span class="toc-number"></span> <span class="toc-text">worker_processes的数值越大，表示Nginx的并发能力越强</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx反向代理"><span class="toc-number">1.</span> <span class="toc-text">Nginx反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx负载均衡"><span class="toc-number">2.</span> <span class="toc-text">nginx负载均衡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx动静分离"><span class="toc-number">3.</span> <span class="toc-text">nginx动静分离</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -145,14 +145,47 @@
   <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">version: '3.1'</span><br><span class="line">services:</span><br><span class="line">    nginx:</span><br><span class="line">        restart: always</span><br><span class="line">        image: daocloud.io/library/nginx:latest</span><br><span class="line">        container_name: nginx</span><br><span class="line">        ports:</span><br><span class="line">            - 80:80</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>nginx 核心配置文件</strong></p>
-  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">user  nginx;</span><br><span class="line">    worker_processes  1;</span><br><span class="line">    error_log  /var/log/nginx/error.log warn;</span><br><span class="line">    pid        /var/run/nginx.pid;</span><br><span class="line">    </span><br><span class="line">    # 以上统称为全区块</span><br><span class="line"># worker_processes的数值越大，表示Nginx的并发能力越强</span><br><span class="line">    # error_log 代表nginx的下错误日志存放的位置</span><br><span class="line">    events &#123;</span><br><span class="line">        worker_connections  1024;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    # events块</span><br><span class="line">    # worker_connections的数值越大，nginx并发能力越强</span><br><span class="line">    </span><br><span class="line">    http &#123;</span><br><span class="line">        include       /etc/nginx/mime.types;</span><br><span class="line">        default_type  application/octet-stream;</span><br><span class="line">    </span><br><span class="line">        # ----------------------------------</span><br><span class="line">        # include /etc/nginx/conf.d/*.conf;</span><br><span class="line">        # ----------------------------------</span><br><span class="line">        server &#123;</span><br><span class="line">            listen       80;</span><br><span class="line">            server_name  localhost;</span><br><span class="line">                location / &#123;</span><br><span class="line">                root   /usr/share/nginx/html;</span><br><span class="line">                index  index.html index.htm;</span><br><span class="line">            &#125;</span><br><span class="line">            # location块</span><br><span class="line">            # root 将接收的请求根据/usr/share/nginx/html区查找静态资源</span><br><span class="line">            # index 默认区上述的路径中找到index.html或者index.htm</span><br><span class="line">    </span><br><span class="line">        &#125;</span><br><span class="line">        # server块</span><br><span class="line">        # listen 代表nginx监听的端口号</span><br><span class="line">        # locahost 代表nginx接收请求的IP</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    # http块</span><br><span class="line">    # include代表引入一个外部文件 -&gt; /mime.type中放着大量的媒体类型</span><br><span class="line">    # include /etc/nginx/conf.d/*.conf -&gt; 引入conf.d目录下以.cong为结尾的配置文件</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>修改docker-compose文件</strong></p>
-  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">version: '3.1'</span><br><span class="line">services:</span><br><span class="line">    nginx:</span><br><span class="line">        restart: always</span><br><span class="line">        image: daocloud.io/library/nginx:latest</span><br><span class="line">        container_name: nginx</span><br><span class="line">        ports:</span><br><span class="line">            - 80:80</span><br><span class="line">        volumes:</span><br><span class="line">            - /opt/docker_nginx/conf.d/:/etc/nginx/conf.d</span><br></pre></td></tr></table></figure>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">user  nginx;</span><br><span class="line">    worker_processes  1;</span><br><span class="line">    error_log  /var/log/nginx/error.log warn;</span><br><span class="line">    pid        /var/run/nginx.pid;</span><br><span class="line">    </span><br><span class="line">    # 以上统称为全区块</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h2><blockquote>
+<h1 id="worker-processes的数值越大，表示Nginx的并发能力越强"><a href="#worker-processes的数值越大，表示Nginx的并发能力越强" class="headerlink" title="worker_processes的数值越大，表示Nginx的并发能力越强"></a>worker_processes的数值越大，表示Nginx的并发能力越强</h1><pre><code># error_log 代表nginx的下错误日志存放的位置
+events {
+    worker_connections  1024;
+}
+
+# events块
+# worker_connections的数值越大，nginx并发能力越强
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    # ----------------------------------
+    # include /etc/nginx/conf.d/*.conf;
+    # ----------------------------------
+    server {
+        listen       80;
+        server_name  localhost;
+            location / {
+            root   /usr/share/nginx/html;
+            index  index.html index.htm;
+        }
+        # location块
+        # root 将接收的请求根据/usr/share/nginx/html区查找静态资源
+        # index 默认区上述的路径中找到index.html或者index.htm
+
+    }
+    # server块
+    # listen 代表nginx监听的端口号
+    # locahost 代表nginx接收请求的IP
+
+}
+
+# http块
+# include代表引入一个外部文件 -&gt; /mime.type中放着大量的媒体类型
+# include /etc/nginx/conf.d/*.conf -&gt; 引入conf.d目录下以.cong为结尾的配置文件
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- **修改docker-compose文件**</span><br><span class="line"></span><br><span class="line">    ```json</span><br><span class="line">    version: &apos;3.1&apos;</span><br><span class="line">    services:</span><br><span class="line">        nginx:</span><br><span class="line">            restart: always</span><br><span class="line">            image: daocloud.io/library/nginx:latest</span><br><span class="line">            container_name: nginx</span><br><span class="line">            ports:</span><br><span class="line">                - 80:80</span><br><span class="line">            volumes:</span><br><span class="line">                - /opt/docker_nginx/conf.d/:/etc/nginx/conf.d</span><br></pre></td></tr></table></figure></code></pre><h2 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h2><blockquote>
 <p>反向代理：</p>
 <pre><code>1. 反向代理服务器是配置在服务端的
  2. 客户端时不知道访问的时哪一太服务器
@@ -187,7 +220,7 @@
 <blockquote>
 <p>实现权重，只需要在轮询的基础上加上权重配置</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">upstream 名字 &#123;</span><br><span class="line">	server ip:port weight=权重比例;</span><br><span class="line">	server ip:port weight=权重比例;</span><br><span class="line">	.......</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">	listen 80;</span><br><span class="line">	server_name loaclhost;</span><br><span class="line">	</span><br><span class="line">	location / &#123;</span><br><span class="line">		proxy_pass http://upstream的名字/;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">upstream 名字1 &#123;</span><br><span class="line">	server ip:port weight=权重比例;</span><br><span class="line">	server ip:port weight=权重比例;</span><br><span class="line">	.......</span><br><span class="line">&#125;</span><br><span class="line">upstream 名字2 &#123;</span><br><span class="line">	server ip:port weight=权重比例;</span><br><span class="line">	server ip:port weight=权重比例;</span><br><span class="line">	.......</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">	listen 80;</span><br><span class="line">	server_name loaclhost;</span><br><span class="line">	</span><br><span class="line">	location /路由1 &#123;</span><br><span class="line">		proxy_pass http://upstream的名字1/;</span><br><span class="line">	&#125;</span><br><span class="line">	location /路由2 &#123;</span><br><span class="line">		proxy_pass http://upstream的名字2/;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>ip_hash</p>
 <blockquote>
@@ -237,7 +270,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx介绍"><span class="toc-number">1.</span> <span class="toc-text">Nginx介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx安装"><span class="toc-number">2.</span> <span class="toc-text">Nginx安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx反向代理"><span class="toc-number">3.</span> <span class="toc-text">Nginx反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx负载均衡"><span class="toc-number">4.</span> <span class="toc-text">nginx负载均衡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx动静分离"><span class="toc-number">5.</span> <span class="toc-text">nginx动静分离</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx介绍"><span class="toc-number">1.</span> <span class="toc-text">Nginx介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx安装"><span class="toc-number">2.</span> <span class="toc-text">Nginx安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#worker-processes的数值越大，表示Nginx的并发能力越强"><span class="toc-number"></span> <span class="toc-text">worker_processes的数值越大，表示Nginx的并发能力越强</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx反向代理"><span class="toc-number">1.</span> <span class="toc-text">Nginx反向代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx负载均衡"><span class="toc-number">2.</span> <span class="toc-text">nginx负载均衡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx动静分离"><span class="toc-number">3.</span> <span class="toc-text">nginx动静分离</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -257,10 +290,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
         <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
     </div>
 
   </div>
