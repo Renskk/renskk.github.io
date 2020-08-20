@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="TOMBNOTES">
 <meta property="og:description" content="Nginx介绍 Nginx (“engine x”) 是一个开源的，支持高性能、高并发的 Web 服务和代理服务软件。它是由俄罗斯人 Igor Sysoev 开发的，最初被应用在俄罗斯的大型网站 www.rambler.ru 上。后来作者将源代码以类 BSD 许可的形式开源出来供全球使用。  Nginx安装 安装nginx   12345678version: &apos;3.1&apos;services:">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2020-08-20T02:43:29.984Z">
+<meta property="og:updated_time" content="2020-08-20T02:47:13.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx基础">
 <meta name="twitter:description" content="Nginx介绍 Nginx (“engine x”) 是一个开源的，支持高性能、高并发的 Web 服务和代理服务软件。它是由俄罗斯人 Igor Sysoev 开发的，最初被应用在俄罗斯的大型网站 www.rambler.ru 上。后来作者将源代码以类 BSD 许可的形式开源出来供全球使用。  Nginx安装 安装nginx   12345678version: &apos;3.1&apos;services:">
@@ -147,45 +147,11 @@
   <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">version: '3.1'</span><br><span class="line">services:</span><br><span class="line">    nginx:</span><br><span class="line">        restart: always</span><br><span class="line">        image: daocloud.io/library/nginx:latest</span><br><span class="line">        container_name: nginx</span><br><span class="line">        ports:</span><br><span class="line">            - 80:80</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>nginx 核心配置文件</strong></p>
-  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">user  nginx;</span><br><span class="line">    worker_processes  1;</span><br><span class="line">    error_log  /var/log/nginx/error.log warn;</span><br><span class="line">    pid        /var/run/nginx.pid;</span><br><span class="line">    </span><br><span class="line">    # 以上统称为全区块</span><br></pre></td></tr></table></figure>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">user  nginx;</span><br><span class="line">worker_processes  1;</span><br><span class="line">error_log  /var/log/nginx/error.log warn;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"># 以上统称为全区块</span><br></pre></td></tr></table></figure>
 
 <p>  <strong>worker_processes的数值越大，表示Nginx的并发能力越强</strong></p>
-<pre><code># error_log 代表nginx的下错误日志存放的位置
-events {
-    worker_connections  1024;
-}
-
-# events块
-# worker_connections的数值越大，nginx并发能力越强
-
-http {
-    include       /etc/nginx/mime.types;
-    default_type  application/octet-stream;
-
-    # ----------------------------------
-    # include /etc/nginx/conf.d/*.conf;
-    # ----------------------------------
-    server {
-        listen       80;
-        server_name  localhost;
-            location / {
-            root   /usr/share/nginx/html;
-            index  index.html index.htm;
-        }
-        # location块
-        # root 将接收的请求根据/usr/share/nginx/html区查找静态资源
-        # index 默认区上述的路径中找到index.html或者index.htm
-
-    }
-    # server块
-    # listen 代表nginx监听的端口号
-    # locahost 代表nginx接收请求的IP
-
-}
-
-# http块
-# include代表引入一个外部文件 -&gt; /mime.type中放着大量的媒体类型
-# include /etc/nginx/conf.d/*.conf -&gt; 引入conf.d目录下以.cong为结尾            的配置文件</code></pre></li>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># error_log 代表nginx的下错误日志存放的位置</span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># events块</span><br><span class="line"># worker_connections的数值越大，nginx并发能力越强</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    # ----------------------------------</span><br><span class="line">    # include /etc/nginx/conf.d/*.conf;</span><br><span class="line">    # ----------------------------------</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">            location / &#123;</span><br><span class="line">            root   /usr/share/nginx/html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">        # location块</span><br><span class="line">        # root 将接收的请求根据/usr/share/nginx/html区查找静态资源</span><br><span class="line">        # index 默认区上述的路径中找到index.html或者index.htm</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    # server块</span><br><span class="line">    # listen 代表nginx监听的端口号</span><br><span class="line">    # locahost 代表nginx接收请求的IP</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># http块</span><br><span class="line"># include代表引入一个外部文件 -&gt; /mime.type中放着大量的媒体类型</span><br><span class="line"># include /etc/nginx/conf.d/*.conf -&gt; 引入conf.d目录下以.cong为结尾			的配置文件</span><br></pre></td></tr></table></figure>
+</li>
 <li><p><strong>修改docker-compose文件</strong></p>
   <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">version: '3.1'</span><br><span class="line">services:</span><br><span class="line">    nginx:</span><br><span class="line">        restart: always</span><br><span class="line">        image: daocloud.io/library/nginx:latest</span><br><span class="line">        container_name: nginx</span><br><span class="line">        ports:</span><br><span class="line">            - 80:80</span><br><span class="line">        volumes:</span><br><span class="line">            - /opt/docker_nginx/conf.d/:/etc/nginx/conf.d</span><br></pre></td></tr></table></figure>
 
